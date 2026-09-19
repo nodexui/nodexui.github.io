@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodexUI — Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="components/style.css">
+
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">NodexUI <span>v1.0</span></a>
+    <a class="all-components" href="components.html">All components →</a>
+  </header>
+
+  <main class="documentation">
+    <div class="breadcrumbs">
+      <a href="docs.html">Docs</a>
+      <span>/</span>
+      <a href="components.html">Components</a>
+      <span>/</span>
+      <strong>Button</strong>
+    </div>
+
+    <header class="page-heading">
+      <span class="eyebrow">ACTIONS</span>
+      <h1>Button<em>.</em></h1>
+      <p>
+        Buttons let people take clear actions. Use a primary button for the
+        most important action in a section.
+      </p>
+    </header>
+
+    <section class="docs-section" id="class-names">
+      <h2>Class names</h2>
+      <p>Start with <code>btn</code>, then add modifiers when needed.</p>
+
+      <div class="class-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Class name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>btn</code></td>
+              <td>The base button class.</td>
+            </tr>
+            <tr>
+              <td><code>btn-one</code></td>
+              <td>A small radius button</td>
+            </tr>
+            <tr>
+              <td><code>btn-outline</code></td>
+              <td>A button with an outline</td>
+            </tr>
+            <tr>
+              <td><code>btn-large</code></td>
+              <td>A large button</td>
+            </tr>
+            <tr>
+              <td><code>btn-wide</code></td>
+              <td>A button with large width</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="docs-section" id="button">
+      <h2>Button</h2>
+      <p>The default NodexUI button.</p>
+
+      <div class="example">
+        <div class="preview">
+          <button class="btn bg-white-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn bg-red-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn bg-blue-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn bg-green-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn bg-yellow-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn bg-black-300 text-white"><a class="text-white" href="#">Button</a></button>
+
+        </div>
+
+        <div class="code-panel">
+          <button class="copy-button" data-copy="button-basic">Copy</button>
+          <pre id="button-basic"><code>&#60;button class="btn bg-white-300 text-black"&#62;&#60;a class="text-black" href="#"&#62;Button&#60;/a&#62;&#60;/button&#62;
+&#60;button class="btn bg-red-300 text-black"&#62;&#60;a class="text-black" href="#"&#62;Button&#60;/a&#62;&#60;/button&#62;
+&#60;button class="btn bg-blue-300 text-black"&#62;&#60;a class="text-black" href="#"&#62;Button&#60;/a&#62;&#60;/button&#62;
+&#60;button class="btn bg-green-300 text-black"&#62;&#60;a class="text-black" href="#"&#62;Button&#60;/a&#62;&#60;/button&#62;
+&#60;button class="btn bg-yellow-300 text-black"&#62;&#60;a class="text-black" href="#"&#62;Button&#60;/a&#62;&#60;/button&#62;
+&#60;button class="btn bg-black-300 text-white"&#62;&#60;a class="text-white" href="#"&#62;Button&#60;/a&#62;&#60;/button&#62;
+</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="styles">
+      <h2>Button styles</h2>
+      <p>With normal border radius</p>
+
+      <div class="example">
+        <div class="preview">
+          <button class="btn-one bg-white-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn-one bg-red-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn-one bg-blue-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn-one bg-green-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn-one bg-yellow-300 text-black"><a class="text-black" href="#">Button</a></button>
+          <button class="btn-one bg-black-300 text-white"><a class="text-white" href="#">Button</a></button>
+
+        </div>
+
+        <div class="code-panel">
+          <button class="copy-button" data-copy="button-styles">Copy</button>
+          <pre id="button-styles"><code>&lt;button class&#x3D;&quot;btn-one bg-white-300 text-black&quot;&gt;&lt;a class&#x3D;&quot;text-black&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-one bg-red-300 text-black&quot;&gt;&lt;a class&#x3D;&quot;text-black&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-one bg-blue-300 text-black&quot;&gt;&lt;a class&#x3D;&quot;text-black&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-one bg-green-300 text-black&quot;&gt;&lt;a class&#x3D;&quot;text-black&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-one bg-yellow-300 text-black&quot;&gt;&lt;a class&#x3D;&quot;text-black&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-one bg-black-300 text-white&quot;&gt;&lt;a class&#x3D;&quot;text-white&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="sizes">
+      <h2>Button sizes</h2>
+      <p>Choose a size that fits the density and priority of your interface.</p>
+
+      <div class="example">
+        <div class="preview">
+          <button class="btn-outline"><a href="#">Button outline</a></button>
+          <button class="btn-large"><a href="#">Button large</a></button>
+          <button class="btn-wide"><a href="#">Button wide</a></button>
+
+        </div>
+
+        <div class="code-panel">
+          <button class="copy-button" data-copy="button-sizes">Copy</button>
+          <pre
+            id="button-sizes"><code>&lt;button class&#x3D;&quot;btn-outline&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-large&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;button class&#x3D;&quot;btn-wide&quot;&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="states">
+      <h2>Customizable button</h2>
+      <p>You can change the color of the button and the text of the button.</p>
+
+      <div class="example">
+        <div class="preview">
+          <button style="background-color: rgb(255, 0, 0);" class="btn"><a style="color: rgb(255, 255, 255);"
+              href="#">Button</a></button>
+        </div>
+
+        <div class="code-panel">
+          <button class="copy-button" data-copy="button-states">Copy</button>
+          <pre
+            id="button-states"><code>&lt;button style&#x3D;&quot;background-color: rgb(255, 0, 0);&quot; class&#x3D;&quot;btn&quot;&gt;&lt;a style&#x3D;&quot;color: rgb(255, 255, 255);&quot; href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div style="margin: 20px auto; text-align: center; font-size: 20px; font-weight: 700;">
+    <h1>Custom <em>hover</em> effect</h1>
+    <p style="font-weight: 400;">Create <span style="font-size: 17px; padding: 1px 15px; margin-left: 5px; margin-right: 5px; background: #dfd5f6ad; color: #895ce3; border-radius: 99px;">style.css</span> file and add this code!</p>
+  </div>
+  <div class="grids-3">
+    <div class="grid-3">
+       <!-- Box 1: CSS -->
+    <div class="ios-code-card">
+      <div class="ios-code-header">
+        <div class="header-left">
+          <div class="window-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <span class="lang-badge">CSS</span>
+        </div>
+
+        <button class="ios-copy-btn" type="button" aria-label="Copy code">
+          <svg class="btn-icon" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="btn-text">Copy</span>
+        </button>
+      </div>
+
+      <div class="ios-code-body">
+        <button class="btn btn1 bg-purple-200"><a class="text-black" href="#">Button</a></button><br><br>
+        <pre class="pre"><code class="code-content">.btn:hover {
+    transform: translateX(3px) !important;
+}</code></pre>
+      </div>
+    </div>
+    </div>
+    <div class="grid-3">
+      <!-- Box 1: CSS -->
+    <div class="ios-code-card">
+      <div class="ios-code-header">
+        <div class="header-left">
+          <div class="window-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <span class="lang-badge">CSS</span>
+        </div>
+
+        <button class="ios-copy-btn" type="button" aria-label="Copy code">
+          <svg class="btn-icon" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="btn-text">Copy</span>
+        </button>
+      </div>
+
+      <div class="ios-code-body">
+        <button class="btn btn2 bg-purple-200"><a class="text-black" href="#">Button</a></button><br><br>
+        <pre class="pre"><code class="code-content">.btn:hover {
+    transform: translateY(3px) !important;
+}</code></pre>
+      </div>
+    </div>
+    </div>
+    <div class="grid-3">
+      <!-- Box 1: CSS -->
+    <div class="ios-code-card">
+      <div class="ios-code-header">
+        <div class="header-left">
+          <div class="window-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <span class="lang-badge">CSS</span>
+        </div>
+
+        <button class="ios-copy-btn" type="button" aria-label="Copy code">
+          <svg class="btn-icon" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="btn-text">Copy</span>
+        </button>
+      </div>
+
+      <div class="ios-code-body">
+        <button class="btn btn3 bg-purple-200"><a class="text-black" href="#">Button</a></button><br><br>
+        <pre class="pre"><code class="code-content">.btn:hover {
+    transform: scale(1.05) !important;
+}</code></pre>
+      </div>
+    </div>
+    </div>
+  </div>
+
+   
+
+
+  <!-- Shared iOS Dynamic Toast Notification -->
+  <div class="ios-toast" id="iosToast">
+    <span class="toast-icon">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </span>
+    <span id="toastMessage">Copied to Clipboard</span>
+  </div>
+<p style="border-top: 1px solid black; width: 90%; margin: auto;"></p><br>
+
+  <div class="report-section">
+
+  <div class="grids card">
+    
+    <div class="grid">
+          <div class="dot-gr">
+<div class="dot" style="background-color: #794cdb;"></div>
+<div class="dot" style="background-color: #51dc4c;"></div>
+<div class="dot" style="background-color: #f1e839;"></div>
+</div>
+      <img class="img1" src="https://i.pinimg.com/736x/02/42/11/024211632bc59effde15ca6d809277f2.jpg" alt="">
+    </div>
+    <div class="grid">
+      <h1 class="title1">Have any isuuse or bugs in components?</h1>
+      <p>You can report to NodexUI team. Also you want any Changes in components, You can also contact us.</p>
+      <button class="btn-report"><a href="#">Report</a></button>
+    </div>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+
+    
+// SVG Templates
+const copySvgIcon = `
+      <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    `;
+const checkSvgIcon = `
+      <polyline points="20 6 9 17 4 12"></polyline>
+    `;
+
+const toast = document.getElementById('iosToast');
+let toastTimeout;
+
+// Attach listener to each code box copy button independently
+document.querySelectorAll('.ios-code-card').forEach((card) => {
+    const copyBtn = card.querySelector('.ios-copy-btn');
+    const btnText = card.querySelector('.btn-text');
+    const btnIcon = card.querySelector('.btn-icon');
+    const codeElement = card.querySelector('.code-content');
+    let buttonResetTimeout;
+
+    copyBtn.addEventListener('click', async () => {
+        // Clean extracted text (ignores HTML markup)
+        const textToCopy = codeElement.innerText;
+
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+
+            // Update this specific button state
+            copyBtn.classList.add('copied');
+            btnText.textContent = 'Copied';
+            btnIcon.innerHTML = checkSvgIcon;
+
+            // Display the global iOS Toast HUD
+            clearTimeout(toastTimeout);
+            toast.classList.add('show');
+
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+
+            // Reset button back to original state after 2.2s
+            clearTimeout(buttonResetTimeout);
+            buttonResetTimeout = setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                btnText.textContent = 'Copy';
+                btnIcon.innerHTML = copySvgIcon;
+            }, 2200);
+
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+        }
+    });
+});
+  </script>
+  <script>
+    document.querySelectorAll(".copy-button").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const code = document.getElementById(button.dataset.copy).innerText;
+
+        try {
+          await navigator.clipboard.writeText(code);
+          button.textContent = "Copied!";
+          setTimeout(() => {
+            button.textContent = "Copy";
+          }, 1400);
+        } catch {
+          button.textContent = "Select code";
+        }
+      });
+    });
+
+    document.getElementById("loadingButton").addEventListener("click", () => {
+      const button = document.getElementById("loadingButton");
+
+      button.innerHTML = '<span class="spinner"></span> Saving';
+
+      setTimeout(() => {
+        button.classList.remove("is-loading");
+        button.innerHTML = "Saved ✓";
+      }, 1200);
+    });
+    // SVG Templates
+    const copySvgIcon = `
+      <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    `;
+    const checkSvgIcon = `
+      <polyline points="20 6 9 17 4 12"></polyline>
+    `;
+
+    const toast = document.getElementById('iosToast');
+    let toastTimeout;
+
+    // Attach listener to each code box copy button independently
+    document.querySelectorAll('.ios-code-card').forEach((card) => {
+      const copyBtn = card.querySelector('.ios-copy-btn');
+      const btnText = card.querySelector('.btn-text');
+      const btnIcon = card.querySelector('.btn-icon');
+      const codeElement = card.querySelector('.code-content');
+      let buttonResetTimeout;
+
+      copyBtn.addEventListener('click', async () => {
+        // Clean extracted text (ignores HTML markup)
+        const textToCopy = codeElement.innerText;
+
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+
+          // Update this specific button state
+          copyBtn.classList.add('copied');
+          btnText.textContent = 'Copied';
+          btnIcon.innerHTML = checkSvgIcon;
+
+          // Display the global iOS Toast HUD
+          clearTimeout(toastTimeout);
+          toast.classList.add('show');
+
+          toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+          }, 2000);
+
+          // Reset button back to original state after 2.2s
+          clearTimeout(buttonResetTimeout);
+          buttonResetTimeout = setTimeout(() => {
+            copyBtn.classList.remove('copied');
+            btnText.textContent = 'Copy';
+            btnIcon.innerHTML = copySvgIcon;
+          }, 2200);
+
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
