@@ -1,0 +1,329 @@
+/*
+NodexUI v1.0 
+
+- Official NodexUI CSS. You can use this css in your project.
+- All rights reserved by NodexUI.
+
+@Version: 1.0.0
+@License: MIT
+
+@CSS-Developer: Dhaval Mandaviya
+- You can read the documenation in official GitHub account.
+
+*/
+
+:root {
+    --bg-white-100: #ffffff;
+    --bg-white-200: #f3f3f3;
+    --bg-white-300: #dadada;
+    --bg-black-100: #3f3f3f;
+    --bg-black-200: #232323;
+    --bg-black-300: #000000;
+    --bg-purple-100: #e6d6ff;
+    --bg-purple-200: #cfa3ff;
+    --bg-purple-300: #aa71f7;
+    --bg-blue-100: #d2d2ff;
+    --bg-blue-200: #9595ff;
+    --bg-blue-300: #5353ff;
+    --bg-yellow-100: #fff8d1;
+    --bg-yellow-200: #ffeba4;
+    --bg-yellow-300: #fdcd74;
+    --bg-red-100: #ffdfd6;
+    --bg-red-200: #fec9bb;
+    --bg-red-300: #f69885;
+    --bg-green-100: #d9ffdc;
+    --bg-green-200: #b0f4b6;
+    --bg-green-300: #88e693;
+
+    --white-text: #ffffff;
+    --black-text: #000000;
+    --purple-text: #7345be;
+    --blue-text: #4545c1;
+    --yellow-text: #cbb956;
+    --red-text: #bc5b41;
+    --green-text: #51cc5b;
+
+    --border-radius-5: 0.3rem;
+    --border-radius-10: 0.6rem;
+    --border-radius-15: 0.9rem;
+    --border-radius-20: 1.6rem;
+    --border-radius-25: 1.9rem;
+    --border-radius-50: 3rem;
+
+    --padding-10: 0.6rem;
+    --padding-15: 0.9rem;
+    --padding-20: 1.2rem;
+    --padding-25: 1.5rem;
+    --padding-50: 3rem;
+
+    --margin-10: 0.6rem;
+    --margin-15: 0.9rem;
+    --margin-20: 1.2rem;
+    --margin-50: 3rem;
+
+
+}
+
+.br-5 {
+    border-radius: var(--border-radius-5);
+}
+
+.br-10 {
+    border-radius: var(--border-radius-10);
+}
+
+.br-15 {
+    border-radius: var(--border-radius-15);
+}
+
+.br-20 {
+    border-radius: var(--border-radius-20);
+}
+
+.br-25 {
+    border-radius: var(--border-radius-25);
+}
+
+.br-50 {
+    border-radius: var(--border-radius-50);
+}
+
+.p-5 {
+    padding: var(--padding-5);
+}
+
+.p-10 {
+    padding: var(--padding-10);
+}
+
+.p-15 {
+    padding: var(--padding-15);
+}
+
+.p-20 {
+    padding: var(--padding-20);
+}
+
+.p-25 {
+    padding: var(--padding-25);
+}
+
+.p-50 {
+    padding: var(--padding-50);
+}
+
+.m-5 {
+    margin: var(--margin-5);
+}
+
+.m-10 {
+    margin: var(--margin-10);
+}
+
+.m-15 {
+    margin: var(--margin-15);
+}
+
+.m-20 {
+    margin: var(--margin-20);
+}
+
+.m-50 {
+    margin: var(--margin-50);
+}
+
+.bg-white-100 {
+    background-color: var(--bg-white-100);
+}
+
+.bg-white-200 {
+    background-color: var(--bg-white-200);
+}
+
+.bg-white-300 {
+    background-color: var(--bg-white-300);
+}
+
+.bg-black-100 {
+    background-color: var(--bg-black-100);
+}
+
+.bg-black-200 {
+    background-color: var(--bg-black-200);
+}
+
+.bg-black-300 {
+    background-color: var(--bg-black-300);
+}
+
+.bg-purple-100 {
+    background-color: var(--bg-purple-100);
+}
+
+.bg-purple-200 {
+    background-color: var(--bg-purple-200);
+}
+
+.bg-purple-300 {
+    background-color: var(--bg-purple-300);
+}
+
+.bg-blue-100 {
+    background-color: var(--bg-blue-100);
+}
+
+.bg-blue-200 {
+    background-color: var(--bg-blue-200);
+}
+
+.bg-blue-300 {
+    background-color: var(--bg-blue-300);
+}
+
+.bg-yellow-100 {
+    background-color: var(--bg-yellow-100);
+}
+
+.bg-yellow-200 {
+    background-color: var(--bg-yellow-200);
+}
+
+.bg-yellow-300 {
+    background-color: var(--bg-yellow-300);
+}
+
+.bg-red-100 {
+    background-color: var(--bg-red-100);
+}
+
+.bg-red-200 {
+    background-color: var(--bg-red-200);
+}
+
+.bg-red-300 {
+    background-color: var(--bg-red-300);
+}
+
+.bg-green-100 {
+    background-color: var(--bg-green-100);
+}
+
+.bg-green-200 {
+    background-color: var(--bg-green-200);
+}
+
+.bg-green-300 {
+    background-color: var(--bg-green-300);
+}
+
+.text-white {
+    color: var(--white-text);
+}
+
+.text-black {
+    color: var(--black-text);
+}
+
+.text-purple {
+    color: var(--purple-text);
+}
+
+.text-blue {
+    color: var(--blue-text);
+}
+
+.text-yellow {
+    color: var(--yellow-text);
+}
+
+.text-red {
+    color: var(--red-text);
+}
+
+.text-green {
+    color: var(--green-text);
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: var(--border-radius-20);
+    margin: var(--margin-10);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.btn a,
+.btn-one a {
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn-one:hover,
+.btn-outline:hover,
+.btn-large:hover,
+.btn-wide:hover {
+    transform: scale(0.95);
+}
+
+.btn-one {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: var(--border-radius-10);
+    margin: var(--margin-10);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.btn-outline {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: var(--border-radius-20);
+    margin: var(--margin-10);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+}
+
+.btn-outline a,
+.btn-large a,
+.btn-wide a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn-large {
+    padding: 10px 25px;
+    text-decoration: none;
+    margin: var(--margin-10);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: var(--font-family-primary);
+    border-radius: var(--border-radius-20);
+    border-color: black;
+}
+
+.btn-wide {
+    padding: 10px 50px;
+    text-decoration: none;
+    margin: var(--margin-10);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: var(--font-family-primary);
+    border-radius: var(--border-radius-20);
+    border-color: black;
+}
