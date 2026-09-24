@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodexUI — Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../ui/main.css">
+  <link rel="icon" type="image/png" sizes="512x512" href="../logo5.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">NodexUI <span>v1.0</span></a>
+    <a class="all-components" href="https://nodexui.github.io/components.html">All components →</a>
+  </header>
+
+  <main class="documentation">
+    <div class="breadcrumbs">
+      <a href="docs.html">Docs</a>
+      <span>/</span>
+      <a href="components.html">Components</a>
+      <span>/</span>
+      <strong>Crads</strong>
+    </div>
+
+    <header class="page-heading">
+      <span class="eyebrow">CARDS</span>
+      <h1>Cards<em>.</em></h1>
+      <p>
+        Cards are used to display content in a structured and organized manner. They are used to display content in a
+        structured and organized manner.
+      </p>
+    </header>
+
+    <section class="docs-section" id="class-names">
+      <h2>Class names</h2>
+      <p>Start with <code>card</code>, then add modifiers when needed.</p>
+
+      <div class="class-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Class name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>card</code></td>
+              <td>Normal card with button</td>
+            </tr>
+            <tr>
+              <td><code>card-head</code></td>
+              <td>A card with heading</td>
+            </tr>
+            <tr>
+              <td><code>card-animation</code></td>
+              <td>Card hover animation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="on-this-page">
+      <p>ON THIS PAGE</p>
+      <a href="#cards" class="current">Crads</a>
+      <a href="#card_head">Card with heading</a>
+      <a href="#card_ani">Card Animation</a>
+      <a href="#card_dot">Card with dots</a>
+      <a href="#card_color">Card colors</a>
+    </aside>
+
+    <section class="docs-section" id="button">
+      <h2>Crads</h2>
+      <p>The default NodexUI cards</p>
+      <div class="example">
+        <div class="preview">
+          <div class="card">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+        </div>
+
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1"><code class="code-content">&lt;div class&#x3D;&quot;card&quot;&gt;
+&lt;h3&gt;Title&lt;&#x2F;h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.&lt;&#x2F;p&gt;
+&lt;button&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="card_head">
+      <h2>Card style with Heading</h2>
+      <p>Card with title heading.</p>
+
+      <div class="example">
+        <div class="preview">
+          <div class="card">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+        </div>
+
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1"><code class="code-content">&lt;div class&#x3D;&quot;card&quot;&gt;
+&lt;h3 class&#x3D;&quot;card-head&quot;&gt;Title&lt;&#x2F;h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.&lt;&#x2F;p&gt;
+&lt;button&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="docs-section" id="card_ani">
+      <h2>Card animation</h2>
+      <p>You can change the color of the button and the text of the button.</p>
+
+      <div class="example">
+        <div class="preview">
+          <div class="card-animation card">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+        </div>
+
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1"><code class="code-content">&lt;div class&#x3D;&quot;card-animation card&quot;&gt;
+&lt;h3 class&#x3D;&quot;card-head&quot;&gt;Title&lt;&#x2F;h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.&lt;&#x2F;p&gt;
+&lt;button&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;&lt;&#x2F;div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="card_dot">
+      <h2>Card style wit dots</h2>
+      <p>Card with three dots.</p>
+
+      <div class="example">
+        <div class="preview">
+          <div class="card">
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+            <span class="dot-3"></span>
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+        </div>
+
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1"><code class="code-content">&lt;div class&#x3D;&quot;card&quot;&gt;
+&lt;span class&#x3D;&quot;dot-1&quot;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;dot-2&quot;&gt;&lt;&#x2F;span&gt;&lt;span class&#x3D;&quot;dot-3&quot;&gt;&lt;&#x2F;span&gt;
+&lt;h3&gt;Title&lt;&#x2F;h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.&lt;&#x2F;p&gt;
+&lt;button&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Button&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;&lt;&#x2F;div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="card_color">
+      <h2>Card colors</h2>
+      <p>You can change the color of the cards.</p>
+
+      <div class="example">
+        <div class="preview">
+          <div class="card-animation card bg-blue-100">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+          <div class="card-animation card bg-green-100">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+          <div class="card-animation card bg-red-100">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+          <div class="card-animation card bg-yellow-100">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+          <div class="card-animation card bg-purple-100">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+          <div class="card-animation card bg-white-100">
+            <h3 class="card-head">Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <button><a href="#">Button</a></button>
+          </div>
+        </div>
+
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1"><code class="code-content">&lt;div class&#x3D;&quot;card bg-blue-100&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;card bg-green-100&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;card bg-red-100&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;card bg-yellow-100&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;card bg-purple-100&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;card bg-white-100&quot;&gt;&lt;/div&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared iOS Dynamic Toast Notification -->
+  <div class="ios-toast" id="iosToast">
+    <span class="toast-icon">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </span>
+    <span id="toastMessage">Copied to Clipboard</span>
+  </div>
+  <p style="border-top: 1px solid black; width: 90%; margin: auto;"></p><br>
+
+  <div class="report-section" align="center">
+
+    <div class="grids card-1">
+
+      <div class="grid">
+        <div class="dot-gr">
+          <div class="dot" style="background-color: #794cdb;"></div>
+          <div class="dot" style="background-color: #51dc4c;"></div>
+          <div class="dot" style="background-color: #f1e839;"></div>
+        </div>
+        <img class="img1" src="https://i.pinimg.com/736x/02/42/11/024211632bc59effde15ca6d809277f2.jpg" alt="">
+      </div>
+      <div class="grid">
+        <h1 class="title1">Have any isuuse or bugs in components?</h1>
+        <p>You can report to NodexUI team. Also you want any Changes in components, You can also contact us.</p>
+        <button class="btn-report"><a href="https://nodexui.github.io/md/report.html">Report</a></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
