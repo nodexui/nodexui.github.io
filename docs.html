@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodexUI — Docs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css_file/docs.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="https://nodexui.github.io">NodexUI <span>v1.0</span></a>
+        <div class="topbar-actions">
+            <a class="btn-1 radius-new" href="https://nodexui.github.io">Back to home</a>
+            <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation"
+                aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top"><span>Quick strat</span><button class="close-menu" id="closeMenu"
+                    aria-label="Close navigation">×</button></div>
+            <nav class="side-nav" id="componentNav">
+                <a href="#install">Install NodexUI</a>
+                <a href="#setup">Developer Setup</a>
+                <a href="#use">How to use?</a>
+                <hr>
+                <a href="#components">All Components</a>
+                <p class="nav-label">Typography</p>
+                <a href="../components/typography.html">Typography</a>
+                <a href="../components/grids.html">Grids</a>
+                <p class="nav-label">Components</p>
+                <a href="../components/button.html">Buttons</a><a href="../components/dropdown.html">Dropdowns</a><a
+                    href="../components/modal.html">Modals</a>
+                <p class="nav-label">Data display</p>
+                <a href="../components/cards.html">Cards</a><a href="../components/avatar.html">Avatars</a><a
+                    href="../components/badge.html">Badges</a>
+                <p class="nav-label">Navigation</p>
+                <a href="../components/tabs.html">Tabs</a><a href="../components/breadcrumbs.html">Breadcrumbs</a><a
+                    href="../components/pagination.html">
+                    Pagination</a>
+                <p class="nav-label">Feedback</p>
+                <a href="../components/alerts.html">Alerts</a><a href="../components/progress.html">Progress</a>
+            </nav>
+            <div class="sidebar-card">
+                <div>✦</div><strong>Looking for examples?</strong>
+                <p>See complete layouts built with NodexUI.</p><a href="#">Explore templates →</a>
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="content">
+            <div class="breadcrumbs"><a href="docs.html"><strong>Docs</strong></a>/Install</div>
+            <section class="hero" id="all">
+                <span class="eyebrow">UI COMPONENTS</span>
+                <h1>Get started with<br /><em>NodexUI.</em></h1>
+                <p>Install NodexUI with cdn and use all components in your project. <br> Latest NodexUI version :
+                    <strong>v1.0</strong><br><br>
+                    <a class="btn-1" style="font-size: 15px;" href="#components">View all components &nbsp; <i class="fa-solid fa-circle-right"></i></a>
+                </p>
+            </section><br>
+            <div style="position: relative; top:-70px;" id="install"></div>
+
+            <section>
+                <h2>Intall via CDN</h2>
+                <p>Install NodexUI with cdn. Past this code in your <strong>Head</strong> section. </p>
+
+                <!-- Box 1: CSS -->
+                <div class="ios-code-card">
+                    <div class="ios-code-header">
+                        <div class="header-left">
+                            <div class="window-dots">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <span class="lang-badge">CSS</span>
+                        </div>
+
+                        <button class="ios-copy-btn" type="button" aria-label="Copy code">
+                            <svg class="btn-icon" viewBox="0 0 24 24">
+                                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="btn-text">Copy</span>
+                        </button>
+                    </div>
+
+                    <div class="ios-code-body">
+                        <pre
+                            class="pre"><code class="code-content">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;<span class="tok-str">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;nodexui&#x2F;nodexui@main&#x2F;<span class="tok-num">v1.0</span>.css</span>&quot;&gt;</code></pre>
+                    </div>
+                </div>
+            </section><b></b>
+            <hr><br>
+            <div style="position: relative; top:-70px;" id="setup"></div>
+            <section>
+                <h2>Developer Setup</h2>
+                <p>Completely HTML structure with NodexUI and all link tag.</p>
+
+                <!-- Box 1: CSS -->
+                <div class="ios-code-card">
+                    <div class="ios-code-header">
+                        <div class="header-left">
+                            <div class="window-dots">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <span class="lang-badge">CSS</span>
+                        </div>
+
+                        <button class="ios-copy-btn" type="button" aria-label="Copy code">
+                            <svg class="btn-icon" viewBox="0 0 24 24">
+                                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="btn-text">Copy</span>
+                        </button>
+                    </div>
+
+                    <div class="ios-code-body">
+                        <pre class="pre" style="height: 200px;"><code class="code-content">&lt;!DOCTYPE html&gt;
+&lt;html lang&#x3D;&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;
+  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;
+  &lt;title&gt;Project Title&lt;&#x2F;title&gt;
+  &lt;!-- NodexUI CSS --&gt;
+  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;nodexui&#x2F;nodexui@main&#x2F;v1.0.css&quot;&gt;
+  &lt;!-- Custom CSS Link --&gt;
+  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;#&quot;&gt;
+  &lt;!--favicon--&gt;
+  &lt;link rel&#x3D;&quot;icon&quot; type&#x3D;&quot;image&#x2F;x-icon&quot; href&#x3D;&quot;#&quot;&gt;
+  &lt;!--font--&gt;
+  &lt;link rel&#x3D;&quot;preconnect&quot; href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&quot;&gt;
+  &lt;link rel&#x3D;&quot;preconnect&quot; href&#x3D;&quot;https:&#x2F;&#x2F;fonts.gstatic.com&quot; crossorigin&gt;
+  &lt;link
+    href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;Lilita+One&amp;family&#x3D;Momo+Trust+Display&amp;family&#x3D;Outfit:wght@100..900&amp;display&#x3D;swap&quot;
+    rel&#x3D;&quot;stylesheet&quot;&gt;
+  &lt;link href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;Gabarito:wght@400..900&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+  &lt;link href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;Luckiest+Guy&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+  &lt;!--Icon--&gt;
+  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;font-awesome&#x2F;7.0.1&#x2F;css&#x2F;all.min.css&quot;
+    integrity&#x3D;&quot;sha512-2SwdPD6INVrV&#x2F;lHTZbO2nodKhrnDdJK9&#x2F;kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw&#x3D;&#x3D;&quot;
+    crossorigin&#x3D;&quot;anonymous&quot; referrerpolicy&#x3D;&quot;no-referrer&quot; &#x2F;&gt;
+&lt;&#x2F;head&gt;
+
+&lt;body&gt;
+  &lt;!-- Add your content below --&gt;
+
+
+  &lt;!-- Add Custom JavaScript --&gt;
+  &lt;script src&#x3D;&quot;#&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</code></pre>
+                    </div>
+                </div>
+            </section><br>
+            <hr><br>
+
+            <div style="position: relative; top:-70px;" id="use"></div>
+            <section>
+                <h2>How to use?</h2>
+                <p>What is NodexUI and how to use it ?</p>
+                <ol>
+                    <li style="padding-bottom: 10px;">First of all, Install NodexUI via CDN in your project</li>
+                    <li style="padding-bottom: 10px;">Then, view components and past HTML code to your project</li>
+                    <li style="padding-bottom: 10px;">Automatically apply all styles in components.</li>
+                    <li style="padding-bottom: 10px;">Customize as per your needs and requirement.</li>
+                </ol>
+
+
+            </section> <br>
+            <hr><br>
+            <div style="position: relative; top:-70px;" id="components"></div>
+            <section>
+                <div class="grids">
+                    <div class="grid">
+                        <h1>Start with <span class="text-purple">Components</span></h1>
+                        <p>Search any components and use in your next project.</p><br>
+                        <!-- Search -->
+
+
+                        <div class="search-wrapper">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+                            <input type="text" id="searchInput" class="search-field" placeholder="Search components..."
+                                autocomplete="off" accesskey="s">
+                            <button type="button" class="search-clear" id="searchClear"
+                                aria-label="Clear Search">&times;</button>
+                            <kbd class="shortcut-tag">Alt + S</kbd>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <img class="img2" src="https://i.pinimg.com/1200x/ca/d9/68/cad96810600b1e88423918ffe150fdc2.jpg"
+                            alt="">
+                    </div>
+                </div>
+
+
+                <!-- Components -->
+                <div class="components" id="componentList">
+
+
+                    <a href="../components/button.html" class="component" data-name="Button">
+                        Button <span class="new">New!</span>
+                    </a>
+
+                    <a href="../components/cards.html" class="component" data-name="Card">
+                        Card
+                    </a>
+
+                    <a href="../components/navbar.html" class="component" data-name="Navbar">
+                        Navbar
+                    </a>
+
+                    <a href="../components/modal.html" class="component" data-name="Modal">
+                        Modal
+                    </a>
+
+                    <a href="../components/dropdown.html" class="component" data-name="Dropdown">
+                        Dropdown
+                    </a>
+
+                    <a href="../components/grids.html" class="component" data-name="Grids">
+                        Grids
+                    </a>
+
+                    <a href="../components/typography.html" class="component" data-name="Typography">
+                        Typography
+                    </a>
+
+                    <a href="#" class="component" data-name="Input">
+                        Input
+                    </a>
+
+                    <a href="#" class="component" data-name="Tooltip">
+                        Tooltip
+                    </a>
+
+                    <a href="#" class="component" data-name="Accordion">
+                        Accordion
+                    </a>
+
+                    <a href="#" class="component" data-name="Tabs">
+                        Tabs
+                    </a>
+
+                    <a href="#" class="component" data-name="Toast">
+                        Toast
+                    </a>
+
+                </div>
+
+                <div class="no-result" id="noResult">
+                    No component found.
+                </div>
+
+
+            </section><br>
+
+            <br>
+            <hr><br>
+            <div class="grids-3">
+                <div class="grid">
+                    <div class="note radius-new">
+                        <div class="iconb radius-new">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <h2>Home</h2>
+                        <p>Back to NodexUI home page.</p>
+                        <a href="https://nodexui.github.io" class="btn-1">Back to home</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="note radius-new">
+                        <div class="iconb radius-new">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h2>Contact </h2>
+                        <p>Contact for any inqiry or information</p>
+                        <a href="https://nodexui.github.io/contact.html" class="btn-1">Contact</a>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="note radius-new">
+                        <div class="iconb radius-new">
+                            <i class="fa-solid fa-bug"></i>
+                        </div>
+                        <h2>Report Bug</h2>
+                        <p>Report bug and get fix.</p>
+                        <a href="https://nodexui.github.io/report.html" class="btn-1">Report</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        const menuButton = document.getElementById("menuButton");
+        const closeMenu = document.getElementById("closeMenu");
+
+        function toggleMenu(show) {
+            if (sidebar) sidebar.classList.toggle("open", show);
+            if (sidebarOverlay) sidebarOverlay.classList.toggle("show", show);
+            document.body.classList.toggle("menu-open", show);
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener("click", () => {
+                toggleMenu(true);
+            });
+        }
+
+        if (closeMenu) {
+            closeMenu.addEventListener("click", () => {
+                toggleMenu(false);
+            });
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener("click", () => {
+                toggleMenu(false);
+            });
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+                const search = document.getElementById("searchInput");
+                if (search) {
+                    event.preventDefault();
+                    search.focus();
+                }
+            }
+
+            if (event.key === "Escape") {
+                toggleMenu(false);
+            }
+        });
+
+    </script>
+    <script>
+
+
+        // SVG Templates
+        const copySvgIcon = `
+      <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    `;
+        const checkSvgIcon = `
+      <polyline points="20 6 9 17 4 12"></polyline>
+    `;
+
+        const toast = document.getElementById('iosToast');
+        let toastTimeout;
+
+        // Attach listener to each code box copy button independently
+        document.querySelectorAll('.ios-code-card').forEach((card) => {
+            const copyBtn = card.querySelector('.ios-copy-btn');
+            const btnText = card.querySelector('.btn-text');
+            const btnIcon = card.querySelector('.btn-icon');
+            const codeElement = card.querySelector('.code-content');
+            let buttonResetTimeout;
+
+            copyBtn.addEventListener('click', async () => {
+                // Clean extracted text (ignores HTML markup)
+                const textToCopy = codeElement.innerText;
+
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+
+                    // Update this specific button state
+                    copyBtn.classList.add('copied');
+                    btnText.textContent = 'Copied';
+                    btnIcon.innerHTML = checkSvgIcon;
+
+                    // Display the global iOS Toast HUD
+                    clearTimeout(toastTimeout);
+                    toast.classList.add('show');
+
+                    toastTimeout = setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 2000);
+
+                    // Reset button back to original state after 2.2s
+                    clearTimeout(buttonResetTimeout);
+                    buttonResetTimeout = setTimeout(() => {
+                        copyBtn.classList.remove('copied');
+                        btnText.textContent = 'Copy';
+                        btnIcon.innerHTML = copySvgIcon;
+                    }, 2200);
+
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+            });
+        });
+
+    </script>
+    <script>
+
+        const searchInput = document.getElementById("searchInput");
+        const components = document.querySelectorAll(".component");
+        const noResult = document.getElementById("noResult");
+
+        searchInput.addEventListener("input", function () {
+
+            const searchValue = this.value.toLowerCase().trim();
+
+            let found = false;
+
+            components.forEach(function (component) {
+
+                const componentName =
+                    component.getAttribute("data-name").toLowerCase();
+
+                if (componentName.includes(searchValue)) {
+
+                    component.style.display = "block";
+                    found = true;
+
+                } else {
+
+                    component.style.display = "none";
+
+                }
+
+            });
+
+            if (found) {
+                noResult.style.display = "none";
+            } else {
+                noResult.style.display = "block";
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
