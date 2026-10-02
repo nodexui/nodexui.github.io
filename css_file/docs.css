@@ -9,7 +9,6 @@
     --surface: #fbfaff;
     --teal: #16766f;
 }
-
 ::-webkit-scrollbar {
     height: 4px;
     width: 5px !important;
