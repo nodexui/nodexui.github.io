@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodexUI — Dropdown menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css_file/main.css">
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#home" class="logo font-4">NodexUI</a>
+        </div>
+        <a class="btnx" href="https://nodexui.github.io/docs.html">All components &nbsp; <i
+                class="fa-solid fa-circle-chevron-right"></i></a>
+    </nav><br><br>
+
+    <main class="documentation">
+        <div class="breadcrumbs">
+            <a href="https://nodexui.github.io/docs.html">Docs</a>
+            <span>/</span>
+            <strong>Dropdown</strong>
+        </div>
+
+        <header class="page-heading">
+            <span class="eyebrow">DROPDOWN</span>
+            <h1>Dropdown<em>.</em></h1>
+            <p>
+                Dropdown menu is an interactive UI component that allows users to select an option from a list of
+                choices.
+            </p>
+        </header>
+
+        <section class="docs-section" id="class-names">
+            <h2>Class names</h2>
+            <p>Start with <code>dropdown</code>, then add modifiers when needed.</p>
+
+            <div class="class-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>summary</code></td>
+                            <td>Summary and details tag</td>
+                        </tr>
+                        <tr>
+                            <td><code>dropdown-menu</code></td>
+                            <td>Dropdown content</td>
+                        </tr>
+                        <tr>
+                            <td><code>dropdown-menu-glass</code></td>
+                            <td>Dropdown content with glass effect</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <aside class="on-this-page">
+            <p>ON THIS PAGE</p>
+            <a href="#dropdown" class="current">Dropdown</a>
+            <a href="#dropdown-glass" class="current">Dropdown with Glass effect</a>
+        </aside>
+
+        <section class="docs-section" id="dropdown">
+            <h2>Dropdown</h2>
+            <p>The default NodexUI dropdown</p>
+            <div class="example">
+                <div class="preview">
+                    <details>
+                        <summary class="summary btn bg-black-300 text-white">Menu &nbsp;<i
+                                class="fa-regular fa-circle-down"></i></summary>
+                        <div class="dropdown-menu">
+                            <a href="#">Home</a>
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="ios-code-card"
+                    style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                    <div class="ios-code-header">
+                        <div class="header-left">
+                            <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+                        </div>
+
+                        <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button"
+                            aria-label="Copy code">
+                            <svg class="btn-icon" viewBox="0 0 24 24">
+                                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="btn-text">Copy</span>
+                        </button>
+                    </div>
+
+                    <div class="ios-code-body">
+                        <pre class="pre-1"><code class="code-content">&lt;details&gt;
+  &lt;summary class=&quot;summary btn bg-black-300 text-white&quot;&gt;Menu &nbsp;&lt;i class=&quot;fa-regular fa-circle-down&quot;&gt;&lt;/i&gt;&lt;/summary&gt;
+  &lt;div class=&quot;dropdown-menu&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Services&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="docs-section" id="dropdown-glass">
+            <h2>Dropdown with Glass effect</h2>
+            <p>The glass effect NodexUI dropdown</p>
+            <div class="example">
+                <div class="preview">
+                    <details>
+                        <summary class="summary btn bg-black-300 text-white">Menu &nbsp;<i
+                                class="fa-regular fa-circle-down"></i></summary>
+                        <div class="dropdown-menu-glass">
+                            <a href="#">Home</a>
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="ios-code-card"
+                    style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                    <div class="ios-code-header">
+                        <div class="header-left">
+                            <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+                        </div>
+
+                        <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button"
+                            aria-label="Copy code">
+                            <svg class="btn-icon" viewBox="0 0 24 24">
+                                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="btn-text">Copy</span>
+                        </button>
+                    </div>
+
+                    <div class="ios-code-body">
+                        <pre class="pre-1"><code class="code-content">&lt;details&gt;
+  &lt;summary class=&quot;summary btn bg-black-300 text-white&quot;&gt;Menu &nbsp;&lt;i class=&quot;fa-regular fa-circle-down&quot;&gt;&lt;/i&gt;&lt;/summary&gt;
+  &lt;div class=&quot;dropdown-menu-glass&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Services&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Shared iOS Dynamic Toast Notification -->
+        <div class="ios-toast" id="iosToast">
+            <span class="toast-icon">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </span>
+            <span id="toastMessage">Copied to Clipboard</span>
+        </div>
+        <p style="border-top: 1px solid black; width: 90%; margin: auto;"></p><br>
+
+        <div class="report-section" align="center">
+
+            <div class="grids card-1">
+
+                <div class="grid">
+                    <div class="dot-gr">
+                        <div class="dot" style="background-color: #794cdb;"></div>
+                        <div class="dot" style="background-color: #51dc4c;"></div>
+                        <div class="dot" style="background-color: #f1e839;"></div>
+                    </div>
+                    <img class="img1" src="https://i.pinimg.com/736x/02/42/11/024211632bc59effde15ca6d809277f2.jpg"
+                        alt="">
+                </div>
+                <div class="grid">
+                    <h1 class="title1">Have any isuuse or bugs in components?</h1>
+                    <p>You can report to NodexUI team. Also you want any Changes in components, You can also contact us.
+                    </p>
+                    <button class="btn-report"><a href="https://nodexui.github.io/md/report.html">Report</a></button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
