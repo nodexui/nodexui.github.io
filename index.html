@@ -194,7 +194,7 @@
             </div>
         </section>
 
-        <section class="why-section" id="why">
+        <section class="why-section reveal" id="why">
             <div class="section-heading">
                 <span class="eyebrow"><i class="fa-regular fa-thumbs-up"></i> MADE FOR MAKERS</span>
                 <h2>Why choose <em>NodexUI?</em></h2>
@@ -252,7 +252,7 @@
             </div>
         </section>
 
-        <section class="features-section" id="docs">
+        <section class="features-section reveal" id="docs">
             <div class="section-heading left">
                 <span class="eyebrow"><i class="fa-solid fa-cubes"></i> CSS LIBRARY</span>
                 <h2>Everything you need to <em>build faster.</em></h2>
@@ -296,7 +296,7 @@
             </div>
         </section>
 
-        <section class="tools-section" id="usef">
+        <section class="tools-section reveal" id="usef">
             <div class="tools-heading">
                 <span class="tools-eyebrow">
                     <i class="fa-solid fa-heart-circle-check"></i>
@@ -420,7 +420,7 @@
             </div>
         </section>
 
-        <section class="materials-section" id="resource">
+        <section class="materials-section reveal" id="resource">
             <div class="materials-intro">
                 <span class="materials-eyebrow">
                     <i class="fa-solid fa-box-open"></i>
@@ -592,7 +592,7 @@
 
 
 
-        <section class="docs-section" id="component">
+        <section class="docs-section reveal" id="component">
             <div class="docs-copy">
                 <span class="eyebrow light"><i class="fa-solid fa-book-open"></i> QUICK DOCUMENTATION</span>
                 <h2>Start building in <em>seconds.</em></h2>
@@ -619,7 +619,7 @@
             </div>
         </section>
 
-        <section class="updates-section" id="updates">
+        <section class="updates-section reveal" id="updates">
             <div class="updates-heading">
                 <span class="updates-eyebrow">
                     <i class="fa-solid fa-clock-rotate-left"></i>
@@ -826,6 +826,40 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Select all elements with the 'reveal' class
+    const revealElements = document.querySelectorAll(".reveal");
+
+    // Options for the observer (when the element should trigger)
+    const observerOptions = {
+        root: null, // uses the viewport
+        rootMargin: "0px",
+        threshold: 0.15 // Trigger when 15% of the element is visible
+    };
+
+    // Callback function when intersection happens
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add the 'active' class to trigger the CSS transition
+                entry.target.classList.add("active");
+                
+                // Optional: Stop observing once the animation has triggered
+                // observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    // Create the Intersection Observer instance
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe each reveal element
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+    </script>
     <script src="script.js"></script>
 </body>
 
