@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodexUI - Developer Mode</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@400;500;600;700;800&family=Luckiest Guy&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <style>
+        body {
+            font-family: Outfit, sans-serif;
+            width: min(100%, 860px);
+            padding: 48px clamp(20px, 6vw, 80px) 70px;
+            margin: auto;
+        }
+
+        #loginForm {
+            background-color: #f7f3ff;
+            padding: 30px;
+            border-radius: 100px;
+            text-align: center;
+            border: 2px solid rgb(232, 219, 253);
+        }
+
+        #container {
+            display: none;
+        }
+
+        .container {
+            background-color: #e8f5e8;
+            padding: 30px;
+            border-radius: 100px;
+            text-align: center;
+            border: 2px solid #4CAF50;
+        }
+
+        input[type="password"] {
+            padding: 9px 20px;
+            font-size: 16px;
+            border: 2px solid #5f457c;
+            border-radius: 40px;
+            margin: 10px;
+            background-color: #efe8fe;
+            color: black;
+        }
+        input:focus {
+            outline: none;
+        }
+
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .btnx {
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            border: 2px solid rgb(72, 45, 115);
+            padding: 5px 20px;
+            font-size: 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btnx:hover {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#home" class="logo font-4">NodexUI </a>
+        </div>
+        <a class="btnx" href="https://nodexui.github.io">Back to Home <i
+        class="fa-solid fa-circle-chevron-right"></i></a>
+    </nav>
+    <br><br>
+    <div id="loginForm" class="radius-new">
+        <h2>Developer Mode</h2>
+        <p>To access the Developer Mode, please enter the password to view protected content:</p>
+        <form id="passwordForm">
+            <input type="password" id="passwordInput" placeholder="Enter Password" required>
+            <br><br>
+            <a style="background-color: #6252a1; color: white;" class="btnx" type="button" onclick="validatePassword()">Access Content</a><br><br>
+        </form>
+        <div id="errorMsg" class="error"></div>
+    </div>
+
+    <div id="container">
+        <div class="container radius-new">
+        <h2>Developer Mode Activated!</h2>
+        <p>This is only for NodexUI Developers. Do not use it for your personal use.</p><br>
+        <a class="btnx" onclick="logout()">Logout</a>
+        </div><br>
+        <p>Component in-built code will be display here..</p>
+    </div>
+    
+
+    <script>
+        const correctPassword = "dhaval@nodexui";
+
+        function validatePassword() {
+            const inputPassword = document.getElementById("passwordInput").value;
+            const errorMsg = document.getElementById("errorMsg");
+
+            if (inputPassword === correctPassword) {
+                // Hide login form and show protected content
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("container").style.display = "block";
+                errorMsg.textContent = "";
+            } else {
+                // Show error message
+                errorMsg.textContent = "Incorrect password!";
+                document.getElementById("passwordInput").value = "";
+                document.getElementById("passwordInput").focus();
+            }
+        }
+
+        function logout() {
+            // Hide protected content and show login form
+            document.getElementById("container").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("passwordInput").value = "";
+        }
+
+        // Allow Enter key to submit
+        document.getElementById("passwordInput").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                validatePassword();
+            }
+        });
+    </script>
+</body>
+
+</html>
