@@ -17,6 +17,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@400;500;600;700;800&family=Luckiest Guy&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="../css_file/animation.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
 
     <style>
         :root {
@@ -81,110 +83,6 @@
 
             margin: auto;
         }
-
-
-        /* =====================================================
-           NAVBAR
-           ===================================================== */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            height: 74px;
-
-            background: rgba(251, 251, 253, 0.84);
-
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(230, 230, 236, 0.85);
-        }
-
-
-        .navbar-inner {
-            width: min(var(--container),
-                    calc(100% - 40px));
-
-            height: 100%;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-
-        .logo {
-            font-family: "Gabarito", sans-serif;
-
-            font-size: 24px;
-            font-weight: 800;
-
-            letter-spacing: -0.8px;
-        }
-
-
-        .logo span {
-            color: var(--primary);
-        }
-
-
-        .desktop-links {
-            display: flex;
-            align-items: center;
-
-            gap: 30px;
-
-            list-style: none;
-        }
-
-
-        .desktop-links a {
-            color: #65656d;
-
-            font-size: 14px;
-            font-weight: 500;
-
-            transition: 0.25s ease;
-        }
-
-
-        .desktop-links a:hover,
-        .desktop-links a.active {
-            color: var(--primary);
-        }
-
-
-        .menu-btn {
-            display: none;
-
-            width: 42px;
-            height: 42px;
-
-            border: 1px solid var(--border);
-            border-radius: 12px;
-
-            background: white;
-
-            cursor: pointer;
-        }
-
-
-        .menu-btn span {
-            display: block;
-
-            width: 18px;
-            height: 2px;
-
-            margin: 4px auto;
-
-            background: var(--text);
-
-            border-radius: 10px;
-        }
-
 
         /* =====================================================
            HERO
@@ -784,7 +682,7 @@
         }
 
 
-       
+
 
         /* =====================================================
            RESPONSIVE
@@ -792,48 +690,6 @@
 
         @media (max-width: 850px) {
 
-            .desktop-links {
-                position: absolute;
-
-                top: 82px;
-                left: 20px;
-                right: 20px;
-
-                display: none;
-
-                flex-direction: column;
-
-                gap: 4px;
-
-                padding: 12px;
-
-                background: white;
-
-                border: 1px solid var(--border);
-
-                border-radius: 16px;
-
-                box-shadow: var(--shadow);
-            }
-
-
-            .desktop-links.show {
-                display: flex;
-            }
-
-
-            .desktop-links a {
-                display: block;
-
-                padding: 11px 12px;
-
-                border-radius: 9px;
-            }
-
-
-            .menu-btn {
-                display: block;
-            }
 
 
             .contact-grid {
@@ -902,52 +758,98 @@
 
         }
 
-        .btnx {
+         .btnx {
             text-decoration: none;
             color: black;
-            background-color: #e1d3ff;
+            background-color: transparent;
+            border: 2px solid rgb(72, 45, 115);
             padding: 5px 20px;
+            font-size: 15px;
             border-radius: 20px;
             transition: all 0.3s ease-in-out;
-            font-size: 13px;
+            cursor: pointer;
         }
 
         .btnx:hover {
             transform: scale(0.95);
         }
+
         .label {
             font-size: 14px;
             color: #2f2f2f;
             font-weight: 600;
             margin-left: 10px;
         }
+.input:focus {
+    background: white;
+    outline: none !important;
+    border: 1px solid #bcb0ff !important;
+
+            border-color: #bcb0ff;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(115, 87, 255, 0.08);
+}
+        .navbar {
+            box-sizing: border-box;
+            position: fixed;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1400px, calc(97% - 6px));
+            height: 72px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 36px;
+            border: 1px solid rgba(229, 229, 229, 0.888);
+            background: rgba(246, 246, 246, 0.7);
+            backdrop-filter: blur(25px) saturate(190%);
+            -webkit-backdrop-filter: blur(25px) saturate(190%);
+            box-shadow: 0 10px 40px rgba(130, 87, 229, 0.05);
+            z-index: 100;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .navbar.scrolled {
+            top: 0;
+            height: 64px;
+            background: rgba(239, 239, 239, 0.85);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            border-color: rgba(214, 214, 214, 0.8);
+        }
+
+        .logo {
+            color: black;
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .logo:hover {
+            color: #5640ac;
+            transform: scale(1.03);
+        }
+
+
     </style>
 </head>
 
 
 <body>
 
-
-    <!-- =====================================================
-     NAVBAR
-     ===================================================== -->
-
-    <nav class="navbar">
-
-        <div class="navbar-inner">
-
-            <a href="https://nodexui.github.io/" class="logo">
-                Nodex<span>UI</span>
-            </a>
-
-
-            <a class="btnx" href="https://nodexui.github.io/">
-                Back to Home
-            </a>
-
+    <!-- Navbar -->
+    <nav class="navbar radius-new" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#home" class="logo font-4">NodexUI </a>
         </div>
-
-    </nav>
+        <a class="btnx" href="nodexui.html">Back to Home <i
+        class="fa-solid fa-circle-chevron-right"></i></a>
+    </nav><br><br>
 
     <section class="hero">
 
@@ -1126,14 +1028,21 @@
                     </p><br>
 
                     <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="2a8c7c6b-f6bd-48c2-8add-44efaf35f899">
+                        <input class="input" type="hidden" name="access_key" value="2a8c7c6b-f6bd-48c2-8add-44efaf35f899">
                         <label for="name" class="label">Name</label>
-                        <input class="input" type="text" name="name" placeholder="Your Name" style="width: 100%; padding: 10px 20px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px;" required>
+                        <input class="input" type="text" name="name" placeholder="Your Name"
+                            style="width: 100%; padding: 10px 20px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px;"
+                            required>
                         <label for="email" class="label">Email</label>
-                        <input type="text" name="email" placeholder="name@gmail.com" style="width: 100%; padding: 10px 20px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px;" required>
+                        <input class="input" type="text" name="email" placeholder="name@gmail.com"
+                            style="width: 100%; padding: 10px 20px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px;"
+                            required>
                         <label for="message" class="label">Message</label>
-                        <textarea name="message" placeholder="Write your message here..." style="width: 100%; padding: 10px 20px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px;" required></textarea>
-                        <button type="submit" style="cursor: pointer; width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px; background-color: #b4a8f7;">Send</button>
+                        <textarea class="input" name="message" placeholder="Write your message here..."
+                            style="width: 100%; padding: 10px 20px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px;"
+                            required></textarea>
+                        <button type="submit"
+                            style="cursor: pointer; width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 25px; background-color: #b4a8f7;">Send</button>
                     </form>
 
 

@@ -9,6 +9,7 @@
     --surface: #fbfaff;
     --teal: #16766f;
 }
+
 ::-webkit-scrollbar {
     height: 4px;
     width: 5px !important;
@@ -64,7 +65,7 @@ button {
 }
 
 .brand {
-    color: var(--purple);
+    color: black;
     font: 800 27px Gabarito, sans-serif;
     letter-spacing: -.5px;
     text-decoration: none;

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NodexUI - Privacy Policy</title>
+    <title>NodexUI - Terms of use</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,6 +14,7 @@
         crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
+    <link rel="stylesheet" href="../css_file/animation.css">
     <style>
         :root {
             --violet: #7543d5;
@@ -140,7 +141,7 @@
             top: 0px;
             left: 50%;
             transform: translateX(-50%);
-            width: min(1400px, calc(100% - 6px));
+            width: min(1400px, calc(97% - 6px));
             height: 72px;
             padding: 0 28px;
             display: flex;
@@ -152,12 +153,12 @@
             backdrop-filter: blur(25px) saturate(190%);
             -webkit-backdrop-filter: blur(25px) saturate(190%);
             box-shadow: 0 10px 40px rgba(130, 87, 229, 0.05);
-            z-index: 1000;
+            z-index: 100;
             transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .navbar.scrolled {
-            top: 0px;
+            top: 0;
             height: 64px;
             background: rgba(239, 239, 239, 0.85);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
@@ -178,20 +179,16 @@
             transform: scale(1.03);
         }
 
-        .desktop-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
         .btnx {
             text-decoration: none;
             color: black;
-            background-color: #e1d3ff;
+            background-color: transparent;
+            border: 2px solid rgb(72, 45, 115);
             padding: 5px 20px;
+            font-size: 15px;
             border-radius: 20px;
             transition: all 0.3s ease-in-out;
+            cursor: pointer;
         }
 
         .btnx:hover {
@@ -217,12 +214,13 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+       <!-- Navbar -->
+    <nav class="navbar radius-new" id="navbar">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <a href="#home" class="logo font-4">Nodex<span style="color: var(--violet);">UI</span></a>
+            <a href="#home" class="logo font-4">NodexUI </a>
         </div>
-        <a href="https://nodexui.github.io/" class="btnx">Back To Home</a>
+        <a class="btnx" href="nodexui.html">Back to Home <i
+        class="fa-solid fa-circle-chevron-right"></i></a>
     </nav>
 
     <div class="content">

@@ -16,13 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo5.png">
+    <link rel="stylesheet" href="../css_file/animation.css">
 </head>
 
 <body>
 
     <header class="topbar">
-        <a class="brand" href="https://nodexui.github.io">NodexUI <span>v1.0</span></a>
+        <a class="brand" href="https://nodexui.github.io">NodexUI</a>
         <div class="topbar-actions">
             <a class="btn-1 radius-new" href="https://nodexui.github.io">Back to home</a>
             <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation"
@@ -311,6 +312,17 @@
             </div>
         </main>
     </div>
+
+    <!-- Shared iOS Dynamic Toast Notification -->
+    <div class="ios-toast" id="iosToast">
+        <span class="toast-icon">
+            <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </span>
+        <span id="toastMessage">Copied to Clipboard</span>
+    </div>
+
 
     <script>
         const sidebar = document.getElementById("sidebar");
