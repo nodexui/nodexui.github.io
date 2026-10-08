@@ -19,6 +19,36 @@ body {
     font-family: Outfit, sans-serif;
 }
 
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-group(root) {
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+    animation-name: slide-out;
+}
+
+::view-transition-new(root) {
+    animation-name: slide-in;
+}
+@keyframes slide-out {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100vw;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        translate: 100vw;
+    }
+}
 
 .font-1 {
     font-family: "Momo Trust Display", sans-serif;
@@ -61,7 +91,7 @@ details {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.radius {
+.radius-new {
     corner-shape: squircle;
 }
 
@@ -140,13 +170,13 @@ details {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(1400px, calc(100% - 6px));
+    width: min(1400px, calc(97% - 6px));
     height: 72px;
     padding: 0 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 36px;
+    border-radius: 900px;
     border: 1px solid rgba(229, 229, 229, 0.888);
     background: rgba(246, 246, 246, 0.7);
     backdrop-filter: blur(25px) saturate(190%);

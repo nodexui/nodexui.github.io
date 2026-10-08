@@ -15,12 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <link rel="stylesheet" href="../css_file/animation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
 
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar radius-new" id="navbar">
         <div style="display: flex; align-items: center; gap: 10px;">
             <a href="#home" class="logo font-4">NodexUI <span class="version">v1.0</span></a>
         </div>
@@ -215,7 +217,8 @@
                             <strong>Welcome back, creator</strong>
                             <small>Your next interface is taking shape.</small>
                         </div>
-                        <a style="cursor: pointer; text-decoration: none; color: white;" href="https://nodexui.github.io/docs.html"><button style="cursor: pointer;"><i
+                        <a style="cursor: pointer; text-decoration: none; color: white;"
+                            href="https://nodexui.github.io/docs.html"><button style="cursor: pointer;"><i
                                     class="fa-solid fa-arrow-right"></i></button></a>
                     </div>
 
@@ -304,7 +307,10 @@
                 </span>
 
                 <h2>Your creative <em>toolbox.</em></h2>
-                <p>Hand-picked resources for UI design, development, animation, deployment, and more.</p>
+                <p>Hand-picked resources for UI design, development, animation, deployment.</p>
+                <p style="color: rgb(126, 126, 126); font-size: 12px;">All links are third-party! Please read <a
+                        style="color: black;" href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>,
+                    before use it.</p>
             </div>
 
             <div class="tools-grid">
@@ -428,6 +434,9 @@
                 </span>
                 <h2>Everything to make your <em>ideas visible.</em></h2>
                 <p>Templates, fonts, colors, illustrations, and ready-to-use assets for your next project.</p>
+                <p style="color: rgb(126, 126, 126); font-size: 12px;">All links are third-party! Please read <a
+                        style="color: black;" href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>,
+                    before use it.</p>
             </div>
 
             <div class="material-group">
@@ -815,7 +824,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 NodexUI. By <a style="color: rgb(77, 37, 151); text-decoration: none;" href="https://dhavalmandaviya.github.io">Dhaval Madnaviya</a></p><br>
+            <p>© 2026 NodexUI. By <a style="color: rgb(77, 37, 151); text-decoration: none;"
+                    href="https://dhavalmandaviya.github.io">Dhaval Madnaviya</a></p><br>
 
             <div class="footer-socials">
                 <a href="#home" aria-label="Home"><i class="fa-solid fa-house"></i></a>
@@ -828,37 +838,37 @@
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    // Select all elements with the 'reveal' class
-    const revealElements = document.querySelectorAll(".reveal");
+            // Select all elements with the 'reveal' class
+            const revealElements = document.querySelectorAll(".reveal");
 
-    // Options for the observer (when the element should trigger)
-    const observerOptions = {
-        root: null, // uses the viewport
-        rootMargin: "0px",
-        threshold: 0.15 // Trigger when 15% of the element is visible
-    };
+            // Options for the observer (when the element should trigger)
+            const observerOptions = {
+                root: null, // uses the viewport
+                rootMargin: "0px",
+                threshold: 0.15 // Trigger when 15% of the element is visible
+            };
 
-    // Callback function when intersection happens
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add the 'active' class to trigger the CSS transition
-                entry.target.classList.add("active");
-                
-                // Optional: Stop observing once the animation has triggered
-                // observer.unobserve(entry.target);
-            }
+            // Callback function when intersection happens
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the 'active' class to trigger the CSS transition
+                        entry.target.classList.add("active");
+
+                        // Optional: Stop observing once the animation has triggered
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Create the Intersection Observer instance
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observe each reveal element
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
         });
-    };
-
-    // Create the Intersection Observer instance
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe each reveal element
-    revealElements.forEach(element => {
-        observer.observe(element);
-    });
-});
     </script>
     <script src="script.js"></script>
 </body>
