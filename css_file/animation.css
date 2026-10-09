@@ -1,3 +1,7 @@
+/*
+Animation 1 : left side
+*/
+
 @view-transition {
     navigation: auto;
 }
@@ -15,34 +19,18 @@
     animation-name: slide-in;
 }
 
-@-webkit-keyframes slide-in {
-    0% {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
+@keyframes slide-out {
+    from {
+        left: 0;
     }
 
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
+    to {
+        left: -100vw;
     }
 }
 
 @keyframes slide-in {
-    0% {
-        -webkit-transform: scale(0.8);
-        transform: scale(0.8);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
+    from {
+        translate: 100vw;
     }
 }

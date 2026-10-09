@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NodexUI — Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css_file/main.css">
+  <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css_file/animation.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://nodexui.github.io/" class="logo font-4">NodexUI</a>
+    </div>
+    <a class="btnx" href="https://nodexui.github.io/docs.html#components">All components &nbsp; <i
+        class="fa-solid fa-circle-chevron-right"></i></a>
+  </nav><br><br>
+
+  <main class="documentation">
+    <div class="breadcrumbs">
+      <a href="https://nodexui.github.io/docs.html">Docs</a>
+      <span>/</span>
+      <strong>Navbar</strong>
+    </div>
+
+    <header class="page-heading">
+      <span class="eyebrow">NAVBAR</span>
+      <h1>Navbar<em>.</em></h1>
+      <p>
+        Navbar is a UI component used to display a collection of links or navigation items to help
+        users navigate through a website or application. It is typically placed at the top of the page and provides
+        easy access to different sections or pages.
+      </p>
+    </header>
+
+    <section class="docs-section" id="class-names">
+      <h2>Class names</h2>
+      <p>Start with <code>navbar</code>, then add modifiers when needed.</p>
+
+      <div class="class-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Class name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>navbar</code></td>
+              <td>Normal navbar</td>
+            </tr>
+            <tr>
+              <td><code>mobile-menu</code></td>
+              <td>Mobile menu</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="on-this-page">
+      <p>ON THIS PAGE</p>
+      <a href="#navbar" class="current">Navbar</a>
+    </aside>
+
+    <section class="docs-section" id="navbar">
+      <h2>Navbar</h2>
+      <p>The default NodexUI Navbar</p>
+      <div class="example">
+        <div class="preview">
+              <!-- Navbar -->
+    <nav class="navbar radius-new" style="position: relative !important; z-index: 0;" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#home" class="logo font-4">NodexUI <span class="version">v1.0</span></a>
+        </div>
+        <ul class="desktop-links">
+            <li><a href="https://nodexui.github.io/docs.html">Docs</a></li>
+            <li><a href="https://nodexui.github.io/docs.html#components">Components</a></li>
+            <li><a href="#usef">Tools</a></li>
+            <li><a href="#resource">Material</a></li>
+            <li><a class="nav-btn" href="https://nodexui.github.io/contact.html">Contact</a></li>
+        </ul>
+        <button class="menu-btn" onclick="openMobileMenu()" aria-label="Open menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </nav>
+        </div>
+
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1"><code class="code-content">    &lt;!-- Navbar --&gt;
+    &lt;nav class&#x3D;&quot;navbar radius-new&quot; id&#x3D;&quot;navbar&quot;&gt;
+        &lt;div style&#x3D;&quot;display: flex; align-items: center; gap: 10px;&quot;&gt;
+            &lt;a href&#x3D;&quot;#home&quot; class&#x3D;&quot;logo font-4&quot;&gt;NodexUI &lt;span class&#x3D;&quot;version&quot;&gt;v1.0&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;
+        &lt;&#x2F;div&gt;
+        &lt;ul class&#x3D;&quot;desktop-links&quot;&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;nodexui.github.io&#x2F;docs.html&quot;&gt;Docs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;nodexui.github.io&#x2F;docs.html#components&quot;&gt;Components&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;#usef&quot;&gt;Tools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+            &lt;li&gt;&lt;a href&#x3D;&quot;#resource&quot;&gt;Material&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+            &lt;li&gt;&lt;a class&#x3D;&quot;nav-btn&quot; href&#x3D;&quot;https:&#x2F;&#x2F;nodexui.github.io&#x2F;contact.html&quot;&gt;Contact&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+        &lt;button class&#x3D;&quot;menu-btn&quot; onclick&#x3D;&quot;openMobileMenu()&quot; aria-label&#x3D;&quot;Open menu&quot;&gt;
+            &lt;i class&#x3D;&quot;fa-solid fa-bars-staggered&quot;&gt;&lt;&#x2F;i&gt;
+        &lt;&#x2F;button&gt;
+    &lt;&#x2F;nav&gt;</code></pre>
+          </div>
+        </div>
+
+        
+        <div class="ios-code-card"
+          style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+          <div class="ios-code-header">
+            <div class="header-left">
+              <span class="lang-badge" style="color: rgb(150, 164, 250);">Script</span><p style="color: white;">required</p>
+            </div>
+
+            <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button" aria-label="Copy code">
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+
+          <div class="ios-code-body">
+            <pre class="pre-1" style="overflow-y: auto; height: 200px;"><code class="code-content">&#x2F;&#x2F; Hide Loader on Page Load
+window.addEventListener(&quot;load&quot;, function () {
+    const loader &#x3D; document.getElementById(&quot;loader&quot;);
+    if (loader) {
+        setTimeout(() &#x3D;&gt; {
+            loader.style.opacity &#x3D; &quot;0&quot;;
+            setTimeout(() &#x3D;&gt; {
+                loader.style.display &#x3D; &quot;none&quot;;
+            }, 400);
+        }, 1);
+    }
+});
+
+&#x2F;&#x2F; Mobile Navbar Menu Toggle
+const mobileMenu &#x3D; document.getElementById(&quot;mobileMenu&quot;);
+const mobileLinks &#x3D; document.querySelectorAll(&quot;.mobile-links a&quot;);
+
+function openMobileMenu() {
+    if (mobileMenu) {
+        mobileMenu.classList.add(&quot;active&quot;);
+    }
+}
+
+function closeMobileMenu() {
+    if (mobileMenu) {
+        mobileMenu.classList.remove(&quot;active&quot;);
+    }
+}
+
+if (mobileMenu) {
+    mobileMenu.addEventListener(&quot;click&quot;, function (event) {
+        if (event.target &#x3D;&#x3D;&#x3D; mobileMenu) {
+            closeMobileMenu();
+        }
+    });
+}
+
+mobileLinks.forEach(function (link) {
+    link.addEventListener(&quot;click&quot;, closeMobileMenu);
+});
+
+&#x2F;&#x2F; Sticky Navbar &amp; Active Section Link Highlighter (ScrollSpy)
+const navbar &#x3D; document.getElementById(&quot;navbar&quot;);
+const navLinks &#x3D; document.querySelectorAll(&quot;.desktop-links a:not(.nav-btn)&quot;);
+const mobileNavLinks &#x3D; document.querySelectorAll(&quot;.mobile-links a&quot;);
+const sections &#x3D; document.querySelectorAll(&quot;section, #home&quot;);
+
+window.addEventListener(&quot;scroll&quot;, function () {
+    &#x2F;&#x2F; 1. Add background shadow and resize when scrolled
+    if (window.scrollY &gt; 50) {
+        navbar.classList.add(&quot;scrolled&quot;);
+    } else {
+        navbar.classList.remove(&quot;scrolled&quot;);
+    }
+
+    &#x2F;&#x2F; 2. Highlight Nav Link on Scroll
+    let currentSectionId &#x3D; &quot;home&quot;;
+    sections.forEach((section) &#x3D;&gt; {
+        const sectionTop &#x3D; section.offsetTop;
+        const sectionHeight &#x3D; section.offsetHeight;
+        if (window.scrollY &gt;&#x3D; sectionTop - 120) {
+            currentSectionId &#x3D; section.getAttribute(&quot;id&quot;);
+        }
+    });
+
+    &#x2F;&#x2F; Update Desktop links
+    navLinks.forEach((link) &#x3D;&gt; {
+        link.classList.remove(&quot;active-link&quot;);
+        if (link.getAttribute(&quot;href&quot;) &#x3D;&#x3D;&#x3D; &#x60;#${currentSectionId}&#x60;) {
+            link.classList.add(&quot;active-link&quot;);
+        }
+    });
+
+    &#x2F;&#x2F; Update Mobile links
+    mobileNavLinks.forEach((link) &#x3D;&gt; {
+        link.classList.remove(&quot;active-link&quot;);
+        if (link.getAttribute(&quot;href&quot;) &#x3D;&#x3D;&#x3D; &#x60;#${currentSectionId}&#x60;) {
+            link.classList.add(&quot;active-link&quot;);
+        }
+    });
+});
+
+const quickMenuButton &#x3D; document.querySelector(&quot;.quick-menu-btn&quot;);
+const quickMenuModal &#x3D; document.getElementById(&quot;quickMenuModal&quot;);
+const quickMenuCloseButton &#x3D; document.querySelector(&quot;.quick-close-btn&quot;);
+const quickMenuLinks &#x3D; document.querySelectorAll(&quot;.quick-menu-item&quot;);
+
+function openQuickMenu() {
+    quickMenuModal.classList.add(&quot;active&quot;);
+    quickMenuModal.setAttribute(&quot;aria-hidden&quot;, &quot;false&quot;);
+    document.body.classList.add(&quot;modal-open&quot;);
+    quickMenuCloseButton.focus();
+}
+
+function closeQuickMenu() {
+    quickMenuModal.classList.remove(&quot;active&quot;);
+    quickMenuModal.setAttribute(&quot;aria-hidden&quot;, &quot;true&quot;);
+    document.body.classList.remove(&quot;modal-open&quot;);
+    quickMenuButton.focus();
+}
+
+quickMenuButton.addEventListener(&quot;click&quot;, openQuickMenu);
+
+quickMenuCloseButton.addEventListener(&quot;click&quot;, closeQuickMenu);
+
+quickMenuModal.addEventListener(&quot;click&quot;, function (event) {
+    if (event.target &#x3D;&#x3D;&#x3D; quickMenuModal) {
+        closeQuickMenu();
+    }
+});
+
+quickMenuLinks.forEach(function (link) {
+    link.addEventListener(&quot;click&quot;, closeQuickMenu);
+});
+
+document.addEventListener(&quot;keydown&quot;, function (event) {
+    if (event.key &#x3D;&#x3D;&#x3D; &quot;Escape&quot; &amp;&amp; quickMenuModal.classList.contains(&quot;active&quot;)) {
+        closeQuickMenu();
+    }
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    <!-- Shared iOS Dynamic Toast Notification -->
+    <div class="ios-toast" id="iosToast">
+      <span class="toast-icon">
+        <svg viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </span>
+      <span id="toastMessage">Copied to Clipboard</span>
+    </div>
+    <p style="border-top: 1px solid black; width: 90%; margin: auto;"></p><br>
+
+    <div class="report-section" align="center">
+
+      <div class="grids card-1">
+
+        <div class="grid">
+          <div class="dot-gr">
+            <div class="dot" style="background-color: #794cdb;"></div>
+            <div class="dot" style="background-color: #51dc4c;"></div>
+            <div class="dot" style="background-color: #f1e839;"></div>
+          </div>
+          <img class="img1" src="https://i.pinimg.com/736x/02/42/11/024211632bc59effde15ca6d809277f2.jpg" alt="">
+        </div>
+        <div class="grid">
+          <h1 class="title1">Have any isuuse or bugs in components?</h1>
+          <p>You can report to NodexUI team. Also you want any Changes in components, You can also contact us.</p>
+          <button class="btn-report"><a href="https://nodexui.github.io/report.html">Report</a></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
