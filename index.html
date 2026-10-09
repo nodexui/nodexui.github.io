@@ -18,21 +18,25 @@
     <link rel="stylesheet" href="../css_file/animation.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
     <style>
-         @keyframes slide-out {
+        @keyframes slide-out {
     from {
-        right: 0 !important;
+        transform: translateX(0);
     }
 
     to {
-        right: 100vw !important;
+        transform: translateX(100%);
     }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
     }
 
-    @keyframes slide-in {
-    from {
-        translate: -100vw !important;
+    to {
+        transform: translateX(0);
     }
-    }
+}
     </style>
 </head>
 
