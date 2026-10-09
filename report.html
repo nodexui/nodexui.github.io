@@ -1,33 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Report an Issue — NodexUI</title>
+    <title>NodexUI - Report an Issue</title>
 
-    <meta
-        name="description"
-        content="Report bugs, issues and problems with NodexUI."
-    >
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    <meta name="description" content="Report bugs, issues and problems with NodexUI.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         crossorigin="anonymous">
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
     <link rel="stylesheet" href="../css_file/animation.css">
 
 
     <style>
-
         :root {
             --primary: #8170d7;
             --primary-dark: #6d5ec3;
@@ -86,10 +79,8 @@
 
 
         .container {
-            width: min(
-                var(--container),
-                calc(100% - 40px)
-            );
+            width: min(var(--container),
+                    calc(100% - 40px));
 
             margin: auto;
         }
@@ -169,11 +160,9 @@
             transform: translateX(-50%);
 
             background:
-                radial-gradient(
-                    circle,
+                radial-gradient(circle,
                     rgba(115, 87, 255, 0.13),
-                    transparent 68%
-                );
+                    transparent 68%);
         }
 
 
@@ -309,7 +298,7 @@
         }
 
 
-        .guide-card > p {
+        .guide-card>p {
             margin-top: 10px;
 
             color: var(--text-soft);
@@ -422,7 +411,7 @@
         }
 
 
-        .report-card > p {
+        .report-card>p {
             margin-top: 7px;
 
             color: var(--text-soft);
@@ -499,8 +488,7 @@
             border-color: #bcb0ff;
 
             box-shadow:
-                0 0 0 4px
-                rgba(115, 87, 255, 0.08);
+                0 0 0 4px rgba(115, 87, 255, 0.08);
         }
 
 
@@ -782,7 +770,8 @@
             }
 
         }
- .btnx {
+
+        .btnx {
             text-decoration: none;
             color: black;
             background-color: transparent;
@@ -797,7 +786,6 @@
         .btnx:hover {
             transform: scale(0.95);
         }
-
     </style>
 
 </head>
@@ -807,615 +795,577 @@
 
 
 
-<!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar radius-new" id="navbar">
         <div style="display: flex; align-items: center; gap: 10px;">
             <a href="#home" class="logo font-4">NodexUI </a>
         </div>
-        <a class="btnx" href="nodexui.html">Back to Home <i
-        class="fa-solid fa-circle-chevron-right"></i></a>
+        <a class="btnx" href="https://nodexui.github.io">Back to Home <i
+                class="fa-solid fa-circle-chevron-right"></i></a>
     </nav><br>
 
 
 
-<!-- =====================================================
+    <!-- =====================================================
      HERO
      ===================================================== -->
 
-<section class="hero">
+    <section class="hero">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="eyebrow">
+            <div class="eyebrow">
 
-            <span class="eyebrow-dot"></span>
+                <span class="eyebrow-dot"></span>
 
-            Bug Report
-
-        </div>
-
-
-        <h1>
-
-            Help us make
-            <span>NodexUI better.</span>
-
-        </h1>
-
-
-        <p>
-
-            Found something that isn't working correctly?
-            Send us a detailed report so we can investigate it.
-
-        </p>
-
-        <p>Due to our Server problem, The form will not submit to us. We are worling to solve it. You can direct email us on <a style="color: #3e2f83;" href="mailto:nodexui@gmail.com">nodexui@gmail.com</a> - untill we solve this problem.</p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     REPORT FORM
-     ===================================================== -->
-
-<section class="report-section">
-
-    <div class="container">
-
-        <div class="report-layout">
-
-
-            <!-- GUIDE -->
-
-            <div class="guide-card reveal">
-
-                <div class="label">
-                    Before reporting
-                </div>
-
-
-                <h2>
-                    Help us reproduce it.
-                </h2>
-
-
-                <p>
-                    A clear report makes it much easier to find and
-                    fix problems quickly.
-                </p>
-
-
-                <div class="steps">
-
-
-                    <div class="step">
-
-                        <div class="step-number">
-                            01
-                        </div>
-
-                        <div>
-
-                            <h4>
-                                Describe the problem
-                            </h4>
-
-                            <p>
-                                Explain exactly what went wrong.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="step">
-
-                        <div class="step-number">
-                            02
-                        </div>
-
-                        <div>
-
-                            <h4>
-                                Mention your environment
-                            </h4>
-
-                            <p>
-                                Include browser, device or relevant setup.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="step">
-
-                        <div class="step-number">
-                            03
-                        </div>
-
-                        <div>
-
-                            <h4>
-                                Add expected behaviour
-                            </h4>
-
-                            <p>
-                                Explain what you expected to happen.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                
+                Bug Report
 
             </div>
 
 
+            <h1>
 
-            <!-- FORM -->
+                Help us make
+                <span>NodexUI better.</span>
 
-            <div class="report-card reveal">
-
-                <div class="label">
-                    Issue details
-                </div>
-
-
-                <h2>
-                    Report an issue.
-                </h2>
-
-
-                <p>
-                    Give us enough information to understand the problem.
-                </p>
-
-                <form
-                    class="report-form"
-                    id="reportForm"
-                    action="https://api.web3forms.com/submit" method="POST"
-                >
-                <input type="hidden" name="access_key" value="2a8c7c6b-f6bd-48c2-8add-44efaf35f899">
-
-
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-
-                            <label for="reportName">
-                                Name
-                            </label>
-
-                            <input
-                                type="text"
-                                id="reportName"
-                                placeholder="Your name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="reportEmail">
-                                Email
-                            </label>
-
-                            <input
-                                type="email"
-                                id="reportEmail"
-                                placeholder="you@example.com"
-                                required
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-
-                            <label for="version">
-                                NodexUI Version
-                            </label>
-
-                            <input
-                                type="text"
-                                id="version"
-                                placeholder="Example: v1.0"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="browser">
-                                Browser
-                            </label>
-
-                            <input
-                                type="text"
-                                id="browser"
-                                placeholder="Example: Chrome 154"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="issueType">
-                            Issue Type
-                        </label>
-
-                        <select id="issueType">
-
-                            <option>
-                                Bug / Broken Component
-                            </option>
-
-                            <option>
-                                Visual / UI Issue
-                            </option>
-
-                            <option>
-                                Responsive Issue
-                            </option>
-
-                            <option>
-                                Documentation Issue
-                            </option>
-
-                            <option>
-                                Performance Issue
-                            </option>
-
-                            <option>
-                                Other
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="issueTitle">
-                            Issue Title
-                        </label>
-
-                        <input
-                            type="text"
-                            id="issueTitle"
-                            placeholder="Short description of the issue"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="issueDescription">
-                            Description
-                        </label>
-
-                        <textarea
-                            id="issueDescription"
-                            placeholder="Describe the issue..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="submit-btn"
-                    >
-                        Submit Report
-                    </button>
-
-
-                    <div class="form-note">
-                        The report will open in your default email client.
-                    </div>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ISSUE TYPES
-     ===================================================== -->
-
-<section class="issue-section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <div class="label">
-                What can you report?
-            </div>
-
-
-            <h2>
-                Every issue matters.
-            </h2>
+            </h1>
 
 
             <p>
-                Report anything that prevents NodexUI from providing
-                a better development experience.
+
+                Found something that isn't working correctly?
+                Send us a detailed report so we can investigate it.
+
             </p>
 
         </div>
 
+    </section>
 
-        <div class="issue-grid">
 
 
-            <div class="issue-card reveal">
+    <!-- =====================================================
+     REPORT FORM
+     ===================================================== -->
 
-                <div class="issue-icon">
-                    !
+    <section class="report-section">
+
+        <div class="container">
+
+            <div class="report-layout">
+
+
+                <!-- GUIDE -->
+
+                <div class="guide-card reveal">
+
+                    <div class="label">
+                        Before reporting
+                    </div>
+
+
+                    <h2>
+                        Help us reproduce it.
+                    </h2>
+
+
+                    <p>
+                        A clear report makes it much easier to find and
+                        fix problems quickly.
+                    </p>
+
+
+                    <div class="steps">
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                01
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Describe the problem
+                                </h4>
+
+                                <p>
+                                    Explain exactly what went wrong.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                02
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Mention your environment
+                                </h4>
+
+                                <p>
+                                    Include browser, device or relevant setup.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step">
+
+                            <div class="step-number">
+                                03
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Add expected behaviour
+                                </h4>
+
+                                <p>
+                                    Explain what you expected to happen.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
                 </div>
 
-                <h3>
-                    Broken Component
-                </h3>
-
-                <p>
-                    A component doesn't work as expected or produces
-                    an incorrect result.
-                </p>
-
-            </div>
 
 
-            <div class="issue-card reveal">
+                <!-- FORM -->
 
-                <div class="issue-icon">
-                    ◫
+                <div class="report-card reveal">
+
+                    <div class="label">
+                        Issue details
+                    </div>
+
+
+                    <h2>
+                        Report an issue.
+                    </h2>
+
+
+                    <p>
+                        Give us enough information to understand the problem.
+                    </p>
+
+                    <form class="report-form" id="reportForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="7a9a34ac-117d-49d8-87a1-fe90338ef43b">
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Name
+                                </label>
+
+                                <input type="text" name="Name" placeholder="Your name" required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Email
+                                </label>
+
+                                <input type="email" name="Email" placeholder="you@example.com" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label>
+                                    NodexUI Version
+                                </label>
+
+                                <input type="text" name="Version" placeholder="Example: v1.0">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Browser
+                                </label>
+
+                                <input type="text" name="Browser" placeholder="Example: Chrome 154">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label >
+                                Issue Type
+                            </label>
+
+                            <select type="choose" name="Issue type" required>
+
+                                <option>
+                                    Bug / Broken Component
+                                </option>
+
+                                <option>
+                                    Visual / UI Issue
+                                </option>
+
+                                <option>
+                                    Responsive Issue
+                                </option>
+
+                                <option>
+                                    Documentation Issue
+                                </option>
+
+                                <option>
+                                    Performance Issue
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Issue Title
+                            </label>
+
+                            <input type="text" name="Problem Heading" placeholder="Short description of the issue" required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Description
+                            </label>
+
+                            <textarea placeholder="Describe the issue..." name="Problem Details" required></textarea>
+
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">
+                            Submit Report
+                        </button>
+
+
+                    </form>
+
                 </div>
-
-                <h3>
-                    UI / Visual Bug
-                </h3>
-
-                <p>
-                    Spacing, alignment, colors, typography or other
-                    visual problems.
-                </p>
-
-            </div>
-
-
-            <div class="issue-card reveal">
-
-                <div class="issue-icon">
-                    ↔
-                </div>
-
-                <h3>
-                    Responsive Issue
-                </h3>
-
-                <p>
-                    Something looks or behaves incorrectly on mobile,
-                    tablet or another screen size.
-                </p>
-
-            </div>
-
-
-            <div class="issue-card reveal">
-
-                <div class="issue-icon">
-                    ?
-                </div>
-
-                <h3>
-                    Documentation
-                </h3>
-
-                <p>
-                    Incorrect, missing or confusing documentation
-                    and examples.
-                </p>
-
-            </div>
-
-
-            <div class="issue-card reveal">
-
-                <div class="issue-icon">
-                    ∿
-                </div>
-
-                <h3>
-                    Performance
-                </h3>
-
-                <p>
-                    Slow loading, unnecessary animations or other
-                    performance-related problems.
-                </p>
-
-            </div>
-
-
-            <div class="issue-card reveal">
-
-                <div class="issue-icon">
-                    +
-                </div>
-
-                <h3>
-                    Other
-                </h3>
-
-                <p>
-                    Anything else that you think the NodexUI team
-                    should know about.
-                </p>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
-
-
-<script>
-
-    /* =====================================================
-       MOBILE NAVBAR
-       ===================================================== */
-
-    const menuBtn =
-        document.getElementById("menuBtn");
-
-    const navLinks =
-        document.getElementById("navLinks");
-
-
-    menuBtn.addEventListener("click", () => {
-
-        navLinks.classList.toggle("show");
-
-    });
+    </section>
 
 
 
-    /* =====================================================
-       REPORT FORM
-       ===================================================== */
-
-    document
-        .getElementById("reportForm")
-        .addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
 
 
-                const name =
-                    document
-                    .getElementById("reportName")
-                    .value;
+    <!-- =====================================================
+     ISSUE TYPES
+     ===================================================== -->
+
+    <section class="issue-section">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+
+                <div class="label">
+                    What can you report?
+                </div>
 
 
-                const email =
-                    document
-                    .getElementById("reportEmail")
-                    .value;
+                <h2>
+                    Every issue matters.
+                </h2>
 
 
-                const version =
-                    document
-                    .getElementById("version")
-                    .value;
+                <p>
+                    Report anything that prevents NodexUI from providing
+                    a better development experience.
+                </p>
+
+            </div>
 
 
-                const browser =
-                    document
-                    .getElementById("browser")
-                    .value;
+            <div class="issue-grid">
 
 
-                const type =
-                    document
-                    .getElementById("issueType")
-                    .value;
+                <div class="issue-card reveal">
+
+                    <div class="issue-icon">
+                        !
+                    </div>
+
+                    <h3>
+                        Broken Component
+                    </h3>
+
+                    <p>
+                        A component doesn't work as expected or produces
+                        an incorrect result.
+                    </p>
+
+                </div>
 
 
-                const title =
-                    document
-                    .getElementById("issueTitle")
-                    .value;
+                <div class="issue-card reveal">
+
+                    <div class="issue-icon">
+                        ◫
+                    </div>
+
+                    <h3>
+                        UI / Visual Bug
+                    </h3>
+
+                    <p>
+                        Spacing, alignment, colors, typography or other
+                        visual problems.
+                    </p>
+
+                </div>
 
 
-                const description =
-                    document
-                    .getElementById("issueDescription")
-                    .value;
+                <div class="issue-card reveal">
+
+                    <div class="issue-icon">
+                        ↔
+                    </div>
+
+                    <h3>
+                        Responsive Issue
+                    </h3>
+
+                    <p>
+                        Something looks or behaves incorrectly on mobile,
+                        tablet or another screen size.
+                    </p>
+
+                </div>
 
 
-                const steps =
-                    document
-                    .getElementById("steps")
-                    .value;
+                <div class="issue-card reveal">
+
+                    <div class="issue-icon">
+                        ?
+                    </div>
+
+                    <h3>
+                        Documentation
+                    </h3>
+
+                    <p>
+                        Incorrect, missing or confusing documentation
+                        and examples.
+                    </p>
+
+                </div>
 
 
-                const subject =
-                    encodeURIComponent(
-                        "NodexUI Bug Report — " + title
-                    );
+                <div class="issue-card reveal">
+
+                    <div class="issue-icon">
+                        ∿
+                    </div>
+
+                    <h3>
+                        Performance
+                    </h3>
+
+                    <p>
+                        Slow loading, unnecessary animations or other
+                        performance-related problems.
+                    </p>
+
+                </div>
 
 
-                const body =
-                    encodeURIComponent(
+                <div class="issue-card reveal">
 
-                        "Name: " + name +
+                    <div class="issue-icon">
+                        +
+                    </div>
 
-                        "\nEmail: " + email +
+                    <h3>
+                        Other
+                    </h3>
 
-                        "\nNodexUI Version: " + version +
+                    <p>
+                        Anything else that you think the NodexUI team
+                        should know about.
+                    </p>
 
-                        "\nBrowser: " + browser +
+                </div>
 
-                        "\nIssue Type: " + type +
+            </div>
 
-                        "\n\nDescription:\n" +
-                        description +
+        </div>
 
-                        "\n\nSteps to Reproduce:\n" +
-                        steps
-
-                    );
+    </section>
 
 
-                window.location.href =
-                    `mailto:hello@nodexui.dev?subject=${subject}&body=${body}`;
+    <script>
 
-            }
-        );
+        /* =====================================================
+           MOBILE NAVBAR
+           ===================================================== */
 
-</script>
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+
+        /* =====================================================
+           REPORT FORM
+           ===================================================== */
+
+        document
+            .getElementById("reportForm")
+            .addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById("reportName")
+                            .value;
+
+
+                    const email =
+                        document
+                            .getElementById("reportEmail")
+                            .value;
+
+
+                    const version =
+                        document
+                            .getElementById("version")
+                            .value;
+
+
+                    const browser =
+                        document
+                            .getElementById("browser")
+                            .value;
+
+
+                    const type =
+                        document
+                            .getElementById("issueType")
+                            .value;
+
+
+                    const title =
+                        document
+                            .getElementById("issueTitle")
+                            .value;
+
+
+                    const description =
+                        document
+                            .getElementById("issueDescription")
+                            .value;
+
+
+                    const steps =
+                        document
+                            .getElementById("steps")
+                            .value;
+
+
+                    const subject =
+                        encodeURIComponent(
+                            "NodexUI Bug Report — " + title
+                        );
+
+
+                    const body =
+                        encodeURIComponent(
+
+                            "Name: " + name +
+
+                            "\nEmail: " + email +
+
+                            "\nNodexUI Version: " + version +
+
+                            "\nBrowser: " + browser +
+
+                            "\nIssue Type: " + type +
+
+                            "\n\nDescription:\n" +
+                            description +
+
+                            "\n\nSteps to Reproduce:\n" +
+                            steps
+
+                        );
+
+
+                    window.location.href =
+                        `mailto:hello@nodexui.dev?subject=${subject}&body=${body}`;
+
+                }
+            );
+
+    </script>
 
 
 </body>
+
 </html>
