@@ -63,6 +63,130 @@ button {
     border-bottom: 1px solid var(--line);
     backdrop-filter: blur(14px);
 }
+.navbar {
+    box-sizing: border-box;
+    position: fixed;
+    top: px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, calc(97% - 6px));
+    height: 72px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 900px;
+    border: 1px solid rgba(229, 229, 229, 0.888);
+    background: rgba(246, 246, 246, 0.7);
+    backdrop-filter: blur(25px) saturate(190%);
+    -webkit-backdrop-filter: blur(25px) saturate(190%);
+    box-shadow: 0 10px 40px rgba(130, 87, 229, 0.05);
+    z-index: 10;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.navbar.scrolled {
+    top: 0px;
+    height: 64px;
+    background: rgba(239, 239, 239, 0.85);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    border-color: rgba(214, 214, 214, 0.8);
+}
+
+.logo {
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.logo:hover {
+    color: #5640ac;
+    transform: scale(1.03);
+}
+
+.desktop-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.desktop-links a {
+    height: 40px;
+    padding: 0 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.desktop-links a:hover {
+    color: #5640ac;
+    background: rgba(130, 87, 229, 0.08);
+}
+
+.desktop-links a.active-link {
+    color: #5640ac;
+    background: rgba(130, 87, 229, 0.15);
+    font-weight: 700;
+}
+
+.desktop-links .nav-btn {
+    background: #8257e5;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(130, 87, 229, 0.25);
+    margin-left: 6px;
+}
+
+.desktop-links .nav-btn:hover {
+    background: #5640ac;
+    transform: translateY(-1.5px);
+    box-shadow: 0 6px 20px rgba(130, 87, 229, 0.35);
+}
+
+.menu-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(130, 87, 229, 0.05);
+    color: #4b347f;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(130, 87, 229, 0.08);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .desktop-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+.menu-btn:hover {
+    background: rgba(130, 87, 229, 0.1);
+    transform: scale(1.05);
+}
+
 
 .brand {
     color: black;
@@ -139,6 +263,7 @@ button {
 
 .sidebar {
     position: sticky;
+    z-index: 1000;
     top: 72px;
     height: calc(100vh - 72px);
     padding: 30px 20px 30px max(20px, calc((100vw - 1460px)/2));
@@ -149,6 +274,7 @@ button {
 
 .sidebar-top {
     display: flex;
+    z-index: 1000;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px 22px;
@@ -161,6 +287,7 @@ button {
 
 .side-nav a {
     display: flex;
+    z-index: 1000;
     gap: 8px;
     align-items: center;
     margin: 2px 0;
@@ -1539,7 +1666,6 @@ footer {
 .btn-1:hover {
     transform: scale(0.95);
 }
-
 .note {
     background-color: #fcfcfc;
     padding: 15px;
