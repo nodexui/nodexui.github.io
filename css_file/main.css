@@ -69,7 +69,7 @@ NodexUI v1.0
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgb(62, 62, 62);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 100px;
 }
 
@@ -372,6 +372,7 @@ details {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border: none;
+    width: fit-content;
 }
 
 .btn a,
@@ -395,6 +396,7 @@ details {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border: none;
+    width: fit-content;
 }
 
 .btn-outline {
@@ -407,6 +409,7 @@ details {
     border: 1px solid black;
     color: black;
     background-color: transparent;
+    width: fit-content;
 }
 
 .btn-outline a,
@@ -430,6 +433,7 @@ details {
     font-family: var(--font-family-primary);
     border-radius: var(--border-radius-20);
     border-color: black;
+    width: fit-content;
 }
 
 .btn-wide {
@@ -1407,4 +1411,88 @@ details[open] summary::after {
     .menu-btn {
         display: flex;
     }
+}
+
+.hero-text {
+    font-size: 55px;
+    margin-bottom: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #351659;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding: 8% 10%;
+}
+
+.left-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.right-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-btn {
+    background-color: rgb(74, 46, 128);
+    border-radius: 200px;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    width: fit-content;
+    border: none;
+}
+
+.hero-btn a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.hero-btn:hover {
+    box-shadow: 4px 4px black;
+    transform: translateY(-2px);
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-text {
+        font-size: 40px;
+    }
+}
+.shadow-1 {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.shadow-2 {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.shadow-3 {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.shadow-4 {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.shadow-5 {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.shadow-6 {
+    box-shadow: 4px 4px black;
 }

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodexUI — Hero section</title>
+    <!--[font]-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Momo+Trust+Display&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css_file/main.css">
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css_file/animation.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://nodexui.github.io/" class="logo font-4">NodexUI</a>
+        </div>
+        <a class="btnx" href="https://nodexui.github.io/docs.html#components">All components &nbsp; <i
+                class="fa-solid fa-circle-chevron-right"></i></a>
+    </nav><br><br>
+
+    <main class="documentation">
+        <div class="breadcrumbs">
+            <a href="https://nodexui.github.io/docs.html">Docs</a>
+            <span>/</span>
+            <strong>Hero</strong>
+        </div>
+
+        <header class="page-heading">
+            <span class="eyebrow">HERO</span>
+            <h1>Hero section<em>.</em></h1>
+            <p>
+                The hero section is the first section that appears on the screen when a user visits a website. It is
+                used to grab the user's attention and make a good first impression. A hero section typically includes a
+                headline, a subheadline, and a call-to-action button.
+            </p>
+        </header>
+
+        <section class="docs-section" id="class-names">
+            <h2>Class names</h2>
+            <p>Start with <code>hero</code>, then add modifiers when needed.</p>
+
+            <div class="class-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>hero-section</code></td>
+                            <td>Normal hero section</td>
+                        </tr>
+                        <tr>
+                            <td><code>left-hero</code></td>
+                            <td>Left hero content</td>
+                        </tr>
+                        <tr>
+                            <td><code>right-hero</code></td>
+                            <td>Right hero content</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <aside class="on-this-page">
+            <p>ON THIS PAGE</p>
+            <a href="#hero-section" class="current">Hero</a>
+        </aside>
+
+        <section class="docs-section" id="hero-section">
+            <h2>Hero section</h2>
+            <p>The default NodexUI Hero with responsive</p>
+            <div class="example">
+                <div class="preview">
+                    <!-- Hero section -->
+                    <div class="hero-section">
+                        <div class="left-hero">
+                            <p class="font-5 hero-text">Hero title</p>
+                            <p>We use the latest technologies to create the best user experience. Use NodexUI for your
+                                next project and see the
+                                difference.</p>
+                            <button class="btn bg-blue-100 radius"><a class="text-black" target="_blank" href="#">Get
+                                    Started</a></button>
+                        </div>
+                        <div class="right-hero">
+                            <img class="hero-img radius"
+                                src="https://i.pinimg.com/1200x/4c/aa/f9/4caaf99d85ff6e09bb0a24eae2e67b9f.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-code-card"
+                    style="background: #211339; margin: 0; width: 100%; border-radius: 0; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                    <div class="ios-code-header">
+                        <div class="header-left">
+                            <span class="lang-badge" style="color: rgb(150, 164, 250);">Code</span>
+                        </div>
+
+                        <button class="ios-copy-btn" style="color: rgb(150, 164, 250);" type="button"
+                            aria-label="Copy code">
+                            <svg class="btn-icon" viewBox="0 0 24 24">
+                                <rect x="9" y="9" width="13" height="13" rx="3" ry="3"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span class="btn-text">Copy</span>
+                        </button>
+                    </div>
+
+                    <div class="ios-code-body">
+                        <pre class="pre-1"><code class="code-content">&lt;!-- Hero section --&gt;
+&lt;div class&#x3D;&quot;hero-section&quot;&gt;
+&lt;div class&#x3D;&quot;left-hero&quot;&gt;
+&lt;p class&#x3D;&quot;font-5 hero-text&quot;&gt;Build a beautiful UI design with NodexUI&lt;&#x2F;p&gt;
+&lt;p&gt;We use the latest technologies to create the best user experience. Use NodexUI for your next project and see the difference.&lt;&#x2F;p&gt;
+&lt;button class&#x3D;&quot;btn bg-blue-100 radius&quot;&gt;&lt;a class&#x3D;&quot;text-black&quot; target&#x3D;&quot;_blank&quot; href&#x3D;&quot;#&quot;&gt;Get Started&lt;&#x2F;a&gt;&lt;&#x2F;button&gt;
+&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;right-hero&quot;&gt;
+&lt;img class&#x3D;&quot;hero-img radius&quot; src&#x3D;&quot;https:&#x2F;&#x2F;i.pinimg.com&#x2F;1200x&#x2F;4c&#x2F;aa&#x2F;f9&#x2F;4caaf99d85ff6e09bb0a24eae2e67b9f.jpg&quot; alt&#x3D;&quot;&quot;&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- Shared iOS Dynamic Toast Notification -->
+        <div class="ios-toast" id="iosToast">
+            <span class="toast-icon">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </span>
+            <span id="toastMessage">Copied to Clipboard</span>
+        </div>
+        <p style="border-top: 1px solid black; width: 90%; margin: auto;"></p><br>
+
+        <div class="report-section" align="center">
+
+            <div class="grids card-1">
+
+                <div class="grid">
+                    <div class="dot-gr">
+                        <div class="dot" style="background-color: #794cdb;"></div>
+                        <div class="dot" style="background-color: #51dc4c;"></div>
+                        <div class="dot" style="background-color: #f1e839;"></div>
+                    </div>
+                    <img class="img1" src="https://i.pinimg.com/736x/02/42/11/024211632bc59effde15ca6d809277f2.jpg"
+                        alt="">
+                </div>
+                <div class="grid">
+                    <h1 class="title1">Have any isuuse or bugs in components?</h1>
+                    <p>You can report to NodexUI team. Also you want any Changes in components, You can also contact us.
+                    </p>
+                    <button class="btn-report"><a href="https://nodexui.github.io/report.html">Report</a></button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
