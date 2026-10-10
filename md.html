@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodexUI </title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@400;500;600;700;800&family=Luckiest Guy&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <link rel="stylesheet" href="../css_file/animation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
+    <style>
+        @keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar radius-new" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#home" class="logo font-4">NodexUI <span class="version">v1.0</span></a>
+        </div>
+        <ul class="desktop-links">
+            <li><a href="https://nodexui.github.io/docs.html">Docs</a></li>
+            <li><a href="https://nodexui.github.io/docs.html#components">Components</a></li>
+            <li><a href="#usef">Tools</a></li>
+            <li><a href="#resource">Material</a></li>
+            <li><a class="nav-btn" href="https://nodexui.github.io/contact.html">Contact</a></li>
+        </ul>
+        <button class="menu-btn" onclick="openMobileMenu()" aria-label="Open menu">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Modal -->
+    <div id="mobileMenu" class="mobile-modal">
+        <div class="mobile-modal-content">
+            <div class="mobile-modal-top">
+                <div class="mobile-modal-title">Menu</div>
+                <button class="close-btn" onclick="closeMobileMenu()" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <ul class="mobile-links">
+                <li><a href="https://nodexui.github.io/docs.html">Docs</a></li>
+                <li><a href="https://nodexui.github.io/docs.html#components">Components</a></li>
+                <li><a href="#usef">Tools</a></li>
+                <li><a href="#resource">Material</a></li>
+                <li><a class="nav-btn" href="https://nodexui.github.io/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <main id="home">
+        <section class="hero-section">
+            <div class="left-hero">
+                <p class="hero-kicker">THE CSS LIBRARY FOR DEVELOPERS</p>
+                <h1>Build a beautiful UI design with <p class="name-title font-4">NodexUI</p>
+                </h1>
+                <p>Thoughtful components and flexible CSS utilities for fast, polished web experiences.</p>
+
+                <div class="hero-btn-container">
+                    <a class="hero-btn" href="https://nodexui.github.io/docs.html">Get Started <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <!-- Quick Menu Button -->
+                    <button class="quick-menu-btn" id="quickMenuButton" type="button" aria-haspopup="dialog"
+                        aria-controls="quickMenuModal" accesskey="m">
+                        Quick Menu <kbd>Alt+M</kbd>
+                    </button>
+
+                    <!-- Quick Menu Modal -->
+                    <div class="quick-modal" id="quickMenuModal" aria-hidden="true">
+                        <div class="quick-modal-box" role="dialog" aria-modal="true" aria-labelledby="quickMenuTitle">
+                            <div class="quick-modal-top">
+                                <div>
+                                    <span class="quick-modal-label">
+                                        <i class="fa-solid fa-bolt"></i>
+                                        NodexUI shortcuts
+                                    </span>
+                                    <h2 id="quickMenuTitle">Quick menu</h2>
+                                </div>
+
+                                <button class="quick-close-btn" id="quickMenuClose" type="button"
+                                    aria-label="Close quick menu">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+
+                            <p class="quick-modal-text">Jump straight to the part of NodexUI you need.</p>
+
+                            <div class="quick-menu-grid">
+                                <a href="https://nodexui.github.io/docs.html" class="quick-menu-item">
+                                    <span class="quick-item-icon quick-purple">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Documentation</strong>
+                                        <small>Start with the basics</small>
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right quick-arrow"></i>
+                                </a>
+
+                                <a href="#component" class="quick-menu-item">
+                                    <span class="quick-item-icon quick-blue">
+                                        <i class="fa-solid fa-cubes"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Components</strong>
+                                        <small>Reusable UI elements</small>
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right quick-arrow"></i>
+                                </a>
+
+                                <a href="#usef" class="quick-menu-item">
+                                    <span class="quick-item-icon quick-orange">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Useful Site</strong>
+                                        <small>Toolbox, Imporatant site for website</small>
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right quick-arrow"></i>
+                                </a>
+                                <a href="#resource" class="quick-menu-item">
+                                    <span class="quick-item-icon quick-new">
+                                        <i class="fa-solid fa-shapes"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Resources</strong>
+                                        <small>Web matreial and design</small>
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right quick-arrow"></i>
+                                </a>
+
+                                <a href="#updates" class="quick-menu-item">
+                                    <span class="quick-item-icon quick-green">
+                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Upcoming Updates</strong>
+                                        <small>See what is next</small>
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right quick-arrow"></i>
+                                </a>
+                                <a href="https://nodexui.github.io/developer.html" class="quick-menu-item">
+                                    <span class="quick-item-icon quick-blue">
+                                        <i class="fa-solid fa-code"></i>
+                                    </span>
+                                    <span>
+                                        <strong>Developer mode</strong>
+                                        <small>Only for Developer resource</small>
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right quick-arrow"></i>
+                                </a>
+                            </div>
+
+                            <div class="quick-modal-footer">
+                                <i class="fa-solid fa-circle-info"></i>
+                                Press <kbd>Esc</kbd> anytime to close the menu.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-hero">
+                <div class="hero-orb"></div>
+                <img width="50%" src="https://i.pinimg.com/1200x/94/69/35/9469357cdd7f4836da2ab21df08ebb87.jpg" alt="">
+                <div class="hero-panel">
+                    <div class="panel-bar">
+                        <i></i><i></i><i></i>
+                        <span>dashboard</span>
+                    </div>
+
+                    <div class="panel-content">
+                        <b>Hello, developers! <i class="fa-solid fa-sparkles"></i></b>
+                        <small>Here is your creative overview.</small>
+
+                        <div class="chart">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+
+                        <div class="panel-stats">
+                            <div><strong>1.0</strong><small>UI version</small></div>
+                            <div><strong>+28%</strong><small>Growth</small></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="why-section reveal" id="why">
+            <div class="section-heading">
+                <span class="eyebrow"><i class="fa-regular fa-thumbs-up"></i> MADE FOR MAKERS</span>
+                <h2>Why choose <em>NodexUI?</em></h2>
+                <p>A practical CSS library that makes polished interfaces feel effortless—from the first idea to a live
+                    product.</p>
+            </div>
+
+            <div class="why-layout">
+                <article class="why-showcase ani1">
+                    <div class="showcase-top ">
+                        Live component preview
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+
+                    <div class="preview-card">
+                        <b class="preview-avatar">D</b>
+                        <div>
+                            <strong>Welcome back, creator</strong>
+                            <small>Your next interface is taking shape.</small>
+                        </div>
+                        <a style="cursor: pointer; text-decoration: none; color: white;"
+                            href="https://nodexui.github.io/docs.html"><button style="cursor: pointer;"><i
+                                    class="fa-solid fa-arrow-right"></i></button></a>
+                    </div>
+
+                    <div class="preview-bars">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </article>
+
+                <div class="why-benefits">
+                    <article>
+                        <i class="purple fa-solid fa-wand-magic-sparkles"></i>
+                        <div>
+                            <h3>Beautiful by default</h3>
+                            <p>Thoughtful spacing, color, and motion create a refined foundation before custom CSS.</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <i class="orange fa-solid fa-mobile-screen-button"></i>
+                        <div>
+                            <h3>Responsive everywhere</h3>
+                            <p>Fluid layouts and mobile-ready components make every screen feel intentional.</p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <i class="blue fa-solid fa-layer-group"></i>
+                        <div>
+                            <h3>Easy to compose</h3>
+                            <p>Small, flexible utility classes help you build without fighting the framework.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section reveal" id="docs">
+            <div class="section-heading left">
+                <span class="eyebrow"><i class="fa-solid fa-cubes"></i> CSS LIBRARY</span>
+                <h2>Everything you need to <em>build faster.</em></h2>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card feature-highlight">
+                    <span>01</span>
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Modern design system</h3>
+                    <p>Colors, typography, shadows and radii that feel coherent in every component.</p>
+                    <a href="https://nodexui.github.io/docs.html">View Documentation <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="feature-card">
+                    <span>02</span>
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    <h3>Smart grids</h3>
+                    <p>Create balanced columns with responsive grid helpers that adapt beautifully.</p>
+                    <div class="mini-grid">
+                        <b></b><b></b><b></b><b></b><b></b><b></b>
+                    </div>
+                </article>
+
+                <article class="feature-card">
+                    <span>03</span>
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Lightweight CSS</h3>
+                    <p>Keep pages quick and focused with no JavaScript dependency.</p>
+                    <div class="speed-line"><b></b></div>
+                </article>
+
+                <article class="feature-card">
+                    <span>04</span>
+                    <i class="fa-solid fa-sliders"></i>
+                    <h3>Customizable</h3>
+                    <p>Make NodexUI yours with a few CSS variables for brand and contrast.</p>
+                    <div class="swatches"><b></b><b></b><b></b><b></b></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="tools-section reveal" id="usef">
+            <div class="tools-heading">
+                <span class="tools-eyebrow">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                    Useful tools
+                </span>
+
+                <h2>Your creative <em>toolbox.</em></h2>
+                <p>Hand-picked resources for UI design, development, animation, deployment.</p>
+                <p style="color: rgb(126, 126, 126); font-size: 12px;">All links are third-party! Please read <a
+                        style="color: black;" href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>,
+                    before use it.</p>
+            </div>
+
+            <div class="tools-grid">
+                <article class="tool-card design-card">
+                    <div class="tool-card-top">
+                        <div class="tool-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <span>01</span>
+                    </div>
+
+                    <h3>UI Design & Inspiration</h3>
+                    <p>Ideas and ready-made inspiration for better interfaces.</p>
+
+                    <div class="tool-links">
+                        <a target="_blank" href="https://uiverse.io/">Uiverse <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://design.dev/">Design.dev <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://patterns.page/">Patterns Page <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://freefrontend.com/">FreeFrontend <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="tool-card developer-card">
+                    <div class="tool-card-top">
+                        <div class="tool-icon"><i class="fa-solid fa-code"></i></div>
+                        <span>02</span>
+                    </div>
+
+                    <h3>Developer Tools</h3>
+                    <p>Helpful utilities to make building and sharing easier.</p>
+
+                    <div class="tool-links">
+                        <a target="_blank" href="https://www.jsdelivr.com/github">JSDelivr CDN <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://10015.io/">10015 Tools <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://pairdrop.net/">PairDrop <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://web3forms.com/#start">Web3Forms <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank"
+                            href="https://tools.vexax.com/tools/escape-unescape/html-escape-unescape-generator">HTML
+                            Tools <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="tool-card animation-card">
+                    <div class="tool-card-top">
+                        <div class="tool-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+                        <span>03</span>
+                    </div>
+
+                    <h3>CSS & Animation</h3>
+                    <p>Bring your layouts to life with motion and visual effects.</p>
+
+                    <div class="tool-links">
+                        <a target="_blank" href="https://animista.net/">Animista <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://kinetools.com/">Kinetools <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://gradienty.codes/">Gradienty <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://glass3d.dev/">Glass3D Generator <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="tool-card resource-card">
+                    <div class="tool-card-top">
+                        <div class="tool-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <span>04</span>
+                    </div>
+
+                    <h3>Useful Resources</h3>
+                    <p>Everyday websites and references for web creators.</p>
+
+                    <div class="tool-links">
+                        <a target="_blank" href="https://css-tricks.com/">CSS Tricks <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://www.w3schools.com/">W3Schools <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://www.ilovepdf.com/edit-pdf">PDF Editor <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://github.com/">GitHub <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://www.freeprivacypolicy.com/">Privacy Policy Generator <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="tool-card deploy-card">
+                    <div class="tool-card-top">
+                        <div class="tool-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <span>05</span>
+                    </div>
+
+                    <h3>Deploy Website</h3>
+                    <p>Publish your project and share it with the world.</p>
+
+                    <div class="tool-links">
+                        <a target="_blank" href="https://vercel.com/">Vercel <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://www.netlify.com/">Netlify <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://render.com/">Render <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://github.com/">GitHub Pages <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="materials-section reveal" id="resource">
+            <div class="materials-intro">
+                <span class="materials-eyebrow">
+                    <i class="fa-solid fa-box-open"></i>
+                    NodexUI resources
+                </span>
+                <h2>Everything to make your <em>ideas visible.</em></h2>
+                <p>Templates, fonts, colors, illustrations, and ready-to-use assets for your next project.</p>
+                <p style="color: rgb(126, 126, 126); font-size: 12px;">All links are third-party! Please read <a
+                        style="color: black;" href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>,
+                    before use it.</p>
+            </div>
+
+            <div class="material-group">
+                <div class="group-title">
+                    <span class="group-icon purple"><i class="fa-solid fa-brush"></i></span>
+                    <div>
+                        <span class="group-label">01 · Start here</span>
+                        <h3>Templates</h3>
+                    </div>
+                </div>
+
+                <div class="material-grid template-grid">
+                    <article class="material-visual template-visual">
+                        <div class="visual-window">
+                            <div class="dots"><i></i><i></i><i></i></div>
+                            <div class="visual-layout">
+                                <b></b><b></b><b></b><b></b>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="material-card blogger-card">
+                        <div class="material-card-icon"><i class="fa-brands fa-blogger-b"></i></div>
+                        <h4>Blogger</h4>
+                        <p>Modern Blogger templates for launching content quickly.</p>
+                        <div class="resource-links">
+                            <a target="_blank"
+                                href="https://drive.google.com/drive/folders/1PHHhT2eIjGvJsDStz2BMZ3rEmpF6zAUy?usp=sharing">Plus
+                                UI <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank"
+                                href="https://drive.google.com/drive/folders/1Ij8M9eHCxQW_3UADnCbiFqongVZeFnfW?usp=sharing">Median
+                                UI <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank"
+                                href="https://drive.google.com/file/d/1BiAu7NzpXjw1VBLuIlHtlnso10YYfu3A/view?usp=sharing">Fletro
+                                Pro <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank"
+                                href="https://drive.google.com/file/d/1uwYQ-1s_cGhfK_IQXXW2D_Ao5kV3SMWt/view?usp=sharing">iMagz
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="material-card html-card">
+                        <div class="material-card-icon"><i class="fa-solid fa-code"></i></div>
+                        <h4>HTML & CSS</h4>
+                        <p>Free starting points for landing pages and portfolios.</p>
+                        <div class="resource-links">
+                            <a target="_blank"
+                                href="https://themewagon.com/theme-category/landing-website/?swoof=1&pa_price=free&paged=1&really_curr_tax=17-product_cat">Landing
+                                Pages <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://themewagon.com/theme-tag/portfolio-template/">Portfolio <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://themewagon.com/">Themewagon <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://www.free-css.com/">Free CSS <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="material-group" id="font">
+                <div class="group-title">
+                    <span class="group-icon blue"><i class="fa-solid fa-pen-fancy"></i></span>
+                    <div>
+                        <span class="group-label">02 · Style it</span>
+                        <h3>Fonts & Icons</h3>
+                    </div>
+                </div>
+
+                <div class="material-grid reverse-grid">
+                    <article class="material-card font-card">
+                        <div class="material-card-icon"><i class="fa-solid fa-font"></i></div>
+                        <h4>Fonts</h4>
+                        <p>Typography choices that give your project its personality.</p>
+                        <div class="resource-links">
+                            <a target="_blank"
+                                href="https://fonts.google.com/share?selection.family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900">Poppins
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank"
+                                href="https://fonts.google.com/share?selection.family=Gabarito:wght@400..900">Gabarito
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank"
+                                href="https://fonts.google.com/share?selection.family=Momo+Trust+Display">Momo Trust <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://fonts.google.com/">View all fonts <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="material-card icon-card">
+                        <div class="material-card-icon"><i class="fa-regular fa-face-smile"></i></div>
+                        <h4>Icons</h4>
+                        <p>Clear icons that make your interface easier to scan and use.</p>
+                        <div class="resource-links">
+                            <a target="_blank"
+                                href="https://tricks-project.blogspot.com/2024/01/full-set-svg-icons-for-median-ui-and.html">Blogger
+                                Plus UI <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://cdnjs.com/libraries/font-awesome">Font Awesome CDN <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://fontawesome.com/search">Find icons <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="material-visual font-visual">
+                        <div class="font-preview">
+                            <span>Aa</span>
+                            <b>Make every word<br>feel intentional.</b>
+                            <small>Typography · Icons · Details</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="material-group" id="colo">
+                <div class="group-title">
+                    <span class="group-icon green"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <div>
+                        <span class="group-label">03 · Make it yours</span>
+                        <h3>Colors & Illustration</h3>
+                    </div>
+                </div>
+
+                <div class="material-grid color-grid">
+                    <article class="material-visual color-visual">
+                        <div class="palette">
+                            <i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <b>Find your perfect palette.</b>
+                    </article>
+
+                    <article class="material-card colors-card">
+                        <div class="material-card-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h4>Colors</h4>
+                        <p>Create balanced, memorable palettes for your next interface.</p>
+                        <div class="resource-links">
+                            <a target="_blank" href="https://coolors.co/">Coolors <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://colorhunt.co/">Color Hunt <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://colorffy.com/">Colorffy <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="material-card illustration-card">
+                        <div class="material-card-icon"><i class="fa-solid fa-image"></i></div>
+                        <h4>Illustrations</h4>
+                        <p>Add friendly, expressive visuals without starting from scratch.</p>
+                        <div class="resource-links">
+                            <a target="_blank" href="https://storyset.com/">Storyset <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://undraw.co/illustrations">unDraw <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a target="_blank" href="https://in.pinterest.com/">Pinterest <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="docs-section reveal" id="component">
+            <div class="docs-copy">
+                <span class="eyebrow light"><i class="fa-solid fa-book-open"></i> QUICK DOCUMENTATION</span>
+                <h2>Start building in <em>seconds.</em></h2>
+                <p>Copy the stylesheet, add a class, and turn plain HTML into a UI that looks carefully crafted.</p>
+                <a class="docs-button" href="https://nodexui.github.io/docs.html#components">Browse components <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="docs-window">
+                <div class="window-bar">
+                    <span><i></i><i></i><i></i></span>
+                    <b>quick-start.html</b>
+                    <em>HTML</em>
+                </div>
+
+                <pre><code><mark>&lt;link</mark> <b>rel</b>=<u>"stylesheet"</u>
+  <b>href</b>=<u>"nodexui.css"</u> <mark>/&gt;</mark>
+
+<mark>&lt;button</mark> <b>class</b>=<u>"btn primary"</u><mark>&gt;</mark>
+  Build something great
+<mark>&lt;/button&gt;</mark></code></pre>
+
+                <footer><i class="fa-solid fa-circle-check"></i> That's it — you're ready to create.</footer>
+            </div>
+        </section>
+
+        <section class="updates-section reveal" id="updates">
+            <div class="updates-heading">
+                <span class="updates-eyebrow">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Coming soon
+                </span>
+
+                <h2>The next update of <br> <em>NodexUI</em></h2>
+
+                <p>
+                    New components, smarter utilities, and more flexible design tools are on the way.
+                </p>
+            </div>
+
+            <div class="update-version-card">
+                <div class="version-content">
+                    <span class="version-label">
+                        <i class="fa-solid fa-rocket"></i>
+                        Next release
+                    </span>
+
+                    <h3>NodexUI <span>v2.0</span></h3>
+                    <p>Expected in the next update with more reusable UI elements and modern CSS helpers.</p>
+                </div>
+
+                <div class="version-orbit">
+                    <div class="orbit-circle orbit-one"></div>
+                    <div class="orbit-circle orbit-two"></div>
+                    <div class="version-badge">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="updates-grid">
+                <article class="update-card">
+                    <div class="update-icon purple-update">
+                        <i class="fa-solid fa-window-maximize"></i>
+                    </div>
+
+                    <span class="update-number">01</span>
+                    <h3>More UI Components</h3>
+                    <p>New modals, tabs, tooltips, accordions, dropdowns, and notification styles.</p>
+
+                    <div class="update-progress">
+                        <span>In progress</span>
+                        <div><i style="width: 8%;"></i></div>
+                    </div>
+                </article>
+
+                <article class="update-card">
+                    <div class="update-icon blue-update">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                    </div>
+
+                    <span class="update-number">02</span>
+                    <h3>Advanced Grid System</h3>
+                    <p>More responsive grid options with easier layout utilities for every screen size.</p>
+
+                    <div class="update-progress">
+                        <span>In progress</span>
+                        <div><i style="width: 12%;"></i></div>
+                    </div>
+                </article>
+
+                <article class="update-card">
+                    <div class="update-icon orange-update">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <span class="update-number">03</span>
+                    <h3>New Animation Pack</h3>
+                    <p>Subtle entrance, hover, loading, and interaction animations built for modern UI.</p>
+
+                    <div class="update-progress">
+                        <span>Planning</span>
+                        <div><i style="width: 12%;"></i></div>
+                    </div>
+                </article>
+
+                <article class="update-card">
+                    <div class="update-icon green-update">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <span class="update-number">04</span>
+                    <h3>Theme & Color Utilities</h3>
+                    <p>More color variables, dark mode support, and quick theme customization tools.</p>
+
+                    <div class="update-progress">
+                        <span>Planning</span>
+                        <div><i style="width: 5%;"></i></div>
+                    </div>
+                </article>
+            </div><br>
+            <article class="update-card">
+                <div class="update-icon green-update"
+                    style="background-color: rgb(212, 255, 246); color: rgb(55, 189, 160)">
+                    <i class="fa-solid fa-code-compare"></i>
+                </div>
+
+                <span class="update-number">05</span>
+                <h3>Imporant Update List</h3>
+                <p>New design and components details are show here!</p>
+
+                <div class="update-progress">
+                    <span>Planning</span>
+                    <div><i style="width: 5%;"></i></div>
+                </div>
+            </article>
+
+            <div class="updates-action">
+                <div>
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Stay ready for the next NodexUI release.</span>
+                </div>
+
+                <a href="https://nodexui.github.io/updates.html">
+                    View all updates
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <p style="border-top: 1px solid black;"></p>
+
+    <footer class="nodex-footer">
+        <div class="footer-glow glow-one"></div>
+        <div class="footer-glow glow-two"></div>
+
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo">
+                    NodexUI <span>v1.0</span>
+                </a>
+
+                <p>
+                    A lightweight CSS library for building modern, responsive, and beautiful interfaces.
+                </p>
+
+                <a class="footer-start-btn" href="https://nodexui.github.io/docs.html">
+                    Start building <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Library</h4>
+                    <a href="https://nodexui.github.io/docs.html">Getting started</a>
+                    <a href="#why">Why NodexUI</a>
+                    <a href="https://nodexui.github.io/docs.html">Installation</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Components</h4>
+                    <a href="https://nodexui.github.io/components/button.html">Buttons</a>
+                    <a href="https://nodexui.github.io/components/cards.html">Cards</a>
+                    <a href="https://nodexui.github.io/components/modal.html">Modal</a>
+                    <a href="https://nodexui.github.io/components/dropdown.html">Dropdown</a>
+                    <a href="https://nodexui.github.io/docs.html#components">View all</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>CSS Utilities</h4>
+                    <a href="https://nodexui.github.io/components/grids.html">Grid system</a>
+                    <a href="https://nodexui.github.io/components/typography.html">Typography</a>
+                    <a href="https://nodexui.github.io/updates.html">Updates</a>
+                    <a href="https://nodexui.github.io/components/animations.html">Animations</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <a target="_blank" href="https://github.com/NodexUI/">GitHub <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://nodexui.github.io/contact.html">Contact</a>
+                    <a href="https://nodexui.github.io/report.html">Report Bugs</a>
+                    <a href="https://nodexui.github.io/document/privacy_policy.html">Privacy Policy</a>
+                    <a href="https://nodexui.github.io/document/disclaimer.html">Disclaimer</a>
+                    <a href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-newsletter">
+            <div>
+                <span class="newsletter-icon"><i class="fa-solid fa-ranking-star"></i></span>
+                <div>
+                    <h3>Build something beautiful.</h3>
+                    <p>Use NodexUI to turn your next idea into a polished interface.</p>
+                </div>
+            </div>
+
+            <a href="https://nodexui.github.io/docs.html">View documentation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 NodexUI. By <a style="color: rgb(77, 37, 151); text-decoration: none;"
+                    href="https://dhavalmandaviya.github.io">Dhaval Madnaviya</a></p><br>
+
+            <div class="footer-socials">
+                <a href="#home" aria-label="Home"><i class="fa-solid fa-house"></i></a>
+                <a target="_blank" href="https://github.com/NodexUI" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://nodexui.github.io/docs.html" aria-label="Documentation"><i
+                        class="fa-solid fa-book-open"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all elements with the 'reveal' class
+            const revealElements = document.querySelectorAll(".reveal");
+
+            // Options for the observer (when the element should trigger)
+            const observerOptions = {
+                root: null, // uses the viewport
+                rootMargin: "0px",
+                threshold: 0.15 // Trigger when 15% of the element is visible
+            };
+
+            // Callback function when intersection happens
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the 'active' class to trigger the CSS transition
+                        entry.target.classList.add("active");
+
+                        // Optional: Stop observing once the animation has triggered
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Create the Intersection Observer instance
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observe each reveal element
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
