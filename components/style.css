@@ -183,17 +183,18 @@ button {
 .class-table {
     overflow-x: auto;
     border: 1px solid var(--purple-line);
-    border-radius: 14px;
+    border-radius: 50px;
+    corner-shape: squircle;
 }
 
 table {
     width: 100%;
-    min-width: 500px;
+    min-width: 50px;
     border-collapse: collapse;
 }
 
 th {
-    padding: 12px 15px;
+    padding: 15px 15px;
     color: #877a95;
     background: #faf7ff;
     font-size: 10px;
@@ -212,7 +213,8 @@ td {
 .example {
     overflow: hidden;
     border: 1px solid var(--purple-line);
-    border-radius: 15px;
+    border-radius: 50px;
+    corner-shape: squircle;
 }
 
 .preview {
@@ -802,9 +804,9 @@ em {
     padding: 20px 30px;
     transition: all 0.3s ease-in-out;
     background-color: #ebe1ff7a;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 50px;
     border: 2px solid #816bae;
-    ;
+    corner-shape: squircle; 
     margin-bottom: 50px;
     backdrop-filter: blur(5px);
 }
@@ -841,7 +843,7 @@ em {
 .navbar {
             box-sizing: border-box;
             position: fixed;
-            top: 0px;
+            top: 0px !important;
             left: 50%;
             corner-shape: squircle;
             transform: translateX(-50%);

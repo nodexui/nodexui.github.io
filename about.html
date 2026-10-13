@@ -1,0 +1,235 @@
+<!-- about.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About NodexUI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+    <link rel="stylesheet" href="../css_file/animation.css">
+  <link rel="stylesheet" href="../css_file/about.css" />
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">NodexUI <span>v1.0</span></a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#values">Values</a>
+      <a href="#developer">Developer</a>
+      <a href="#contact" class="nav-button">Get Started <span>→</span></a>
+    </div>
+
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <i></i><i></i><i></i>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+      <span>Navigation</span>
+      <button id="closeMenu" aria-label="Close menu">×</button>
+    </div>
+    <a href="#about">About</a>
+    <a href="#values">Our values</a>
+    <a href="#developer">Developer</a>
+    <a href="#contact">Get started →</a>
+  </div>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-content">
+        <span class="eyebrow"><b>✦</b> MADE FOR MAKERS</span>
+        <h1>Let Know, what is<br /><em>NodexUI.</em></h1>
+        <p>
+          NodexUI is a thoughtfully crafted CSS library for developers who want
+          to turn good ideas into beautiful digital experiences.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#developer" class="primary-button">Meet the developer <span>→</span></a>
+          <a href="#values" class="text-button">Our story <span>↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+
+        <div class="window-card">
+          <div class="window-top">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>nodexui.design</span>
+          </div>
+
+          <div class="window-body">
+            <div class="window-side">
+              <b></b><b></b><b></b><b></b><b></b>
+            </div>
+
+            <div class="window-main">
+              <div class="mini-label">CREATE WITHOUT LIMITS</div>
+              <div class="mini-heading"></div>
+              <div class="mini-heading short"></div>
+
+              <div class="mini-grid">
+                <div class="mini-card violet"><i>✦</i><b></b><span></span></div>
+                <div class="mini-card peach"><i>◌</i><b></b><span></span></div>
+                <div class="mini-card teal"><i>↗</i><b></b><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-tag tag-one">Clean CSS <b>✦</b></div>
+        <div class="floating-tag tag-two">Made with passion <b>♥</b></div>
+      </div>
+      
+    </section>
+
+    <section class="story-section">
+      <div class="story-label"><span>01</span> OUR PURPOSE</div>
+
+      <div class="story-content">
+        <h2>History and begining of <em>NodexUI.</em></h2>
+        <div>
+          <p>
+            In 2025, I was exploring that how to make a library and how to make it diffrent from other websites. And then I make a library which is diffrent from other websites.
+          </p>
+          <p>
+            But that website is not perfect and not have so many features. So I deside to make a new library which is perfect and have so many features. And then I make a NodexUI.
+            In 21 October 2026, I made my own CSS library at my 1st sem of Collage which is called NodexUI.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section" id="values">
+      <div class="section-heading">
+        <span class="eyebrow"><b>✦</b> THE NODEXUI WAY</span>
+        <h2>Made with the details<br />that <em>matter.</em></h2>
+      </div>
+
+      <div class="values-grid">
+        <article class="value-card purple-card">
+          <div class="value-icon">✦</div>
+          <span>01</span>
+          <h3>Purposeful by default</h3>
+          <p>Thoughtful colors, spacing, and type create a polished foundation from the first class.</p>
+        </article>
+
+        <article class="value-card orange-card">
+          <div class="value-icon">◌</div>
+          <span>02</span>
+          <h3>Diffrent from other</h3>
+          <p>Its diffrent from other. In NodexUI, you can explore useful sites and Matrial which can useful for you when you make a website.</p>
+        </article>
+
+        <article class="value-card teal-card">
+          <div class="value-icon">↗</div>
+          <span>03</span>
+          <h3>Easy to build with</h3>
+          <p>Clear naming and flexible utilities let you focus more on creating and less on fixing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="developer-section" id="developer">
+      <div class="developer-grid">
+        <div class="developer-photo">
+          <div class="portrait-shape">
+            <span>MD</span>
+          </div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="developer-badge">
+            <i>✦</i>
+            <span>Creator of<br /><b>NodexUI</b></span>
+          </div>
+        </div>
+
+        <div class="developer-content">
+          <span class="eyebrow"><b>✦</b> THE DEVELOPER</span>
+          <h2>Hi, I'm <em>Dhaval<br />Mandaviya.</em></h2>
+          <p>
+            I am a developer and creative builder with a passion for designing
+            clean, useful, and memorable web experiences.
+          </p>
+          <p>
+            NodexUI is my space to share practical UI ideas, modern CSS patterns,
+            and components that help makers bring their work to life.
+          </p>
+
+          <div class="developer-details">
+            <div>
+              <small>FOCUS</small>
+              <strong>UI Design & Development</strong>
+            </div>
+            <div>
+              <small>BASED IN</small>
+              <strong>India</strong>
+            </div>
+          </div>
+
+          <a class="primary-button" href="https://dhavalmandaviya.github.io" target="_blank" rel="noopener">
+            Visit portfolio <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="cta-orb orb-left"></div>
+      <div class="cta-orb orb-right"></div>
+
+      <span class="eyebrow light"><b>✦</b> START CREATING</span>
+      <h2>Ready to build<br />something <em>beautiful?</em></h2>
+      <p>Bring your next idea to life with a better starting point.</p>
+      <a href="#" class="cta-button">Explore NodexUI <span>→</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">NodexUI <span>v1.0</span></a>
+    <p>Thoughtful CSS tools for creative developers.</p>
+    <span>© 2026 NodexUI. Crafted by Dhaval Mandaviya.</span>
+  </footer>
+
+  <script>
+    // about.js
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
+const menuLinks = mobileMenu.querySelectorAll("a");
+
+function setMenu(open) {
+  mobileMenu.classList.toggle("open", open);
+  menuButton.setAttribute("aria-expanded", open);
+  document.body.style.overflow = open ? "hidden" : "";
+}
+
+menuButton.addEventListener("click", () => setMenu(true));
+closeMenu.addEventListener("click", () => setMenu(false));
+
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setMenu(false);
+});
+  </script>
+</body>
+</html>
