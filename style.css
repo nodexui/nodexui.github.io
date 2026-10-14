@@ -35,10 +35,12 @@ body {
 ::view-transition-new(root) {
     animation-name: slide-in;
 }
+
 @keyframes slide-out {
     from {
         left: 0;
     }
+
     to {
         left: -100vw;
     }
@@ -412,12 +414,12 @@ details {
 
 ::-webkit-scrollbar {
     height: 50px !important;
-    width: 5px;
-    border-radius: 100px;
+    width: 5px !important;
+    border-radius: 10px !important;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent !important;
     border-radius: 100px;
 }
 
@@ -425,6 +427,7 @@ details {
     background-color: rgb(131, 124, 200);
     border-radius: 100px;
 }
+
 .name-title {
     color: #ffffff;
     background-color: #8257e5d9;
@@ -441,7 +444,7 @@ details {
 
 .hero-section {
     min-height: 690px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     padding: 150px 7% 75px;
     display: grid;
@@ -449,6 +452,40 @@ details {
     gap: 60px;
     align-items: center;
 }
+
+.img-hero {
+    width: 100%;
+    border-radius: 100px;
+    box-shadow: 0 0 0 2px #c8aaf7;
+    border: 2px solid rgb(153, 113, 214);
+}
+
+.img-sec {
+    position: relative;
+}
+
+.img-sec p {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    color: white;
+    background-color: #8257e5;
+    padding: 5px 10px;
+    border-radius: 18px;
+    border: 1px solid rgba(130, 87, 229, 0.05);
+    transform: rotate(-2deg);
+    width: fit-content;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.img-sec span {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    font-size: 10px;
+}
+
 
 .hero-kicker {
     color: var(--violet);
@@ -2777,9 +2814,10 @@ details {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
+
 .reveal.active {
     opacity: 1;
     transform: translateY(0);

@@ -15,7 +15,6 @@
         crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
     <link rel="stylesheet" href="../css_file/animation.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nodexui/nodexui@main/v1.0.css">
     <style>
         @keyframes slide-out {
             from {
@@ -43,15 +42,16 @@
     <!-- Navbar -->
     <nav class="navbar radius-new" id="navbar">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <a href="#home" class="logo font-4">NodexUI <span class="version">v1.0</span></a>
+            <a href="#" class="logo font-4">NodexUI <span class="version">v1.0</span></a>
         </div>
         <ul class="desktop-links">
-            <li><a href="https://nodexui.github.io/docs.html">Docs</a></li>
-            <li><a href="https://nodexui.github.io/docs.html#components">Components</a></li>
+            <li><a href="./about.html">About US</a></li>
+            <li><a href="./docs.html">Docs</a></li>
+            <li><a href="./docs.html#components">Components</a></li>
             <li><a href="#usef">Tools</a></li>
             <li><a href="#resource">Material</a></li>
             <li>
-                <a class="nav-btn" href="https://nodexui.github.io/contact.html">Contact</a>
+                <a class="nav-btn" href="./contact.html">Contact</a>
             </li>
         </ul>
         <button class="menu-btn" onclick="openMobileMenu()" aria-label="Open menu"> <i
@@ -66,12 +66,13 @@
                         class="fa-solid fa-xmark"></i> </button>
             </div>
             <ul class="mobile-links">
-                <li><a href="https://nodexui.github.io/docs.html">Docs</a></li>
-                <li><a href="https://nodexui.github.io/docs.html#components">Components</a></li>
+                <li><a href="./about.html">About US</a></li>
+                <li><a href="./docs.html">Docs</a></li>
+                <li><a href="./docs.html#components">Components</a></li>
                 <li><a href="#usef">Tools</a></li>
                 <li><a href="#resource">Material</a></li>
                 <li>
-                    <a class="nav-btn" href="https://nodexui.github.io/contact.html">Contact</a>
+                    <a class="nav-btn" href="./contact.html">Contact</a>
                 </li>
             </ul>
         </div>
@@ -88,10 +89,10 @@
                     Thoughtful components and flexible CSS utilities for fast, polished web experiences.
                 </p>
                 <div class="hero-btn-container">
-                    <a class="hero-btn" href="https://nodexui.github.io/docs.html">Get Started <i
-                            class="fa-solid fa-arrow-right"></i></a> <!-- Quick Menu Button --> <button
-                        class="quick-menu-btn" id="quickMenuButton" type="button" aria-haspopup="dialog"
-                        aria-controls="quickMenuModal" accesskey="m"> Quick Menu <kbd>Alt+M</kbd> </button>
+                    <a class="hero-btn" href="./docs.html">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                    <!-- Quick Menu Button --> <button class="quick-menu-btn" id="quickMenuButton" type="button"
+                        aria-haspopup="dialog" aria-controls="quickMenuModal" accesskey="m"> Quick Menu <kbd>Alt+M</kbd>
+                    </button>
                     <!-- Quick Menu Modal -->
                     <div class="quick-modal" id="quickMenuModal" aria-hidden="true">
                         <div class="quick-modal-box" role="dialog" aria-modal="true" aria-labelledby="quickMenuTitle">
@@ -108,11 +109,12 @@
                                 Jump straight to the part of NodexUI you need.
                             </p>
                             <div class="quick-menu-grid">
-                                <a href="https://nodexui.github.io/docs.html" class="quick-menu-item"> <span
+                                <a href="./docs.html" class="quick-menu-item"> <span
                                         class="quick-item-icon quick-purple"> <i class="fa-solid fa-book-open"></i>
                                     </span> <span> <strong>Documentation</strong> <small>Start with the basics</small>
                                     </span> <i class="fa-solid fa-arrow-right quick-arrow"></i> </a> <a
-                                    href="#component" class="quick-menu-item"> <span class="quick-item-icon quick-blue">
+                                    href="./docs.html#components" class="quick-menu-item"> <span
+                                        class="quick-item-icon quick-blue">
                                         <i class="fa-solid fa-cubes"></i> </span> <span> <strong>Components</strong>
                                         <small>Reusable UI elements</small> </span> <i
                                         class="fa-solid fa-arrow-right quick-arrow"></i> </a> <a href="#usef"
@@ -127,9 +129,9 @@
                                     class="quick-menu-item"> <span class="quick-item-icon quick-green"> <i
                                             class="fa-solid fa-clock-rotate-left"></i> </span> <span> <strong>Upcoming
                                             Updates</strong> <small>See what is next</small> </span> <i
-                                        class="fa-solid fa-arrow-right quick-arrow"></i> </a> <a
-                                    href="https://nodexui.github.io/developer.html" class="quick-menu-item"> <span
-                                        class="quick-item-icon quick-blue"> <i class="fa-solid fa-code"></i> </span>
+                                        class="fa-solid fa-arrow-right quick-arrow"></i> </a> <a href="./developer.html"
+                                    class="quick-menu-item"> <span class="quick-item-icon quick-blue"> <i
+                                            class="fa-solid fa-code"></i> </span>
                                     <span> <strong>Developer mode</strong> <small>Only for Developer resource</small>
                                     </span> <i class="fa-solid fa-arrow-right quick-arrow"></i> </a>
                             </div>
@@ -141,21 +143,10 @@
                 </div>
             </div>
             <div class="right-hero">
-                <div class="hero-orb"></div>
-                <img width="50%" src="https://i.pinimg.com/1200x/94/69/35/9469357cdd7f4836da2ab21df08ebb87.jpg" alt="">
-                <div class="hero-panel">
-                    <div class="panel-bar"><i></i><i></i><i></i> <span>dashboard</span></div>
-                    <div class="panel-content">
-                        <b>Hello, developers! <i class="fa-solid fa-sparkles"></i></b> <small>Here is your creative
-                            overview.</small>
-                        <div class="chart">
-                            <span></span><span></span><span></span> <span></span><span></span><span></span>
-                        </div>
-                        <div class="panel-stats">
-                            <div><strong>1.0</strong><small>UI version</small></div>
-                            <div><strong>+28%</strong><small>Growth</small></div>
-                        </div>
-                    </div>
+                <div class="img-sec">
+                    <p class="img-text">NodexUI</p>
+                    <img class="img-hero radius-new shadow-6"
+                        src="https://i.pinimg.com/1200x/1d/2c/3f/1d2c3f4dfae5a4595b4f7b4b7e135c07.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -178,9 +169,8 @@
                         <div>
                             <strong>Welcome back, creator</strong> <small>Your next interface is taking shape.</small>
                         </div>
-                        <a style="cursor: pointer; text-decoration: none; color: white;"
-                            href="https://nodexui.github.io/docs.html"><button style="cursor: pointer;"><i
-                                    class="fa-solid fa-arrow-right"></i></button></a>
+                        <a style="cursor: pointer; text-decoration: none; color: white;" href="./docs.html"><button
+                                style="cursor: pointer;"><i class="fa-solid fa-arrow-right"></i></button></a>
                     </div>
                     <div class="preview-bars"><i></i><i></i><i></i><i></i><i></i></div>
                 </article>
@@ -227,8 +217,7 @@
                     <p>
                         Colors, typography, shadows and radii that feel coherent in every component.
                     </p>
-                    <a href="https://nodexui.github.io/docs.html">View Documentation <i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="./docs.html">View Documentation <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </article>
                 <article class="feature-card">
                     <span>02</span> <i class="fa-solid fa-table-cells-large"></i>
@@ -258,8 +247,8 @@
                 <h2>Your creative <em>toolbox.</em></h2>
                 <p>Hand-picked resources for UI design, development, animation, deployment.</p>
                 <p style="color: rgb(126, 126, 126); font-size: 12px;">
-                    All links are third-party! Please read <a style="color: black;"
-                        href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>, before use it.
+                    All links are third-party! Please read <a style="color: black;" href="./document/terms_use.html"
+                        target="_blank">Terms of use</a>, before use it.
                 </p>
             </div>
             <div class="tools-grid">
@@ -295,12 +284,12 @@
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a> <a target="_blank"
                             href="https://10015.io/">10015 Tools <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a> <a target="_blank"
-                            href="https://pairdrop.net/">PairDrop <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a> <a target="_blank"
                             href="https://web3forms.com/#start">Web3Forms <i
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a> <a target="_blank"
                             href="https://tools.vexax.com/tools/escape-unescape/html-escape-unescape-generator">HTML
                             Tools <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a target="_blank" href="https://js-obfuscator.net/">JS Obfuscator <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </article>
                 <article class="tool-card animation-card">
@@ -367,8 +356,8 @@
                     Templates, fonts, colors, illustrations, and ready-to-use assets for your next project.
                 </p>
                 <p style="color: rgb(126, 126, 126); font-size: 12px;">
-                    All links are third-party! Please read <a style="color: black;"
-                        href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>, before use it.
+                    All links are third-party! Please read <a style="color: black;" href="./document/terms_use.html"
+                        target="_blank">Terms of use</a>, before use it.
                 </p>
             </div>
             <div class="material-group">
@@ -638,8 +627,7 @@
                 <div>
                     <i class="fa-solid fa-bell"></i> <span>Stay ready for the next NodexUI release.</span>
                 </div>
-                <a href="https://nodexui.github.io/updates.html"> View all updates <i
-                        class="fa-solid fa-arrow-right"></i> </a>
+                <a href="./updates.html"> View all updates <i class="fa-solid fa-arrow-right"></i> </a>
             </div>
         </section>
     </main>
@@ -653,39 +641,34 @@
                 <p>
                     A lightweight CSS library for building modern, responsive, and beautiful interfaces.
                 </p>
-                <a class="footer-start-btn" href="https://nodexui.github.io/docs.html"> Start building <i
-                        class="fa-solid fa-arrow-right"></i> </a>
+                <a class="footer-start-btn" href="./docs.html"> Start building <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
                     <h4>Library</h4>
-                    <a href="https://nodexui.github.io/docs.html">Getting started</a> <a href="#why">Why NodexUI</a> <a
-                        href="https://nodexui.github.io/docs.html">Installation</a>
+                    <a href="./docs.html">Getting started</a> <a href="#why">Why NodexUI</a> <a
+                        href="./docs.html">Installation</a>
                 </div>
                 <div class="footer-column">
                     <h4>Components</h4>
-                    <a href="https://nodexui.github.io/components/button.html">Buttons</a> <a
-                        href="https://nodexui.github.io/components/cards.html">Cards</a> <a
-                        href="https://nodexui.github.io/components/modal.html">Modal</a> <a
-                        href="https://nodexui.github.io/components/dropdown.html">Dropdown</a> <a
-                        href="https://nodexui.github.io/docs.html#components">View all</a>
+                    <a href="./components/button.html">Buttons</a> <a href="./components/cards.html">Cards</a> <a
+                        href="./components/modal.html">Modal</a> <a href="./components/dropdown.html">Dropdown</a> <a
+                        href="./docs.html#components">View all</a>
                 </div>
                 <div class="footer-column">
                     <h4>CSS Utilities</h4>
-                    <a href="https://nodexui.github.io/components/grids.html">Grid system</a> <a
-                        href="https://nodexui.github.io/components/typography.html">Typography</a> <a
-                        href="https://nodexui.github.io/updates.html">Updates</a> <a
-                        href="https://nodexui.github.io/components/animations.html">Animations</a>
+                    <a href="./components/grids.html">Grid system</a> <a
+                        href="./components/typography.html">Typography</a> <a href="./updates.html">Updates</a> <a
+                        href="./components/animations.html">Animations</a>
                 </div>
                 <div class="footer-column">
                     <h4>Community</h4>
                     <a target="_blank" href="https://github.com/NodexUI/">GitHub <i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a> <a
-                        href="https://nodexui.github.io/contact.html">Contact</a> <a
-                        href="https://nodexui.github.io/report.html">Report Bugs</a> <a
-                        href="https://nodexui.github.io/document/privacy_policy.html">Privacy Policy</a> <a
-                        href="https://nodexui.github.io/document/disclaimer.html">Disclaimer</a> <a
-                        href="https://nodexui.github.io/document/terms_use.html">Terms of use</a>
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a> <a href="./contact.html">Contact</a>
+                    <a href="./report.html">Report Bugs</a> <a href="./document/privacy_policy.html">Privacy Policy</a>
+                    <a href="./document/disclaimer.html">Disclaimer</a> <a href="./document/terms_use.html">Terms of
+                        use</a>
                 </div>
             </div>
         </div>
@@ -697,19 +680,18 @@
                     <p>Use NodexUI to turn your next idea into a polished interface.</p>
                 </div>
             </div>
-            <a href="https://nodexui.github.io/docs.html">View documentation <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="./docs.html">View documentation <i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="footer-bottom">
             <p>
-                © 2026 NodexUI. By <a style="color: rgb(77, 37, 151); text-decoration: none;"
+                © 2026 NodexUI. All rights reserved by <a style="color: rgb(77, 37, 151); text-decoration: none;"
                     href="https://dhavalmandaviya.github.io">Dhaval Madnaviya</a>
             </p>
             <br>
             <div class="footer-socials">
                 <a href="#home" aria-label="Home"><i class="fa-solid fa-house"></i></a> <a target="_blank"
                     href="https://github.com/NodexUI" aria-label="GitHub"><i class="fa-brands fa-github"></i></a> <a
-                    href="https://nodexui.github.io/docs.html" aria-label="Documentation"><i
-                        class="fa-solid fa-book-open"></i></a>
+                    href="./docs.html" aria-label="Documentation"><i class="fa-solid fa-book-open"></i></a>
             </div>
         </div>
     </footer>
@@ -722,7 +704,7 @@
             const observerOptions = {
                 root: null, // uses the viewport
                 rootMargin: "0px",
-                threshold: 0.15 // Trigger when 15% of the element is visible
+                threshold: 0.14 // Trigger when 15% of the element is visible
             };
 
             // Callback function when intersection happens
