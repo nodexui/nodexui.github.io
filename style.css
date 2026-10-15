@@ -1116,6 +1116,7 @@ details {
     .hero-section {
         padding-top: 135px;
         gap: 30px;
+        margin-bottom: -100px;
     }
 
     .right-hero {

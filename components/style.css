@@ -1058,11 +1058,16 @@ em {
 .btnx {
     text-decoration: none;
     color: black;
-    background-color: transparent;
-    border: 2px solid rgb(72, 45, 115);
-    padding: 5px 20px;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
+    margin-right: 10px;
+    background-color: #F1EAFF;
+    color: #8150DF;
+    padding: 5px 15px;
+    border-radius: 500px;
+    transition: all 0.4s ease;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .btnx:hover {
