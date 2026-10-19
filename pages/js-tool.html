@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodexUI - Terms of use</title>
+    <!-- CDN links -->
+    <link rel="stylesheet" href="../css_file/animation.css">
+    <link rel="stylesheet" href="../css_file/main.css">
+
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@400;500;600;700;800&family=Luckiest Guy&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        :root {
+            --bg: #f7f8fc;
+            --surface: #ffffff;
+            --surface-soft: #f8f9ff;
+            --text: #20243a;
+            --muted: #777f96;
+            --line: #e7e9f2;
+            --blue: #764db5;
+            --blue-dark: #492096;
+            --purple: #6340ba;
+            --green: #159b72;
+            --red: #d94b62;
+            --radius: 15px;
+            --shadow: 0 8px 30px rgba(40, 47, 90, .045);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button:focus-visible,
+        select:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+        }
+
+        .container {
+            width: min(1440px, 95%);
+            margin-inline: auto;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+            white-space: nowrap;
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            box-shadow: 0 5px 12px #6678ee30;
+            font-size: 14px;
+            letter-spacing: -.5px;
+        }
+
+        .brand-name span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            color: #606982;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-version {
+            border: 1px solid #dfe3ff;
+            background: #f1f3ff;
+            color: var(--blue-dark);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Page header */
+
+        .page-header {
+            padding: 36px 0 25px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--blue);
+        }
+
+        .page-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 20px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--blue-dark);
+            background: #edf0ff;
+            border: 1px solid #e1e5ff;
+            padding: 5px 10px;
+            border-radius: 7px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .page-heading h1 {
+            margin: 13px 0 8px;
+            font-size: clamp(27px, 3vw, 37px);
+            line-height: 1.2;
+            letter-spacing: -1.3px;
+        }
+
+        .page-heading h1 span {
+            background: linear-gradient(100deg, var(--blue), var(--purple));
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .page-description {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            padding-bottom: 5px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background: #22b78b;
+            border-radius: 50%;
+        }
+
+        /* Workspace */
+
+        .workspace {
+            padding-bottom: 48px;
+        }
+
+        .workspace-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 13px;
+        }
+
+        .workspace-label {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .workspace-label .mini-icon {
+            width: 31px;
+            height: 31px;
+            display: grid;
+            place-items: center;
+            background: #ecefff;
+            border-radius: 9px;
+            color: var(--blue);
+            font-size: 15px;
+        }
+
+        .workspace-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 13px;
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            background: var(--surface);
+            color: #515a73;
+            font-size: 12px;
+            font-weight: 650;
+            transition: background .2s, border-color .2s, transform .2s;
+        }
+
+        .btn:hover {
+            border-color: #c9d0ff;
+            background: #f7f8ff;
+        }
+
+        .btn:active {
+            transform: scale(.98);
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: linear-gradient(110deg, var(--blue), #8874ed);
+            border-color: transparent;
+            box-shadow: 0 5px 13px #6678ee24;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(110deg, var(--blue-dark), #8068e4);
+            color: white;
+        }
+
+        .btn:disabled {
+            opacity: .6;
+            cursor: wait;
+        }
+
+        /* Main grid: settings alongside editor */
+
+        .tool-layout {
+            display: grid;
+            grid-template-columns: 290px minmax(0, 1fr);
+            gap: 16px;
+            align-items: start;
+        }
+
+        .settings-panel,
+        .editor-card,
+        .info-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            min-width: 0;
+        }
+
+        .settings-panel {
+            overflow: hidden;
+            position: sticky;
+            top: 86px;
+        }
+
+        .panel-heading {
+            padding: 17px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .panel-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .panel-subtitle {
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .settings-body {
+            padding: 15px;
+        }
+
+        .group-label {
+            font-size: 10px;
+            font-weight: 800;
+            color: #8991a6;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .preset-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 5px;
+            margin-bottom: 22px;
+        }
+
+        .preset {
+            min-width: 0;
+            padding: 8px 3px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            color: #727b91;
+            background: #fff;
+            font-size: 10px;
+            font-weight: 750;
+        }
+
+        .preset.active {
+            color: var(--blue-dark);
+            background: #f0f2ff;
+            border-color: #bdc6ff;
+        }
+
+        .setting-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .setting {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 8px;
+            border-radius: 9px;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+        .setting:hover {
+            background: #f8f9ff;
+        }
+
+        .setting input {
+            width: 15px;
+            height: 15px;
+            margin: 3px 0 0;
+            flex-shrink: 0;
+            accent-color: var(--blue);
+            cursor: pointer;
+        }
+
+        .setting-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .setting-title {
+            display: block;
+            font-size: 11px;
+            font-weight: 750;
+            line-height: 1.5;
+        }
+
+        .setting-help {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.5;
+            margin-top: 2px;
+        }
+
+        .setting-divider {
+            height: 1px;
+            background: var(--line);
+            margin: 17px 0;
+        }
+
+        .select-field {
+            margin-top: 14px;
+        }
+
+        .select-field label {
+            display: block;
+            color: #626c84;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .select-field select {
+            width: 100%;
+            padding: 9px 10px;
+            background: #fff;
+            border: 1px solid #e3e6f0;
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .setting-note {
+            margin-top: 17px;
+            padding: 11px;
+            background: #f6f7ff;
+            border: 1px solid #e7eaff;
+            border-radius: 9px;
+            color: #69728c;
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .setting-note strong {
+            color: #4f5fc6;
+        }
+
+        /* Editors */
+
+        .editor-column {
+            min-width: 0;
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px;
+        }
+
+        .editor-card {
+            overflow: hidden;
+        }
+
+        .editor-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            min-height: 55px;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .editor-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .editor-icon {
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: #eff1ff;
+            color: var(--blue);
+            font-size: 12px;
+        }
+
+        .editor-icon.result {
+            background: #f0eaff;
+            color: #8968d8;
+        }
+
+        .file-tag {
+            background: #f6f7fb;
+            border: 1px solid #ebedf4;
+            border-radius: 5px;
+            color: #9299aa;
+            padding: 3px 6px;
+            font-family: monospace;
+            font-size: 9px;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            height: 385px;
+            resize: vertical;
+            padding: 15px 14px;
+            border: 0;
+            outline: none;
+            background: #fbfcff;
+            color: #333d59;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+            font-size: 12px;
+            line-height: 1.8;
+            tab-size: 2;
+            white-space: pre;
+        }
+
+        textarea:focus-visible {
+            outline: 2px solid #d9deff;
+            outline-offset: -2px;
+        }
+
+        textarea::placeholder {
+            color: #a9b0c2;
+        }
+
+        textarea[readonly] {
+            background: #f9f8ff;
+            color: #655c91;
+        }
+
+        .editor-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 7px;
+            flex-wrap: wrap;
+            padding: 9px 13px;
+            border-top: 1px solid var(--line);
+            color: #9299aa;
+            font-size: 10px;
+        }
+
+        .editor-footer strong {
+            color: #68728c;
+            font-weight: 650;
+        }
+
+        .action-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 13px;
+        }
+
+        .action-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-row .btn {
+            font-size: 11px;
+        }
+
+        .run-btn {
+            min-height: 43px;
+            padding: 11px 18px;
+            font-size: 12px !important;
+        }
+
+        .status-message {
+            margin-top: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 11px 13px;
+            border: 1px solid #e5e8f1;
+            border-radius: 9px;
+            background: #fff;
+            color: #758097;
+            font-size: 11px;
+            overflow-wrap: anywhere;
+        }
+
+        .status-message.success {
+            background: #f0fbf6;
+            border-color: #d6f1e4;
+            color: #14845f;
+        }
+
+        .status-message.error {
+            background: #fff5f6;
+            border-color: #f7dfe3;
+            color: var(--red);
+        }
+
+        .status-indicator {
+            font-weight: 900;
+        }
+
+        /* Information section */
+
+        .info-section {
+            padding: 12px 0 55px;
+        }
+
+        .section-heading {
+            margin-bottom: 18px;
+        }
+
+        .section-heading h2 {
+            font-size: 23px;
+            letter-spacing: -.6px;
+            margin: 0 0 6px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .info-card {
+            padding: 20px;
+        }
+
+        .info-icon {
+            display: grid;
+            place-items: center;
+            width: 37px;
+            height: 37px;
+            border-radius: 10px;
+            background: #f0f1ff;
+            color: var(--blue);
+            font-size: 17px;
+            margin-bottom: 13px;
+        }
+
+        .info-card h3 {
+            margin: 0 0 7px;
+            font-size: 13px;
+        }
+
+        .info-card p {
+            color: var(--muted);
+            font-size: 11px;
+            margin: 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            background: #fff;
+            padding: 22px 0;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 1150px) {
+            .tool-layout {
+                grid-template-columns: 260px minmax(0, 1fr);
+            }
+
+            .editor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            textarea {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: 94%;
+            }
+
+            .nav-inner {
+                min-height: 62px;
+            }
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .nav-version {
+                display: none;
+            }
+
+            .page-header {
+                padding-top: 26px;
+            }
+
+            .page-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .header-status {
+                padding: 0;
+            }
+
+            .tool-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-panel {
+                position: static;
+            }
+
+            .settings-body {
+                padding: 14px;
+            }
+
+            .setting-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4px;
+            }
+
+            .setting {
+                padding: 9px 6px;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .editor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            textarea {
+                height: 270px;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .brand {
+                font-size: 17px;
+                gap: 8px;
+            }
+
+            .brand-icon {
+                width: 33px;
+                height: 33px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+            }
+
+            .page-heading h1 {
+                font-size: 29px;
+            }
+
+            .workspace-actions {
+                width: 100%;
+            }
+
+            .workspace-actions .btn {
+                flex: 1;
+            }
+
+            .setting-list {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-row {
+                align-items: stretch;
+            }
+
+            .action-row>*,
+            .action-group {
+                width: 100%;
+            }
+
+            .action-group .btn {
+                flex: 1;
+            }
+
+            .run-btn {
+                width: 100%;
+            }
+
+            .editor-head {
+                padding: 10px;
+            }
+
+            .editor-footer {
+                font-size: 9px;
+            }
+        }
+
+        .navbar {
+            box-sizing: border-box;
+            position: fixed;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1400px, calc(97% - 6px));
+            height: 72px;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 36px;
+            border: 1px solid rgba(229, 229, 229, 0.888);
+            background: rgba(246, 246, 246, 0.7);
+            backdrop-filter: blur(25px) saturate(190%);
+            -webkit-backdrop-filter: blur(25px) saturate(190%);
+            box-shadow: 0 10px 40px rgba(130, 87, 229, 0.05);
+            z-index: 100;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .navbar.scrolled {
+            top: 0;
+            height: 64px;
+            background: rgba(239, 239, 239, 0.85);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            border-color: rgba(214, 214, 214, 0.8);
+        }
+
+        .logo {
+            color: black;
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .logo:hover {
+            color: #5640ac;
+            transform: scale(1.03);
+        }
+
+        .btnx {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+            background-color: #F1EAFF;
+            color: #8150DF;
+            padding: 5px 15px;
+            border-radius: 500px;
+            transition: all 0.4s ease;
+            border: none;
+            width: fit-content;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btnx:hover {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar radius-new" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#home" class="logo font-4">NodexUI </a>
+        </div>
+        <a class="btnx radius-new" href="/index.html">Back <i class="fa-solid fa-circle-arrow-left"></i></a>
+    </nav><br><br><br>
+    <main>
+        <section class="page-header container">
+
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">✦ JAVASCRIPT TOOL</span>
+                    <h1>JavaScript <span>Obfuscator</span></h1>
+                    <p class="page-description">
+                        Transform readable JavaScript into harder-to-understand
+                        code. Configure your options, obfuscate, and export
+                        everything in one workspace.
+                    </p>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    Browser-based tool
+                </div>
+            </div>
+        </section>
+
+        <section class="workspace container" id="tool">
+
+            <div class="workspace-bar">
+                <div class="workspace-label">
+                    <span class="mini-icon">⌘</span>
+                    Obfuscation workspace
+                </div>
+
+                <div class="workspace-actions">
+                    <button class="btn" id="sampleBtn">↗ Load sample</button>
+                    <button class="btn" id="clearBtn">⌫ Clear all</button>
+                </div>
+            </div>
+
+            <div class="tool-layout">
+
+                <!-- SETTINGS SIDEBAR -->
+                <aside class="settings-panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <span>⚙ Obfuscation settings</span>
+                            <span style="color:#9299aa;font-size:11px">01</span>
+                        </div>
+                        <div class="panel-subtitle">
+                            Customize how your code is transformed.
+                        </div>
+                    </div>
+
+                    <div class="settings-body">
+
+                        <div class="group-label">PRESET CONFIGURATION</div>
+
+                        <div class="preset-list">
+                            <button class="preset" data-level="low">Light</button>
+                            <button class="preset active" data-level="medium">Balanced</button>
+                            <button class="preset" data-level="high">Strong</button>
+                        </div>
+
+                        <div class="group-label">TRANSFORMATIONS</div>
+
+                        <div class="setting-list">
+                            <label class="setting">
+                                <input type="checkbox" id="compact" checked>
+                                <span class="setting-text">
+                                    <span class="setting-title">Compact code</span>
+                                    <span class="setting-help">Remove extra formatting</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="stringArray" checked>
+                                <span class="setting-text">
+                                    <span class="setting-title">String array</span>
+                                    <span class="setting-help">Transform string literals</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="deadCode">
+                                <span class="setting-text">
+                                    <span class="setting-title">Dead code</span>
+                                    <span class="setting-help">Add decoy code paths</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="controlFlow">
+                                <span class="setting-text">
+                                    <span class="setting-title">Control flow</span>
+                                    <span class="setting-help">Change code structure</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="selfDefending">
+                                <span class="setting-text">
+                                    <span class="setting-title">Self-defending</span>
+                                    <span class="setting-help">Detect certain modifications</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="debugProtection">
+                                <span class="setting-text">
+                                    <span class="setting-title">Debug protection</span>
+                                    <span class="setting-help">Interfere with debugging</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="disableConsole">
+                                <span class="setting-text">
+                                    <span class="setting-title">Disable console</span>
+                                    <span class="setting-help">Suppress console methods</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="renameGlobals">
+                                <span class="setting-text">
+                                    <span class="setting-title">Rename globals</span>
+                                    <span class="setting-help">May affect external references</span>
+                                </span>
+                            </label>
+
+                            <label class="setting">
+                                <input type="checkbox" id="unicodeEscape">
+                                <span class="setting-text">
+                                    <span class="setting-title">Unicode escaping</span>
+                                    <span class="setting-help">Escape eligible identifiers</span>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="setting-divider"></div>
+
+                        <div class="group-label">ADVANCED OPTIONS</div>
+
+                        <div class="select-field">
+                            <label for="encoding">String encoding</label>
+                            <select id="encoding">
+                                <option value="none">None</option>
+                                <option value="base64">Base64</option>
+                                <option value="rc4">RC4</option>
+                            </select>
+                        </div>
+
+                        <div class="select-field">
+                            <label for="target">Target environment</label>
+                            <select id="target">
+                                <option value="browser">Browser</option>
+                                <option value="browser-no-eval">Browser (no eval)</option>
+                                <option value="node">Node.js</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-note">
+                            <strong>ⓘ Note</strong><br>
+                            Strong transformations may increase file size or
+                            reduce performance. Always test the result.
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- CODE EDITORS -->
+                <div class="editor-column">
+                    <div class="editor-grid">
+
+                        <article class="editor-card">
+                            <div class="editor-head">
+                                <div class="editor-title">
+                                    <span class="editor-icon">{ }</span>
+                                    Source JavaScript
+                                </div>
+                                <span class="file-tag">INPUT.JS</span>
+                            </div>
+
+                            <textarea id="inputCode" spellcheck="false" autocapitalize="off" autocomplete="off"
+                                aria-label="Source JavaScript" placeholder="// Paste JavaScript here..."></textarea>
+
+                            <div class="editor-footer">
+                                <span id="inputLines">0 lines</span>
+                                <span><strong id="inputSize">0 B</strong></span>
+                            </div>
+                        </article>
+
+                        <article class="editor-card">
+                            <div class="editor-head">
+                                <div class="editor-title">
+                                    <span class="editor-icon result">✧</span>
+                                    Obfuscated output
+                                </div>
+                                <span class="file-tag">OUTPUT.JS</span>
+                            </div>
+
+                            <textarea id="outputCode" spellcheck="false" aria-label="Obfuscated JavaScript output"
+                                readonly placeholder="// Your result will appear here..."></textarea>
+
+                            <div class="editor-footer">
+                                <span id="outputLines">0 lines</span>
+                                <span><strong id="outputSize">0 B</strong></span>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <div class="action-row">
+                        <button class="btn btn-primary run-btn" id="obfuscateBtn">
+                            🔒 Obfuscate JavaScript
+                        </button>
+
+                        <div class="action-group">
+                            <button class="btn" id="copyBtn">▣ Copy output</button>
+                            <button class="btn" id="downloadBtn">↓ Download .js</button>
+                        </div>
+                    </div>
+
+                    <div class="status-message" id="statusBox" role="status" aria-live="polite">
+                        <span class="status-indicator" id="statusIcon">●</span>
+                        <span id="statusText">Ready. Paste JavaScript or load the sample to begin.</span>
+                    </div>
+
+                    <div class="editor-footer" style="margin-top:9px;border:0;padding:4px 2px">
+                        <span id="sizeCompare">Input: 0 B · Output: 0 B</span>
+                        <span>Processing in your browser</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="info-section container" id="features">
+            <div class="section-heading">
+                <h2>Built for JavaScript developers.</h2>
+                <p>Essential tools for transforming and exporting your source code.</p>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="info-icon">⌘</div>
+                    <h3>Configurable options</h3>
+                    <p>Choose individual transformations or use a preset to configure multiple options quickly.</p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">↔</div>
+                    <h3>Instant workspace</h3>
+                    <p>Keep settings beside your code editors on desktop and access them above the editors on mobile.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">↓</div>
+                    <h3>Easy export</h3>
+                    <p>Copy your transformed code or download the generated JavaScript file.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>© <span id="year"></span> <a href="https://nodexui.github.io/">NodexUI</a>. Developer tools.</span>
+            <span>Obfuscation makes code harder to read, not impossible to reverse.</span>
+        </div>
+    </footer>
+
+    <!-- Obfuscation engine -->
+    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+
+    <script>
+        "use strict";
+
+        const $ = id => document.getElementById(id);
+
+        const input = $("inputCode");
+        const output = $("outputCode");
+        const runButton = $("obfuscateBtn");
+
+        $("year").textContent = new Date().getFullYear();
+
+        function formatBytes(value) {
+            if (value < 1024) return value + " B";
+            if (value < 1024 * 1024) return (value / 1024).toFixed(2) + " KB";
+            return (value / (1024 * 1024)).toFixed(2) + " MB";
+        }
+
+        function byteSize(text) {
+            return new Blob([text]).size;
+        }
+
+        function updateStats() {
+            const source = input.value;
+            const result = output.value;
+
+            $("inputLines").textContent =
+                (source ? source.split("\n").length : 0) + " lines";
+
+            $("outputLines").textContent =
+                (result ? result.split("\n").length : 0) + " lines";
+
+            $("inputSize").textContent = formatBytes(byteSize(source));
+            $("outputSize").textContent = formatBytes(byteSize(result));
+
+            $("sizeCompare").textContent =
+                "Input: " + formatBytes(byteSize(source)) +
+                " · Output: " + formatBytes(byteSize(result));
+        }
+
+        function setStatus(message, type = "normal") {
+            $("statusText").textContent = message;
+
+            const box = $("statusBox");
+            box.classList.remove("success", "error");
+
+            if (type === "success") box.classList.add("success");
+            if (type === "error") box.classList.add("error");
+
+            $("statusIcon").textContent =
+                type === "error" ? "!" : type === "success" ? "✓" : "●";
+        }
+
+        function clearOutput() {
+            output.value = "";
+            updateStats();
+        }
+
+        input.addEventListener("input", () => {
+            updateStats();
+            setStatus("Source updated. Ready to obfuscate.");
+        });
+
+        output.addEventListener("input", updateStats);
+
+        function setOption(id, checked) {
+            $(id).checked = checked;
+        }
+
+        function applyPreset(level) {
+            document.querySelectorAll(".preset").forEach(button => {
+                button.classList.toggle("active", button.dataset.level === level);
+            });
+
+            const configurations = {
+                low: {
+                    compact: true,
+                    stringArray: false,
+                    deadCode: false,
+                    controlFlow: false,
+                    selfDefending: false,
+                    debugProtection: false,
+                    disableConsole: false,
+                    renameGlobals: false,
+                    unicodeEscape: false,
+                    encoding: "none"
+                },
+
+                medium: {
+                    compact: true,
+                    stringArray: true,
+                    deadCode: false,
+                    controlFlow: false,
+                    selfDefending: false,
+                    debugProtection: false,
+                    disableConsole: false,
+                    renameGlobals: false,
+                    unicodeEscape: false,
+                    encoding: "base64"
+                },
+
+                high: {
+                    compact: true,
+                    stringArray: true,
+                    deadCode: true,
+                    controlFlow: true,
+                    selfDefending: false,
+                    debugProtection: false,
+                    disableConsole: false,
+                    renameGlobals: false,
+                    unicodeEscape: false,
+                    encoding: "base64"
+                }
+            };
+
+            const config = configurations[level];
+
+            Object.keys(config).forEach(key => {
+                if (key === "encoding") {
+                    $("encoding").value = config[key];
+                } else {
+                    setOption(key, config[key]);
+                }
+            });
+
+            setStatus(level.charAt(0).toUpperCase() + level.slice(1) +
+                " preset selected.");
+        }
+
+        document.querySelectorAll(".preset").forEach(button => {
+            button.addEventListener("click", () => applyPreset(button.dataset.level));
+        });
+
+        $("sampleBtn").addEventListener("click", () => {
+            input.value = [
+                "function calculateDiscount(price, discount) {",
+                '    const message = "Calculating final price";',
+                "    const finalPrice = price - (price * discount / 100);",
+                "    console.log(message);",
+                '    console.log("Final price:", finalPrice);',
+                "    return finalPrice;",
+                "}",
+                "",
+                'const productName = "Developer Toolkit";',
+                "const total = calculateDiscount(1000, 15);",
+                "console.log(productName, total);"
+            ].join("\n");
+
+            clearOutput();
+            updateStats();
+            setStatus("Sample JavaScript loaded.", "success");
+        });
+
+        $("clearBtn").addEventListener("click", () => {
+            input.value = "";
+            output.value = "";
+            updateStats();
+            setStatus("Both editors cleared.");
+            input.focus();
+        });
+
+        runButton.addEventListener("click", () => {
+            const source = input.value.trim();
+
+            if (!source) {
+                setStatus("Please enter JavaScript code first.", "error");
+                input.focus();
+                return;
+            }
+
+            if (typeof JavaScriptObfuscator === "undefined") {
+                setStatus(
+                    "The obfuscation engine could not load. Check your internet connection and reload.",
+                    "error"
+                );
+                return;
+            }
+
+            runButton.disabled = true;
+            runButton.textContent = "Processing...";
+
+            // Yield briefly so the loading state can render.
+            setTimeout(() => {
+                try {
+                    const encoding = $("encoding").value;
+                    const target = $("target").value;
+
+                    const options = {
+                        compact: $("compact").checked,
+                        identifierNamesGenerator: "hexadecimal",
+                        stringArray: $("stringArray").checked,
+                        stringArrayEncoding:
+                            encoding === "none" ? [] : [encoding],
+                        stringArrayThreshold: 0.75,
+                        deadCodeInjection: $("deadCode").checked,
+                        deadCodeInjectionThreshold: 0.2,
+                        controlFlowFlattening: $("controlFlow").checked,
+                        controlFlowFlatteningThreshold: 0.5,
+                        selfDefending: $("selfDefending").checked,
+                        debugProtection: $("debugProtection").checked,
+                        disableConsoleOutput: $("disableConsole").checked,
+                        renameGlobals: $("renameGlobals").checked,
+                        unicodeEscapeSequence: $("unicodeEscape").checked,
+                        target: target,
+                        log: false
+                    };
+
+                    const result = JavaScriptObfuscator.obfuscate(source, options);
+                    const code = result.getObfuscatedCode();
+
+                    if (!code) {
+                        throw new Error("The engine returned empty output.");
+                    }
+
+                    output.value = code;
+                    updateStats();
+                    setStatus("JavaScript obfuscated successfully.", "success");
+
+                } catch (error) {
+                    output.value = "";
+                    updateStats();
+                    console.error("Obfuscation error:", error);
+
+                    setStatus(
+                        "Obfuscation failed: " +
+                        (error && error.message ? error.message : String(error)),
+                        "error"
+                    );
+
+                } finally {
+                    runButton.disabled = false;
+                    runButton.textContent = "🔒 Obfuscate JavaScript";
+                }
+            }, 30);
+        });
+
+        $("copyBtn").addEventListener("click", async () => {
+            if (!output.value) {
+                setStatus("Generate output before copying.", "error");
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(output.value);
+                setStatus("Output copied to clipboard.", "success");
+            } catch (error) {
+                output.focus();
+                output.select();
+
+                const success = document.execCommand("copy");
+
+                setStatus(
+                    success ? "Output copied to clipboard." :
+                        "Copy failed. Select the code and copy manually.",
+                    success ? "success" : "error"
+                );
+            }
+        });
+
+        $("downloadBtn").addEventListener("click", () => {
+            if (!output.value) {
+                setStatus("Generate output before downloading.", "error");
+                return;
+            }
+
+            const blob = new Blob([output.value], {
+                type: "text/javascript;charset=utf-8"
+            });
+
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+
+            link.href = url;
+            link.download = "obfuscated.js";
+
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+            setStatus("JavaScript download started.", "success");
+        });
+
+        updateStats();
+    </script>
+    <script>
+        document.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+        });
+        $(document).ready(function () {
+            $("body").on("contextmenu", function (e) {
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
