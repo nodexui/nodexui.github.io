@@ -606,8 +606,8 @@ pre {
 
 /* iOS Dynamic Island / HUD Toast */
 .ios-toast {
-    position: fixed;
-    top: 24px;
+position: fixed;
+    top: 55px;
     left: 50%;
     transform: translateX(-50%) translateY(-40px) scale(0.9);
     opacity: 0;
@@ -616,19 +616,24 @@ pre {
     align-items: center;
     gap: 10px;
     padding: 10px 18px;
-    background: rgba(30, 30, 32, 0.88);
-    backdrop-filter: blur(28px) saturate(200%);
-    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    background: #f1eaff9c;
+    backdrop-filter: blur(3.5px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 9999px;
-    color: #ffffff;
+    color: #8150DF;
     font-size: 13px;
     font-weight: 600;
     box-shadow:
-        0 16px 36px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.08);
+        0 1px 1px #412672,
+        0 0 0 1px #412672;
     transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 9999;
+}
+@media (max-width:600px){
+.ios-toast{
+    width: 55%;
+    top:70px;
+}
 }
 
 .ios-toast.show {
@@ -642,7 +647,7 @@ pre {
     justify-content: center;
     width: 18px;
     height: 18px;
-    background: #30d158;
+    background: #8150DF;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -650,7 +655,7 @@ pre {
 .toast-icon svg {
     width: 11px;
     height: 11px;
-    stroke: #000;
+    stroke: white;
     stroke-width: 2.8;
     fill: none;
 }
