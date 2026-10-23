@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodexUI — Hero section</title>
+    <!-- CDN links -->
+    <link rel="stylesheet" href="../css_file/animation.css">
+    <link rel="stylesheet" href="../css_file/main.css">
+
+    <link rel="icon" type="image/png" sizes="512x512" href="../logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@400;500;600;700;800&family=Luckiest Guy&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6658f5;
+            --primary-light: #efedff;
+            --text: #191a2c;
+            --muted: #85879b;
+            --border: #e9e9f2;
+            --surface: #f5edffb1;
+            --radius: 30px;
+            --shadow: 0 24px 70px rgba(38, 34, 89, 0.12);
+        }
+
+        .documentation {
+            width: min(100%, 860px);
+            padding: 48px clamp(20px, 80px) 70px;
+            margin: auto;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            gap: 9px;
+            margin-bottom: 39px;
+            color: #a294ad;
+            font-size: 12px;
+        }
+
+        .breadcrumbs a {
+            color: #806d99;
+            text-decoration: none;
+        }
+
+        .breadcrumbs strong {
+            color: var(--purple);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 11px;
+            color: var(--purple);
+            background: var(--purple-soft);
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.9px;
+        }
+
+        :root {
+            --ink: #291844;
+            --muted: #746b80;
+            --purple: #7040cf;
+            --purple-dark: #5530a6;
+            --purple-soft: #f1eaff;
+            --purple-line: #e9dff7;
+            --line: #eee8f4;
+        }
+
+        a,
+        button,
+        summary,
+        label,
+        details {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        ::-webkit-scrollbar {
+            height: 4px;
+            width: 5px !important;
+            border-radius: 100px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: rgb(255, 255, 255) !important;
+            border-radius: 100px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(131, 124, 200);
+            border-radius: 100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: #fff;
+            font-family: "Outfit", sans-serif;
+        }
+
+        .documentation {
+            width: min(100%, 890px);
+            
+            margin: auto;
+        }
+
+        .btnx {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+            background-color: #F1EAFF;
+            color: #8150DF;
+            padding: 5px 15px;
+            border-radius: 500px;
+            transition: all 0.4s ease;
+            border: none;
+            width: fit-content;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btnx:hover {
+            transform: scale(0.95);
+        }
+
+        .on-this-page {
+            position: fixed;
+            top: 95px;
+            right: 10px;
+            height: fit-content;
+            padding: 20px 30px;
+            transition: all 0.3s ease-in-out;
+            background-color: #ebe1ff7a;
+            border-radius: 50px;
+            border: 2px solid #816bae;
+            corner-shape: squircle;
+            margin-bottom: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .on-this-page p {
+            margin: 0 0 14px;
+            color: #9a8ca6;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .on-this-page a {
+            display: block;
+            margin: 0 0 11px;
+            color: #80738c;
+            font-size: 11px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .on-this-page a:hover,
+        .on-this-page .current {
+            color: var(--purple);
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .on-this-page {
+                position: static;
+            }
+        }
+
+        .img1 {
+            width: 90%;
+        }
+
+        @media (max-width: 600px) {
+            .img1 {
+                width: 100%;
+            }
+        }
+
+        * {
+            margin: 0;
+            
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        .search-demo {
+            width: 100%;
+            max-width: 620px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid #e2deff;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #dcd7ff;
+        }
+
+        h1 {
+            margin-bottom: 12px;
+            font-size: clamp(30px, 5vw, 44px);
+            font-weight: 800;
+            letter-spacing: -1.8px;
+            line-height: 1.15;
+        }
+
+        .navbar {
+            top: 0 !important;
+        }
+
+        h1 span {
+            color: var(--primary);
+        }
+
+        .description {
+            max-width: 480px;
+            margin-bottom: 32px;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* SEARCH BOX */
+
+        .search-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 66px;
+            padding: 9px 10px 9px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(32, 30, 70, .05);
+            transition: border-color .25s, box-shadow .25s;
+        }
+
+        .search-box:focus-within {
+            border-color: #aaa1ff;
+            box-shadow:
+                0 0 0 4px rgba(102, 88, 245, .09),
+                0 12px 36px rgba(32, 30, 70, .08);
+        }
+
+        .search-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            color: #9293a8;
+        }
+
+        #searchInput {
+            flex: 1;
+            min-width: 0;
+            padding: 10px 0;
+            color: var(--text);
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        #searchInput::placeholder {
+            color: #a5a6b7;
+        }
+
+        .clear-btn {
+            display: none;
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            color: #88899d;
+            background: #f4f4fa;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .clear-btn.visible {
+            display: flex;
+        }
+
+        .clear-btn:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .search-btn {
+            flex-shrink: 0;
+            min-height: 46px;
+            padding: 0 20px;
+            color: white;
+            background: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 650;
+            cursor: pointer;
+            transition: background .2s, transform .2s;
+        }
+
+        .search-btn:hover {
+            background: #5546e8;
+            transform: translateY(-1px);
+        }
+
+        .search-btn:active {
+            transform: scale(.97);
+        }
+
+        /* DROPDOWN */
+
+        .suggestions {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            right: 0;
+            display: none;
+            padding: 10px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            box-shadow: var(--shadow);
+            animation: dropdownIn .2s ease both;
+        }
+
+        .suggestions.open {
+            display: block;
+        }
+
+        @keyframes dropdownIn {
+            from {
+                opacity: 0;
+                transform: translateY(-7px) scale(.99);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .dropdown-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 12px 13px;
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .result-count {
+            padding: 4px 8px;
+            color: var(--primary);
+            background: var(--primary-light);
+            border-radius: 7px;
+            font-size: 11px;
+            letter-spacing: 0;
+        }
+
+        .suggestion-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 11px 12px;
+            text-align: left;
+            color: var(--text);
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background .16s, border-color .16s;
+        }
+
+        .suggestion-item:hover,
+        .suggestion-item.active {
+            background: #f6f5ff;
+            border-color: #eeebff;
+        }
+
+        .item-icon {
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid #e5e1ff;
+            border-radius: 12px;
+        }
+
+        .item-icon svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .item-title {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .item-description {
+            display: block;
+            overflow: hidden;
+            color: var(--muted);
+            font-size: 12px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .item-title mark {
+            color: var(--primary);
+            background: #eae6ff;
+            border-radius: 3px;
+        }
+
+        .item-arrow {
+            color: #b0b0c3;
+            font-size: 19px;
+            transition: transform .2s, color .2s;
+        }
+
+        .suggestion-item:hover .item-arrow,
+        .suggestion-item.active .item-arrow {
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        .empty-state {
+            display: none;
+            padding: 28px 12px;
+            text-align: center;
+        }
+
+        .empty-state.visible {
+            display: block;
+        }
+
+        .empty-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            color: #9293a8;
+            background: #f4f4fa;
+            border-radius: 15px;
+            font-size: 23px;
+        }
+
+        .empty-state strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .empty-state p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .dropdown-footer {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 8px;
+            padding: 12px 12px 5px;
+            color: var(--muted);
+            border-top: 1px solid #f0f0f6;
+            font-size: 11px;
+        }
+
+        .key {
+            display: inline-grid;
+            place-items: center;
+            min-width: 21px;
+            height: 21px;
+            padding: 0 5px;
+            color: #66677d;
+            background: #f6f6fa;
+            border: 1px solid #e7e7f0;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+
+        .helper-text {
+            margin-top: 20px;
+            color: #9293a8;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 18px;
+            }
+
+            h1 {
+                letter-spacing: -1px;
+            }
+
+            .search-box {
+                gap: 9px;
+                min-height: 60px;
+                padding: 7px 8px 7px 14px;
+            }
+
+            #searchInput {
+                font-size: 14px;
+            }
+
+            .search-btn {
+                min-height: 43px;
+                padding: 0 13px;
+                font-size: 12px;
+            }
+
+            .suggestions {
+                padding: 7px;
+            }
+
+            .item-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .dropdown-footer {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar radius-new" id="navbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="#" class="logo font-4">NodexUI</a>
+        </div>
+        <a class="btnx radius-new" href="../docs.html#components">Back &nbsp; <i
+                class="fa-solid fa-circle-chevron-right"></i></a>
+    </nav><br><br><br><br>
+
+    <main class="documentation">
+        <div class="breadcrumbs">
+            <a href="../docs.html">Docs</a>
+            <span>/</span>
+            <strong>NodexUI Source</strong>
+        </div>
+
+        <header class="page-heading">
+            <span class="eyebrow">Source</span>
+            <h1>NodexUI Sources<em>.</em></h1>
+            <p>Explore NodexUI more source which can help you to create website. Also get tutorial for your project.</p>
+        </header><br><br>
+
+        <div class="search-wrapper" id="searchWrapper">
+
+            <form class="search-box radius-new" id="searchForm" role="search">
+
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m16 16 4 4"></path>
+                </svg>
+
+                <input accesskey="s" type="text" id="searchInput" placeholder="Search... (Alt+S)" autocomplete="off"
+                    aria-label="Search components" aria-autocomplete="list" aria-controls="suggestionList"
+                    aria-expanded="false" role="combobox">
+
+                <button type="button" class="clear-btn" id="clearBtn" aria-label="Clear search">✕</button>
+
+                <button type="submit" class="search-btn radius-new">Search</button>
+
+            </form>
+
+            <div class="suggestions" id="suggestions">
+
+                <div class="dropdown-header">
+                    <span id="dropdownTitle">Suggestions</span>
+                    <span class="result-count" id="resultCount">0 results</span>
+                </div>
+
+                <div class="suggestion-list" id="suggestionList" role="listbox" aria-label="Search suggestions">
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">⌕</div>
+                    <strong>No page found</strong>
+                    <p>Try another page name.</p>
+                </div>
+
+                <div class="dropdown-footer">
+                    <span class="key">↑</span>
+                    <span class="key">↓</span>
+                    <span>to navigate</span>
+                    <span class="key">↵</span>
+                    <span>to open</span>
+                    <span class="key">Esc</span>
+                    <span>to close</span>
+                </div>
+
+            </div>
+        </div><br><br>
+
+        <aside class="on-this-page">
+            <p>ON THIS PAGE</p>
+            <a href="#security" class="current">Security</a>
+        </aside>
+
+        <hr><br>
+
+        <h2 id="security">JavaScript Obfuscator</h2>
+        <div class="grids">
+            <div class="grid"><img class="img1"
+                    src="https://i.pinimg.com/736x/fe/32/a5/fe32a512b7432f18a89127461eb5c82e.jpg" alt=""></div>
+            <div class="grid card bg-blue-100 p-20" style="align-self: center;">
+                <h3>NodexUI Security System</h3><br>
+
+                <p>
+                    Introduce NodexUI Security System. <br> How to protect your code and hide from developer tools. You
+                    can hide only JavaScript code.
+                </p><br>
+                <a class="btnx" href="./js-tool.html">Use tool &nbsp;<i
+                        class="fa-solid fa-circle-chevron-right"></i></a>
+            </div>
+        </div>
+
+        <script>
+            /* ==================================
+               1. COMPONENTS AND EXTERNAL URLS
+            ================================== */
+
+            const components = [
+                {
+                    name: "JavaScript Obfuscator",
+                    description: "Hide your javascript code",
+                    icon: "button",
+                    url: "https://nodexui.github.io/pages/js-tool.html"
+                },
+                {
+                    name: "Badge",
+                    description: "Small labels for status and categories",
+                    icon: "badge",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Breadcrumb",
+                    description: "Navigation paths for your pages",
+                    icon: "breadcrumb",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Button Group",
+                    description: "Group related buttons together",
+                    icon: "button",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Banner",
+                    description: "Display announcements and messages",
+                    icon: "banner",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Card",
+                    description: "Flexible containers for content",
+                    icon: "card",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Checkbox",
+                    description: "Select one or multiple options",
+                    icon: "checkbox",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Dropdown",
+                    description: "Menus with selectable options",
+                    icon: "dropdown",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Input",
+                    description: "Text fields for user input",
+                    icon: "input",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Modal",
+                    description: "Dialogs and overlay windows",
+                    icon: "modal",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Navbar",
+                    description: "Navigation bars for websites",
+                    icon: "navbar",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Pagination",
+                    description: "Navigate between multiple pages",
+                    icon: "pagination",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Select",
+                    description: "Choose an option from a list",
+                    icon: "dropdown",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Slider",
+                    description: "Choose a value within a range",
+                    icon: "slider",
+                    url: "https://nodexui.github.io/"
+                },
+                {
+                    name: "Tooltip",
+                    description: "Helpful information on hover",
+                    icon: "tooltip",
+                    url: "https://nodexui.github.io/"
+                }
+            ];
+
+            /* ==================================
+               2. ELEMENTS
+            ================================== */
+
+            const searchWrapper = document.getElementById("searchWrapper");
+            const searchForm = document.getElementById("searchForm");
+            const searchInput = document.getElementById("searchInput");
+            const suggestions = document.getElementById("suggestions");
+            const suggestionList = document.getElementById("suggestionList");
+            const resultCount = document.getElementById("resultCount");
+            const dropdownTitle = document.getElementById("dropdownTitle");
+            const emptyState = document.getElementById("emptyState");
+            const clearBtn = document.getElementById("clearBtn");
+
+            let filteredComponents = [];
+            let activeIndex = -1;
+
+            /* ==================================
+               3. ICONS
+            ================================== */
+
+            const icons = {
+                button: '<rect x="3" y="6" width="18" height="12" rx="4"/><path d="M8 12h8"/>',
+                badge: '<path d="M12 3 14.5 5.5 18 6l.5 3.5L21 12l-2.5 2.5L18 18l-3.5.5L12 21l-2.5-2.5L6 18l-.5-3.5L3 12l2.5-2.5L6 6l3.5-.5Z"/><path d="m9 12 2 2 4-4"/>',
+                breadcrumb: '<path d="m9 6 6 6-6 6"/><path d="m3 6 6 6-6 6"/><path d="m15 6 6 6-6 6"/>',
+                banner: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7"/>',
+                card: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18M8 10v10"/>',
+                checkbox: '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8 12 3 3 5-6"/>',
+                dropdown: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m9 11 3 3 3-3"/>',
+                input: '<rect x="3" y="6" width="18" height="12" rx="3"/><path d="M7 10v4"/>',
+                modal: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+                navbar: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+                pagination: '<path d="m8 7-5 5 5 5M16 7l5 5-5 5M13 5l-2 14"/>',
+                slider: '<path d="M4 12h16"/><circle cx="9" cy="12" r="3"/>',
+                tooltip: '<path d="M4 5h16v11h-8l-5 4v-4H4z"/><path d="M8 9h8"/>'
+            };
+
+            function getIcon(type) {
+                return `
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.7"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+                ${icons[type] || icons.button}
+            </svg>
+        `;
+            }
+
+            /* ==================================
+               4. HIGHLIGHT MATCHING TEXT
+            ================================== */
+
+            function highlightText(text, query) {
+                if (!query) return text;
+
+                const index = text.toLowerCase().indexOf(query.toLowerCase());
+
+                if (index === -1) return text;
+
+                return text.slice(0, index) +
+                    "<mark>" +
+                    text.slice(index, index + query.length) +
+                    "</mark>" +
+                    text.slice(index + query.length);
+            }
+
+            /* ==================================
+               5. FILTER SEARCH RESULTS
+            ================================== */
+
+            function filterComponents(query) {
+                const q = query.trim().toLowerCase();
+
+                if (!q) return [];
+
+                return components
+                    .filter(component =>
+                        component.name.toLowerCase().includes(q) ||
+                        component.description.toLowerCase().includes(q)
+                    )
+                    .sort((a, b) => {
+                        const aStarts = a.name.toLowerCase().startsWith(q) ? 0 : 1;
+                        const bStarts = b.name.toLowerCase().startsWith(q) ? 0 : 1;
+
+                        return aStarts - bStarts ||
+                            a.name.localeCompare(b.name);
+                    });
+            }
+
+            /* ==================================
+               6. RENDER DROPDOWN
+            ================================== */
+
+            function renderSuggestions(query) {
+                filteredComponents = filterComponents(query);
+                activeIndex = -1;
+
+                suggestionList.replaceChildren();
+
+                const hasQuery = query.trim().length > 0;
+                const hasResults = filteredComponents.length > 0;
+
+                resultCount.textContent =
+                    `${filteredComponents.length} result${filteredComponents.length === 1 ? "" : "s"}`;
+
+                dropdownTitle.textContent = hasQuery
+                    ? "Matching components"
+                    : "Suggestions";
+
+                emptyState.classList.toggle("visible", hasQuery && !hasResults);
+                suggestionList.style.display = hasResults ? "flex" : "none";
+
+                filteredComponents.forEach((component, index) => {
+                    const item = document.createElement("button");
+
+                    item.type = "button";
+                    item.className = "suggestion-item";
+                    item.id = `suggestion-${index}`;
+                    item.setAttribute("role", "option");
+                    item.setAttribute("aria-selected", "false");
+
+                    item.innerHTML = `
+                <span class="item-icon">
+                    ${getIcon(component.icon)}
+                </span>
+
+                <span class="item-content">
+                    <span class="item-title">
+                        ${highlightText(component.name, query.trim())}
+                    </span>
+                    <span class="item-description">
+                        ${component.description}
+                    </span>
+                </span>
+
+                <span class="item-arrow" aria-hidden="true">↗</span>
+            `;
+
+                    item.addEventListener("mousedown", event => {
+                        event.preventDefault();
+                    });
+
+                    item.addEventListener("click", () => {
+                        openComponent(component);
+                    });
+
+                    suggestionList.appendChild(item);
+                });
+            }
+
+            /* ==================================
+               7. OPEN EXTERNAL COMPONENT URL
+            ================================== */
+
+            function openComponent(component) {
+                // Allow only HTTP and HTTPS URLs.
+                let targetURL;
+
+                try {
+                    targetURL = new URL(component.url);
+
+                    if (!["https:", "http:"].includes(targetURL.protocol)) {
+                        throw new Error("Invalid URL protocol");
+                    }
+                } catch (error) {
+                    console.error("Invalid component URL:", component.url);
+                    return;
+                }
+
+                // Open the selected component in a new browser tab.
+                window.open(targetURL.href, "_blank", "noopener,noreferrer");
+
+                closeDropdown();
+            }
+
+            /* ==================================
+               8. OPEN / CLOSE DROPDOWN
+            ================================== */
+
+            function openDropdown() {
+                suggestions.classList.add("open");
+                searchInput.setAttribute("aria-expanded", "true");
+            }
+
+            function closeDropdown() {
+                suggestions.classList.remove("open");
+                searchInput.setAttribute("aria-expanded", "false");
+                activeIndex = -1;
+                updateActiveItem();
+            }
+
+            /* ==================================
+               9. KEYBOARD NAVIGATION
+            ================================== */
+
+            function updateActiveItem() {
+                const items = suggestionList.querySelectorAll(".suggestion-item");
+
+                items.forEach((item, index) => {
+                    const active = index === activeIndex;
+
+                    item.classList.toggle("active", active);
+                    item.setAttribute("aria-selected", String(active));
+
+                    if (active) {
+                        searchInput.setAttribute("aria-activedescendant", item.id);
+                        item.scrollIntoView({ block: "nearest" });
+                    }
+                });
+
+                if (activeIndex === -1) {
+                    searchInput.removeAttribute("aria-activedescendant");
+                }
+            }
+
+            searchInput.addEventListener("keydown", event => {
+                if (event.key === "ArrowDown") {
+                    event.preventDefault();
+
+                    if (!suggestions.classList.contains("open")) {
+                        renderSuggestions(searchInput.value);
+                        openDropdown();
+                    }
+
+                    if (filteredComponents.length) {
+                        activeIndex = (activeIndex + 1) % filteredComponents.length;
+                        updateActiveItem();
+                    }
+                }
+
+                else if (event.key === "ArrowUp") {
+                    event.preventDefault();
+
+                    if (filteredComponents.length) {
+                        activeIndex = activeIndex <= 0
+                            ? filteredComponents.length - 1
+                            : activeIndex - 1;
+
+                        updateActiveItem();
+                    }
+                }
+
+                else if (event.key === "Enter") {
+                    if (suggestions.classList.contains("open") &&
+                        activeIndex >= 0 &&
+                        filteredComponents[activeIndex]) {
+
+                        event.preventDefault();
+                        openComponent(filteredComponents[activeIndex]);
+                    }
+                }
+
+                else if (event.key === "Escape") {
+                    closeDropdown();
+                }
+            });
+
+            /* ==================================
+               10. LIVE SEARCH
+            ================================== */
+
+            searchInput.addEventListener("input", () => {
+                const query = searchInput.value;
+
+                clearBtn.classList.toggle("visible", query.length > 0);
+
+                renderSuggestions(query);
+
+                if (query.trim()) {
+                    openDropdown();
+                } else {
+                    closeDropdown();
+                }
+            });
+
+            searchInput.addEventListener("focus", () => {
+                if (searchInput.value.trim()) {
+                    renderSuggestions(searchInput.value);
+                    openDropdown();
+                }
+            });
+
+            /* ==================================
+               11. SEARCH BUTTON
+            ================================== */
+
+            searchForm.addEventListener("submit", event => {
+                event.preventDefault();
+
+                const query = searchInput.value.trim();
+
+                if (!query) {
+                    searchInput.focus();
+                    return;
+                }
+
+                const results = filterComponents(query);
+
+                if (results.length > 0) {
+                    openComponent(results[0]);
+                } else {
+                    renderSuggestions(query);
+                    openDropdown();
+                }
+            });
+
+            /* ==================================
+               12. CLEAR SEARCH
+            ================================== */
+
+            clearBtn.addEventListener("click", () => {
+                searchInput.value = "";
+                clearBtn.classList.remove("visible");
+
+                renderSuggestions("");
+                closeDropdown();
+                searchInput.focus();
+            });
+
+            /* ==================================
+               13. CLOSE ON OUTSIDE CLICK
+            ================================== */
+
+            document.addEventListener("click", event => {
+                if (!searchWrapper.contains(event.target)) {
+                    closeDropdown();
+                }
+            });
+        </script>
+</body>
+
+</html>
