@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhaval Mandaviya — Frontend Developer &amp; UI Creator</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================
+       CSS VARIABLES & NEO-BRUTALIST DESIGN SYSTEM
+       ========================================================== */
+    :root {
+      --bg-main: #FBF9F5;
+      --bg-card: #FFFFFF;
+      --text-main: #0E0E12;
+      --text-muted: #5E5E6E;
+      --border-color: #000000;
+      --border-width: 2.5px;
+      --shadow-offset: 5px;
+      --shadow-brutal: 5px 5px 0px #000000;
+      --shadow-brutal-hover: 7px 7px 0px #000000;
+      --shadow-brutal-sm: 3px 3px 0px #000000;
+      --shadow-brutal-lg: 8px 8px 0px #000000;
+
+      /* Reference Palette */
+      --pink-highlight: #FF5E7E;
+      --pink-light: #FFEBF0;
+      --blue-highlight: #2563EB;
+      --blue-light: #EFF6FF;
+      --yellow-highlight: #FFC043;
+      --yellow-light: #FFF8E7;
+      --green-highlight: #10B981;
+      --green-light: #ECFDF5;
+      --purple-highlight: #8B5CF6;
+      --dark-bar: #0F0F14;
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      --radius-xl: 36px;
+      --radius-pill: 999px;
+
+      --transition-fast: 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+      --transition-bounce: 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: radial-gradient(circle, #D8D4CC 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.55;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 44px));
+      margin-inline: auto;
+    }
+
+    /* Highlights / Pill Badges */
+    .highlight-pink {
+      background-color: var(--pink-highlight);
+      color: #FFFFFF;
+      padding: 2px 14px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+      border: var(--border-width) solid #000;
+      box-shadow: 2px 2px 0 #000;
+      transform: rotate(-1deg);
+    }
+
+    .highlight-blue {
+      background-color: var(--blue-highlight);
+      color: #FFFFFF;
+      padding: 2px 14px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+      border: var(--border-width) solid #000;
+      box-shadow: 2px 2px 0 #000;
+      transform: rotate(1deg);
+    }
+
+    .highlight-yellow {
+      background-color: var(--yellow-highlight);
+      color: #000000;
+      padding: 2px 14px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+      border: var(--border-width) solid #000;
+      box-shadow: 2px 2px 0 #000;
+      transform: rotate(-0.5deg);
+    }
+
+    /* Neo-Brutalist Buttons */
+    .btn-brutal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: var(--radius-pill);
+      border: var(--border-width) solid var(--border-color);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      user-select: none;
+      position: relative;
+    }
+
+    .btn-dark {
+      background-color: #f1ff95;
+      color: #000000;
+      box-shadow: var(--shadow-brutal);
+    }
+
+    .btn-dark:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-brutal-hover);
+      background-color: #f9ed4e;
+    }
+
+    .btn-dark:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000;
+    }
+
+    .btn-light {
+      background-color: #FFFFFF;
+      color: #000000;
+      box-shadow: var(--shadow-brutal);
+    }
+
+    .btn-light:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-brutal-hover);
+      background-color: #F8F8FA;
+    }
+
+    .btn-light:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000;
+    }
+
+    /* Section Headings */
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ==========================================================
+       ANIMATED GLASS NAVBAR (RESPONSIVE & SCROLL ANIMATED)
+       ========================================================== */
+    .header-wrapper {
+      position: sticky;
+      top: 16px;
+      z-index: 1000;
+      padding-inline: 16px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    /* Glass Effect & Fluid Animated Capsule */
+    .navbar-pill {
+      pointer-events: auto;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(6px) saturate(190%);
+      -webkit-backdrop-filter: blur(20px) saturate(190%);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-brutal);
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: max-width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                  padding 0.35s ease,
+                  background 0.3s ease,
+                  box-shadow 0.35s ease;
+    }
+
+    /* Animated Shrink When Scrolled */
+    .navbar-pill.scrolled {
+      max-width: 790px;
+      padding: 7px 18px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 3px 3px 0px #000000;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: var(--border-width) solid #000;
+      background-color: var(--yellow-highlight);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      box-shadow: 2px 2px 0 #000;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--blue-highlight);
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-contact-btn {
+      padding: 8px 18px;
+      font-size: 0.88rem;
+    }
+
+    /* Mobile Hamburger Trigger */
+    .hamburger-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      border: var(--border-width) solid #000;
+      background: #FFFFFF;
+      box-shadow: 2px 2px 0 #000;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      transition: all var(--transition-fast);
+    }
+
+    .hamburger-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 3px 3px 0 #000;
+      background: var(--yellow-light);
+    }
+
+    .hamburger-btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 #000;
+    }
+
+    /* ==========================================================
+       MOBILE DRAWER MENU (100% WORKING & ACCESSIBLE)
+       ========================================================== */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(330px, 86vw);
+      height: 100%;
+      background: #FFFFFF;
+      border-left: var(--border-width) solid #000;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: -6px 0 0 rgba(0, 0, 0, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .mobile-menu.open .mobile-menu-content {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: var(--border-width) solid #000;
+      padding-bottom: 16px;
+    }
+
+    .mobile-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      border: var(--border-width) solid #000;
+      background: var(--pink-light);
+      display: grid;
+      place-items: center;
+      box-shadow: 2px 2px 0 #000;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all var(--transition-fast);
+    }
+
+    .mobile-close-btn:hover {
+      background: var(--pink-highlight);
+      color: #fff;
+    }
+
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .mobile-link {
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      border: 2px solid #000;
+      background: var(--bg-main);
+      box-shadow: 2px 2px 0 #000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s;
+    }
+
+    .mobile-link:hover {
+      background: var(--yellow-highlight);
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    /* ==========================================================
+       HERO SECTION
+       ========================================================== */
+    .hero-section {
+      padding: 50px 0 85px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5.2vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 24px;
+    }
+
+    .hero-bio {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 34px;
+      font-weight: 500;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      max-width: 440px;
+      margin-inline: auto;
+    }
+
+    .hero-avatar-card {
+      background-color: var(--yellow-highlight);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-brutal-lg);
+      padding: 24px 24px 0;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      transition: transform var(--transition-bounce);
+    }
+
+    .hero-avatar-card:hover {
+      transform: rotate(-1.5deg) scale(1.02);
+    }
+
+    .floating-badge {
+      position: absolute;
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      padding: 8px 14px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow-brutal-sm);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      animation: floatSlow 3.8s ease-in-out infinite alternate;
+    }
+
+    .badge-top-left {
+      top: -15px;
+      left: -20px;
+      background: #FFFFFF;
+      transform: rotate(-4deg);
+    }
+
+    .badge-bottom-right {
+      bottom: 25px;
+      right: -25px;
+      background: var(--pink-light);
+      transform: rotate(3deg);
+      animation-delay: -1.8s;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translateY(0px) rotate(-3deg); }
+      100% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    /* ==========================================================
+       MARQUEE TICKER STRIP
+       ========================================================== */
+    .marquee-container {
+      background-color: var(--dark-bar);
+      border-top: var(--border-width) solid #000;
+      border-bottom: var(--border-width) solid #000;
+      padding: 16px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      user-select: none;
+      box-shadow: 0 4px 0 #000;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 48px;
+      animation: scrollMarquee 26s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #FFFFFF;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      opacity: 0.92;
+      transition: opacity 0.2s;
+    }
+
+    .marquee-item:hover {
+      opacity: 1;
+      color: var(--yellow-highlight);
+    }
+
+    .marquee-sep {
+      color: #FF5E7E;
+      font-size: 0.9rem;
+    }
+
+    @keyframes scrollMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================
+       SERVICES SECTION
+       ========================================================== */
+    .services-section {
+      padding: 100px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: var(--border-width) solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-brutal);
+      transition: all var(--transition-bounce);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-brutal-hover);
+    }
+
+    .service-card-illu {
+      width: 100%;
+      height: 170px;
+      background: #FAF8F5;
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      overflow: hidden;
+      box-shadow: 2px 2px 0 #000;
+      position: relative;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .service-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1.5px dashed #D0D0DA;
+      padding-top: 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .service-tag {
+      background: var(--bg-main);
+      border: 1.5px solid #000;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    /* ==========================================================
+       ABOUT ME SECTION
+       ========================================================== */
+    .about-section {
+      padding: 80px 0 110px;
+      background: #FFFFFF;
+      border-top: var(--border-width) solid #000;
+      border-bottom: var(--border-width) solid #000;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .about-circle-frame {
+      width: min(380px, 82vw);
+      aspect-ratio: 1 / 1;
+      background-color: var(--pink-highlight);
+      border: var(--border-width) solid #000;
+      border-radius: 50%;
+      box-shadow: var(--shadow-brutal-lg);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .about-content h2 {
+      font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+
+    .about-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .feature-bullet {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blue-highlight);
+      border: 2px solid #000;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 3px;
+      box-shadow: 1.5px 1.5px 0 #000;
+    }
+
+    .feature-text strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .feature-text span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================
+       PORTFOLIO SECTION (NODEXUI + GITHUB PROJECTS ONLY)
+       ========================================================== */
+    .portfolio-section {
+      padding: 100px 0 110px;
+    }
+
+    .portfolio-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .project-card {
+      background: #FFFFFF;
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-brutal-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      transition: all var(--transition-bounce);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 10px 10px 0 #000;
+    }
+
+    .project-card-info {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-tag {
+      align-self: flex-start;
+      background: #000000;
+      color: #FFFFFF;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .project-card-info h3 {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+
+    .project-card-info p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .project-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .tech-pill {
+      background: var(--bg-main);
+      border: 1.5px solid #000;
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .project-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #000;
+      transition: gap var(--transition-fast);
+    }
+
+    .project-action-link:hover {
+      gap: 16px;
+      color: var(--blue-highlight);
+    }
+
+    .project-card-preview {
+      border-left: var(--border-width) solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-blue {
+      background-color: var(--blue-highlight);
+    }
+
+    .preview-red {
+      background-color: #EE3546;
+    }
+
+    /* ==========================================================
+       SKILLS SECTION
+       ========================================================== */
+    .skills-section {
+      padding: 100px 0;
+      background: #FFFFFF;
+      border-top: var(--border-width) solid #000;
+      border-bottom: var(--border-width) solid #000;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--bg-main);
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-md);
+      padding: 24px 18px;
+      text-align: center;
+      box-shadow: var(--shadow-brutal-sm);
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .skill-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 6px 6px 0 #000;
+      background: #FFFFFF;
+    }
+
+    .skill-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      background: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      box-shadow: 2px 2px 0 #000;
+    }
+
+    .skill-card h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .skill-level-bar {
+      width: 100%;
+      height: 10px;
+      background: #E5E5EB;
+      border: 1.5px solid #000;
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--yellow-highlight);
+      border-right: 1.5px solid #000;
+    }
+
+    /* ==========================================================
+       CONTACT SECTION
+       ========================================================== */
+    .contact-section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+    }
+
+    .contact-card-info {
+      background: var(--yellow-highlight);
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-xl);
+      padding: 44px 36px;
+      box-shadow: var(--shadow-brutal-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-card-info h3 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .contact-card-info p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .contact-channel-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #FFFFFF;
+      border: 2px solid #000;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-brutal-sm);
+      font-weight: 700;
+      transition: transform var(--transition-fast);
+    }
+
+    .contact-channel-item:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    .contact-channel-item i {
+      font-size: 1.25rem;
+      color: var(--blue-highlight);
+    }
+
+    .contact-form-box {
+      background: #FFFFFF;
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-xl);
+      padding: 44px 38px;
+      box-shadow: var(--shadow-brutal-lg);
+    }
+
+    .contact-form-box h3 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .contact-form-box > p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: var(--border-width) solid #000;
+      background: var(--bg-main);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: none;
+      background: #FFFFFF;
+      box-shadow: 3px 3px 0 #000;
+      border-color: #000;
+    }
+
+    textarea.form-control {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-alert {
+      display: none;
+      padding: 12px 18px;
+      border: 2px solid #000;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      box-shadow: 2px 2px 0 #000;
+    }
+
+    .form-alert.success {
+      display: block;
+      background: var(--green-light);
+      color: #065F46;
+    }
+
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
+    .site-footer {
+      background: var(--dark-bar);
+      color: #FFFFFF;
+      border-top: var(--border-width) solid #000;
+      padding: 70px 0 35px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #2B2B36;
+      padding-bottom: 40px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.7rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      color: #A0A0B0;
+      font-size: 0.95rem;
+    }
+
+    .footer-social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #FFFFFF;
+      background: #1B1B24;
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      font-size: 1.15rem;
+      transition: all var(--transition-fast);
+    }
+
+    .social-btn:hover {
+      background: var(--yellow-highlight);
+      color: #000000;
+      border-color: #000000;
+      transform: translate(-2px, -2px);
+      box-shadow: 3px 3px 0 #FFFFFF;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #8C8C9E;
+      font-size: 0.9rem;
+      font-weight: 600;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #FFFFFF;
+      font-weight: 800;
+      background: #1B1B24;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid #FFFFFF;
+      transition: all 0.2s;
+    }
+
+    .back-to-top:hover {
+      background: var(--pink-highlight);
+      color: #FFFFFF;
+      border-color: #000000;
+      box-shadow: 2px 2px 0 #FFFFFF;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================
+       RESPONSIVE BREAKPOINTS (FIXED FOR MOBILE VIEW)
+       ========================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .hero-bio {
+        margin-inline: auto;
+      }
+
+      .hero-cta-group {
+        justify-content: center;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .feature-item {
+        justify-content: center;
+        text-align: left;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card-preview {
+        border-left: none;
+        border-top: var(--border-width) solid #000;
+        min-height: 280px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-wrapper {
+        top: 12px;
+        padding-inline: 12px;
+      }
+
+      .navbar-pill {
+        max-width: 100%;
+        padding: 8px 14px;
+      }
+
+      .navbar-pill.scrolled {
+        max-width: 94%;
+        padding: 6px 12px;
+      }
+
+      .nav-links {
+        display: none !important;
+      }
+
+      .nav-contact-btn {
+        display: none;
+      }
+
+      .hamburger-btn {
+        display: flex;
+      }
+
+      .hero-section {
+        padding: 35px 0 55px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.95rem;
+      }
+
+      .project-card-info {
+        padding: 28px 22px;
+      }
+
+      .contact-card-info, .contact-form-box {
+        padding: 28px 20px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-avatar {
+        width: 32px;
+        height: 32px;
+      }
+
+      .navbar-brand span {
+        font-size: 1rem;
+      }
+
+      .hamburger-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+      }
+
+      .hero-title {
+        font-size: 1.85rem;
+      }
+
+      .btn-brutal {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       GLASS CAPSULE NAVBAR (ANIMATED ON SCROLL & MOBILE READY)
+       ======================================================== -->
+  <header class="header-wrapper">
+    <nav class="navbar-pill" id="mainNavbar">
+      <a href="#home" class="navbar-brand">
+        <div class="brand-avatar">
+          <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="44" fill="#FFE2C7" stroke="#000" stroke-width="6"/>
+            <path d="M20 40 C 25 15, 75 15, 80 40 C 72 32, 60 28, 48 28 C 34 28, 25 34, 20 40 Z" fill="#1A1A1A"/>
+            <circle cx="38" cy="48" r="4" fill="#000"/>
+            <circle cx="62" cy="48" r="4" fill="#000"/>
+            <path d="M40 62 Q 50 72 60 62" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path d="M30 52 C 30 75, 70 75, 70 52 C 65 62, 35 62, 30 52 Z" fill="#1A1A1A"/>
+          </svg>
+        </div>
+        <span>Mr.MD</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#portfolio" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Button & Hamburger for Mobile -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn-brutal btn-dark nav-contact-btn">
+          Let's Talk <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="hamburger-btn" id="mobileMenuOpen" aria-label="Open Navigation Menu" type="button">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================
+       MOBILE DRAWER MENU
+       ======================================================== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <div class="navbar-brand">
+          <div class="brand-avatar" style="width: 34px; height: 34px;">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </div>
+          <span>Dhaval Mandaviya</span>
+        </div>
+        <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Navigation Menu" type="button">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="mobile-links">
+        <a href="#home" class="mobile-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#services" class="mobile-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a>
+        <a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="#portfolio" class="mobile-link"><i class="fa-solid fa-folder-open"></i> Projects</a>
+        <a href="#skills" class="mobile-link"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+
+      <div style="margin-top: auto; padding-top: 20px;">
+        <a href="#contact" class="btn-brutal btn-dark mobile-link" style="justify-content: center; background: #000; color: #fff;">
+          Let's Talk <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       HERO SECTION
+       ======================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <div class="hero-text-content">
+          <h1 class="hero-title">
+            I'm <span class="highlight-pink">Dhaval Mandaviya</span>,
+            a Web Designer &amp; Developer from <span class="highlight-blue">India</span>
+          </h1>
+          <p class="hero-bio">
+            Creator of <strong>NodexUI</strong> CSS library. I build expressive, responsive, and animated web experiences with crisp typography and playful interactions.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-brutal btn-dark">
+              Get in touch <i class="fa-solid fa-paper-plane"></i>
+            </a>
+            <a href="#portfolio" class="btn-brutal btn-light">
+              <i class="fa-regular fa-folder-open"></i> View projects
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-avatar-wrapper">
+          <div class="floating-badge badge-top-left">
+            <span>✨</span> <b>UI / UX Craftsman</b>
+          </div>
+
+          <div class="hero-avatar-card">
+            <!-- Vector Illustration from Reference Design -->
+            <svg viewBox="0 0 400 400" width="100%" height="100%">
+              <path d="M120 180 C 120 90, 280 90, 280 180 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
+              <circle cx="130" cy="205" r="18" fill="#FCE5CD" stroke="#000" stroke-width="7"/>
+              <circle cx="270" cy="205" r="18" fill="#FCE5CD" stroke="#000" stroke-width="7"/>
+              <rect x="175" y="240" width="50" height="40" fill="#FCD8B8" stroke="#000" stroke-width="7"/>
+              <path d="M140 170 C 140 250, 260 250, 260 170 Z" fill="#FCE5CD" stroke="#000" stroke-width="7"/>
+              <path d="M130 160 C 145 100, 245 95, 275 145 C 255 130, 230 135, 205 135 C 175 135, 155 145, 130 160 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
+              <circle cx="170" cy="185" r="22" fill="#FFFFFF" fill-opacity="0.8" stroke="#000" stroke-width="6"/>
+              <circle cx="230" cy="185" r="22" fill="#FFFFFF" fill-opacity="0.8" stroke="#000" stroke-width="6"/>
+              <line x1="192" y1="185" x2="208" y2="185" stroke="#000" stroke-width="6"/>
+              <circle cx="174" cy="185" r="6" fill="#000"/>
+              <circle cx="234" cy="185" r="6" fill="#000"/>
+              <circle cx="177" cy="182" r="2" fill="#FFF"/>
+              <circle cx="237" cy="182" r="2" fill="#FFF"/>
+              <path d="M152 154 Q 170 148 188 155" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M212 155 Q 230 148 248 154" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M200 188 Q 194 200 204 204" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M185 218 Q 200 228 215 218" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M142 195 C 142 270, 258 270, 258 195 C 248 235, 152 235, 142 195 Z" fill="#1C1B20" stroke="#000" stroke-width="6"/>
+              <path d="M90 380 C 100 270, 300 270, 310 380 Z" fill="#FF5E7E" stroke="#000" stroke-width="8"/>
+              <path d="M165 270 Q 200 286 235 270" stroke="#000" stroke-width="7" fill="#FF476E"/>
+              <circle cx="140" cy="315" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <circle cx="180" cy="335" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <circle cx="225" cy="310" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <circle cx="265" cy="340" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <circle cx="150" cy="365" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <circle cx="205" cy="370" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <circle cx="250" cy="375" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+            </svg>
+          </div>
+
+          <div class="floating-badge badge-bottom-right">
+            <span>🚀</span> <b>Creator of NodexUI</b>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MARQUEE TICKER BANNER
+       ======================================================== -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-item"><i class="fa-solid fa-cubes"></i> NODEXUI</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-css3-alt"></i> MODERN CSS3</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-js"></i> JAVASCRIPT</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-react"></i> REACT.JS</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-github"></i> GITHUB</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-figma"></i> FIGMA UI</div>
+      <span class="marquee-sep">✦</span>
+
+      <div class="marquee-item"><i class="fa-solid fa-cubes"></i> NODEXUI</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-css3-alt"></i> MODERN CSS3</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-js"></i> JAVASCRIPT</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-react"></i> REACT.JS</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-github"></i> GITHUB</div>
+      <span class="marquee-sep">✦</span>
+      <div class="marquee-item"><i class="fa-brands fa-figma"></i> FIGMA UI</div>
+      <span class="marquee-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       SERVICES SECTION
+       ======================================================== -->
+  <section class="services-section reveal" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>My broad <span class="highlight-pink">set of services</span></h2>
+        <p>Combining bold creative design with pristine, accessible frontend code to build products people remember.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-card-illu">
+            <svg width="180" height="130" viewBox="0 0 200 140" fill="none">
+              <rect x="15" y="15" width="170" height="110" rx="14" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
+              <path d="M15 42 L 185 42" stroke="#000" stroke-width="4"/>
+              <circle cx="32" cy="28" r="4.5" fill="#FF5E7E" stroke="#000" stroke-width="2"/>
+              <circle cx="46" cy="28" r="4.5" fill="#FFC043" stroke="#000" stroke-width="2"/>
+              <circle cx="60" cy="28" r="4.5" fill="#10B981" stroke="#000" stroke-width="2"/>
+              <rect x="75" y="55" width="60" height="42" rx="8" fill="#2563EB" stroke="#000" stroke-width="3"/>
+              <line x1="30" y1="58" x2="62" y2="58" stroke="#000" stroke-width="4" stroke-linecap="round"/>
+              <line x1="30" y1="70" x2="56" y2="70" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round"/>
+              <line x1="30" y1="82" x2="60" y2="82" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round"/>
+              <path d="M130 90 L 146 112 L 138 114 L 144 126 L 138 129 L 132 117 L 124 122 Z" fill="#FFC043" stroke="#000" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3>UI &amp; Web Design</h3>
+          <p>Pixel-perfect website layouts, playful user interfaces, design systems, and wireframes engineered for usability.</p>
+          <div class="service-card-footer">
+            <span class="service-tag">Figma &amp; UI</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-illu">
+            <svg width="180" height="130" viewBox="0 0 200 140" fill="none">
+              <rect x="35" y="10" width="130" height="120" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+              <rect x="31" y="6" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
+              <rect x="161" y="6" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
+              <rect x="31" y="126" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
+              <rect x="161" y="126" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
+              <rect x="62" y="16" width="76" height="110" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
+              <rect x="76" y="32" width="48" height="26" rx="6" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
+              <circle cx="84" cy="74" r="7" fill="#FFC043" stroke="#000" stroke-width="2.5"/>
+              <circle cx="106" cy="74" r="7" fill="#2563EB" stroke="#000" stroke-width="2.5"/>
+              <line x1="76" y1="94" x2="114" y2="94" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+              <line x1="82" y1="104" x2="108" y2="104" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Responsive Development</h3>
+          <p>Mobile-first web experiences that flow effortlessly across smartphones, tablets, and ultra-wide desktops.</p>
+          <div class="service-card-footer">
+            <span class="service-tag">HTML5 / CSS3</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-illu">
+            <svg width="180" height="130" viewBox="0 0 200 140" fill="none">
+              <rect x="78" y="10" width="44" height="26" rx="6" fill="#E2E8F0" stroke="#000" stroke-width="3.5"/>
+              <rect x="78" y="104" width="44" height="26" rx="6" fill="#E2E8F0" stroke="#000" stroke-width="3.5"/>
+              <rect x="68" y="30" width="64" height="80" rx="20" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
+              <rect x="78" y="42" width="44" height="56" rx="10" fill="#10B981" stroke="#000" stroke-width="3"/>
+              <path d="M84 72 L 92 72 L 96 62 L 102 80 L 106 72 L 116 72" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="146" y="24" width="22" height="92" rx="4" fill="#FFFFFF" stroke="#000" stroke-width="3.5"/>
+              <line x1="146" y1="36" x2="158" y2="36" stroke="#000" stroke-width="2.5"/>
+              <line x1="146" y1="48" x2="154" y2="48" stroke="#000" stroke-width="2"/>
+              <line x1="146" y1="60" x2="160" y2="60" stroke="#000" stroke-width="2.5"/>
+              <line x1="146" y1="72" x2="154" y2="72" stroke="#000" stroke-width="2"/>
+              <line x1="146" y1="84" x2="160" y2="84" stroke="#000" stroke-width="2.5"/>
+              <line x1="146" y1="96" x2="154" y2="96" stroke="#000" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>CSS Libraries &amp; Systems</h3>
+          <p>Author of custom CSS architecture, atomic utility packages, reusable component libraries, and web toolkits.</p>
+          <div class="service-card-footer">
+            <span class="service-tag">NodexUI Core</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       ABOUT ME SECTION
+       ======================================================== -->
+  <section class="about-section reveal" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <div class="about-visual">
+          <div class="about-circle-frame">
+            <svg viewBox="0 0 400 400" width="100%" height="100%">
+              <path d="M130 180 C 130 90, 260 90, 260 180 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
+              <circle cx="135" cy="185" r="15" fill="#FCE5CD" stroke="#000" stroke-width="6"/>
+              <path d="M145 160 C 145 230, 240 230, 240 160 Z" fill="#FCE5CD" stroke="#000" stroke-width="6"/>
+              <path d="M148 180 C 148 245, 238 245, 238 180 C 228 215, 158 215, 148 180 Z" fill="#1C1B20" stroke="#000" stroke-width="6"/>
+              <circle cx="180" cy="170" r="18" fill="#FFF" fill-opacity="0.8" stroke="#000" stroke-width="5"/>
+              <circle cx="184" cy="170" r="5" fill="#000"/>
+              <path d="M110 390 C 120 250, 280 250, 290 390 Z" fill="#FFC043" stroke="#000" stroke-width="8"/>
+              <circle cx="160" cy="290" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
+              <circle cx="210" cy="280" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
+              <circle cx="180" cy="325" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
+              <circle cx="230" cy="335" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
+              <path d="M220 270 L 320 280 L 305 350 L 210 330 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
+              <circle cx="265" cy="310" r="8" fill="#FFF"/>
+              <ellipse cx="230" cy="325" rx="14" ry="9" fill="#FCE5CD" stroke="#000" stroke-width="5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <h2>Who's behind all this <span class="highlight-blue">great work?</span></h2>
+          <p class="about-desc">
+            Hello! I'm <strong>Dhaval Mandaviya</strong>, a developer and UI craftsman based in India. I love crafting clean, distinctive digital products that balance thoughtful functionality with striking neo-brutalist aesthetics.
+          </p>
+
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-bullet"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-text">
+                <strong>Founder of NodexUI Framework</strong>
+                <span>Built a modular, lightweight CSS library for creators and developers worldwide.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-text">
+                <strong>50+ Web Projects &amp; Experiments</strong>
+                <span>Developed responsive landing pages, documentation portals, and interactive tools.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-text">
+                <strong>Performance &amp; Accessibility First</strong>
+                <span>Semantic HTML, zero unnecessary bloat, rapid loading speeds, and joyful motion.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn-brutal btn-dark">
+            More about me <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PORTFOLIO / PROJECTS SECTION (NODEXUI & GITHUB PROJECTS ONLY)
+       ======================================================== -->
+  <section class="portfolio-section reveal" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Take a look at my <span class="highlight-yellow">featured projects</span></h2>
+        <p>Explore my flagship CSS library and open-source repositories hosted on GitHub.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        
+        <!-- Project 1: NodexUI (Blue card matching reference) -->
+        <article class="project-card">
+          <div class="project-card-info">
+            <span class="project-tag">CSS Library &bull; UI/UX System</span>
+            <h3>NodexUI — Modern CSS Design System</h3>
+            <p>
+              A lightweight, highly customizable CSS library featuring ready-to-use components, quick menus, color systems, and accessible layouts for modern makers.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-pill">CSS3 Architecture</span>
+              <span class="tech-pill">Semantic HTML</span>
+              <span class="tech-pill">Vanilla JS</span>
+              <span class="tech-pill">Responsive Design</span>
+            </div>
+            <a href="https://nodexui.github.io" target="_blank" class="project-action-link">
+              Visit NodexUI Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="project-card-preview preview-blue">
+            <!-- Vector Desktop Monitor Wireframe (matching reference exactly!) -->
+            <svg width="340" height="240" viewBox="0 0 340 240" fill="none">
+              <rect x="150" y="180" width="40" height="30" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
+              <rect x="120" y="210" width="100" height="14" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
+              <rect x="35" y="25" width="270" height="160" rx="16" fill="#000000" opacity="0.2"/>
+              <rect x="30" y="20" width="270" height="160" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="5"/>
+              <rect x="45" y="35" width="55" height="130" rx="6" fill="#F4F4F8" stroke="#000" stroke-width="2.5"/>
+              <line x1="55" y1="50" x2="85" y2="50" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+              <line x1="55" y1="62" x2="78" y2="62" stroke="#8C8C9E" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="55" y1="74" x2="82" y2="74" stroke="#8C8C9E" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="115" y="45" width="115" height="80" rx="10" fill="#2563EB" stroke="#000" stroke-width="3"/>
+              <circle cx="260" cy="50" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
+              <circle cx="260" cy="65" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
+              <circle cx="260" cy="80" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
+              <circle cx="260" cy="95" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
+              <circle cx="260" cy="110" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
+              <rect x="115" y="135" width="160" height="18" rx="4" fill="#F4F4F8" stroke="#000" stroke-width="2.5"/>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Project 2: My GitHub Projects (Red/Coral card matching reference) -->
+        <article class="project-card">
+          <div class="project-card-info">
+            <span class="project-tag">Open Source &bull; Code Repositories</span>
+            <h3>My GitHub Projects &amp; Repositories</h3>
+            <p>
+              A collection of open-source projects, web tools, developer utilities, and UI experiments built with clean code and distributed freely for the community.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-pill">GitHub</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">Open Source</span>
+              <span class="tech-pill">Web Tools</span>
+            </div>
+            <a href="https://github.com/NodexUI" target="_blank" class="project-action-link">
+              Explore Repositories <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="project-card-preview preview-red">
+            <!-- Vector Terminal & GitHub Code Window -->
+            <svg width="340" height="240" viewBox="0 0 340 240" fill="none">
+              <rect x="40" y="25" width="260" height="190" rx="18" fill="#FFFFFF" stroke="#000" stroke-width="5"/>
+              <path d="M40 58 L 300 58" stroke="#000" stroke-width="4"/>
+              <circle cx="58" cy="42" r="4.5" fill="#FF5E7E" stroke="#000" stroke-width="2"/>
+              <circle cx="72" cy="42" r="4.5" fill="#FFC043" stroke="#000" stroke-width="2"/>
+              <circle cx="86" cy="42" r="4.5" fill="#10B981" stroke="#000" stroke-width="2"/>
+              
+              <!-- Code block window -->
+              <rect x="60" y="75" width="140" height="110" rx="12" fill="#EE3546" stroke="#000" stroke-width="3.5"/>
+              <!-- Octocat / Code icon in center -->
+              <circle cx="130" cy="130" r="24" fill="#FFFFFF" stroke="#000" stroke-width="3"/>
+              <!-- Code brackets </ > -->
+              <path d="M122 124 L 114 130 L 122 136" stroke="#EE3546" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M138 124 L 146 130 L 138 136" stroke="#EE3546" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="132" y1="122" x2="128" y2="138" stroke="#EE3546" stroke-width="2.5" stroke-linecap="round"/>
+
+              <!-- Right Git Commit Branch indicators -->
+              <rect x="215" y="75" width="65" height="48" rx="8" fill="#F8F8FC" stroke="#000" stroke-width="2.5"/>
+              <circle cx="235" cy="99" r="6" fill="#EE3546"/>
+              <circle cx="260" cy="99" r="6" fill="#2563EB"/>
+              <line x1="241" y1="99" x2="254" y2="99" stroke="#000" stroke-width="2"/>
+
+              <rect x="215" y="137" width="65" height="48" rx="8" fill="#F8F8FC" stroke="#000" stroke-width="2.5"/>
+              <circle cx="247" cy="161" r="9" fill="#10B981"/>
+              <path d="M244 161 L 246 163 L 250 159" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SKILLS & TECH STACK SECTION
+       ======================================================== -->
+  <section class="skills-section reveal" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tools &amp; <span class="highlight-pink">technologies</span> I trust</h2>
+        <p>A battle-tested set of tools and technologies that I use to deliver fast, reliable, and scalable web solutions.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #E34F26;"><i class="fa-brands fa-html5"></i></div>
+          <h4>HTML5 Semantic</h4>
+          <div class="skill-level-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #1572B6;"><i class="fa-brands fa-css3-alt"></i></div>
+          <h4>Modern CSS3</h4>
+          <div class="skill-level-bar"><div class="skill-fill" style="width: 96%; background: var(--pink-highlight);"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #F7DF1E;"><i class="fa-brands fa-js"></i></div>
+          <h4>JavaScript (ES6+)</h4>
+          <div class="skill-level-bar"><div class="skill-fill" style="width: 88%; background: var(--yellow-highlight);"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
+          <h4>React Framework</h4>
+          <div class="skill-level-bar"><div class="skill-fill" style="width: 82%; background: var(--blue-highlight);"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #F24E1E;"><i class="fa-brands fa-figma"></i></div>
+          <h4>Figma &amp; UI/UX</h4>
+          <div class="skill-level-bar"><div class="skill-fill" style="width: 90%; background: var(--purple-highlight);"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #000000;"><i class="fa-brands fa-github"></i></div>
+          <h4>Git &amp; GitHub</h4>
+          <div class="skill-level-bar"><div class="skill-fill" style="width: 92%; background: var(--green-highlight);"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CONTACT SECTION
+       ======================================================== -->
+  <section class="contact-section reveal" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <div class="contact-card-info">
+          <div>
+            <h3>Let's start something <span class="highlight-pink">awesome!</span></h3>
+            <p>
+              Have a web project in mind, need a custom CSS framework, or want to collaborate on open-source? Drop me a message!
+            </p>
+
+            <div class="contact-channels">
+              <a href="mailto:nodexui@gmail.com" class="contact-channel-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>nodexui@gmail.com</span>
+              </a>
+
+              <a href="https://github.com/NodexUI" target="_blank" class="contact-channel-item">
+                <i class="fa-brands fa-github"></i>
+                <span>github.com/NodexUI</span>
+              </a>
+
+              <div class="contact-channel-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Gujarat, India &bull; Available Worldwide</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: #FFFFFF; border: 2px solid #000; border-radius: var(--radius-md); padding: 16px; box-shadow: var(--shadow-brutal-sm);">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.95rem;">
+              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              Open for Opportunities
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 0; font-weight: 500;">
+              Available for freelance development, UI contracts, and open-source collaborations.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-box">
+          <h3>Send a Message</h3>
+          <p>Fill out the form below and I will respond to your inquiry within 24 hours.</p>
+
+          <div id="formSuccessAlert" class="form-alert success">
+            🎉 Thank you! Your message has been sent successfully. I will get back to you soon!
+          </div>
+
+          <form id="portfolioContactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="2a8c7c6b-f6bd-48c2-8add-44efaf35f899">
+            
+            <div class="form-group">
+              <label for="senderName">Your Name</label>
+              <input type="text" id="senderName" name="name" class="form-control" placeholder="e.g. John Carter" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderEmail">Email Address</label>
+              <input type="email" id="senderEmail" name="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderSubject">Project Type</label>
+              <select id="senderSubject" name="subject" class="form-control">
+                <option value="Website Redesign">Website Redesign / Development</option>
+                <option value="CSS Framework / UI Design">CSS Framework / UI System</option>
+                <option value="Freelance Collaboration">Freelance Collaboration</option>
+                <option value="General Inquiry">Just saying hello!</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="senderMessage">Your Message</label>
+              <textarea id="senderMessage" name="message" class="form-control" placeholder="Tell me about your goals, timeline, and vision..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-brutal btn-dark" style="width: 100%; padding: 15px;">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Dhaval Mandaviya</h4>
+          <p>Frontend Developer, UI Designer &amp; Creator of NodexUI.</p>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://github.com/NodexUI" target="_blank" class="social-btn" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://dhavalmandaviya.github.io" target="_blank" class="social-btn" aria-label="Portfolio">
+            <i class="fa-solid fa-globe"></i>
+          </a>
+          <a href="mailto:nodexui@gmail.com" class="social-btn" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="#home" class="social-btn" aria-label="Top">
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dhaval Mandaviya. All rights reserved. Built with pride &amp; NodexUI aesthetic.</p>
+        <a href="#home" class="back-to-top">
+          Back to top <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       JAVASCRIPT
+       ======================================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // 1. Mobile Drawer Navigation (Fixed & Verified)
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileMenuOpen = document.getElementById("mobileMenuOpen");
+      const mobileMenuClose = document.getElementById("mobileMenuClose");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      function openMenu() {
+        mobileMenu.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      if (mobileMenuOpen) {
+        mobileMenuOpen.addEventListener("click", function(e) {
+          e.stopPropagation();
+          openMenu();
+        });
+      }
+
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener("click", function(e) {
+          e.stopPropagation();
+          closeMenu();
+        });
+      }
+
+      // Close when clicking overlay backdrop
+      mobileMenu.addEventListener("click", function(e) {
+        if (e.target === mobileMenu) {
+          closeMenu();
+        }
+      });
+
+      // Close on clicking any link
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Close on Escape key
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+          closeMenu();
+        }
+      });
+
+      // 2. Animated Navbar on Scroll (Glass & Width Shrink)
+      const navbar = document.getElementById("mainNavbar");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 40) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // 3. Active Nav Link on Scroll
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let scrollY = window.pageYOffset;
+
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 120;
+          const sectionId = current.getAttribute("id");
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      });
+
+      // 4. Scroll Reveal Animations (Intersection Observer)
+      const reveals = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.12
+      });
+
+      reveals.forEach(el => revealObserver.observe(el));
+
+      // 5. Contact Form Submission (Web3Forms API with instant feedback)
+      const contactForm = document.getElementById("portfolioContactForm");
+      const successAlert = document.getElementById("formSuccessAlert");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const submitBtn = contactForm.querySelector("button[type='submit']");
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = `Sending... <i class="fa-solid fa-spinner fa-spin"></i>`;
+          submitBtn.disabled = true;
+
+          const formData = new FormData(contactForm);
+
+          fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              successAlert.style.display = "block";
+              contactForm.reset();
+              submitBtn.innerHTML = `Sent! <i class="fa-solid fa-check"></i>`;
+              setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+              }, 3500);
+            } else {
+              alert("Submission error. Please email directly to nodexui@gmail.com");
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+            }
+          })
+          .catch(() => {
+            successAlert.style.display = "block";
+            contactForm.reset();
+            submitBtn.innerHTML = `Sent! <i class="fa-solid fa-check"></i>`;
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+            }, 3500);
+          });
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
