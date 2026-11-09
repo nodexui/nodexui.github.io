@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhaval Mandaviya — Frontend Developer &amp; UI Creator</title>
-  
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -22,9 +24,8 @@
       --text-muted: #5E5E6E;
       --border-color: #000000;
       --border-width: 2.5px;
-      --shadow-offset: 5px;
       --shadow-brutal: 5px 5px 0px #000000;
-      --shadow-brutal-hover: 7px 7px 0px #000000;
+      --shadow-brutal-hover: 8px 8px 0px #000000;
       --shadow-brutal-sm: 3px 3px 0px #000000;
       --shadow-brutal-lg: 8px 8px 0px #000000;
 
@@ -38,6 +39,7 @@
       --green-highlight: #10B981;
       --green-light: #ECFDF5;
       --purple-highlight: #8B5CF6;
+      --purple-light: #F5F3FF;
       --dark-bar: #0F0F14;
 
       --radius-sm: 10px;
@@ -47,10 +49,12 @@
       --radius-pill: 999px;
 
       --transition-fast: 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
-      --transition-bounce: 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --transition-bounce: 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -59,6 +63,8 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     body {
@@ -68,6 +74,8 @@
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
+      width: 100%;
+      max-width: 100%;
     }
 
     /* Subtle grid background */
@@ -94,12 +102,16 @@
       list-style: none;
     }
 
-    img, svg {
+    img,
+    svg {
       display: block;
       max-width: 100%;
     }
 
-    button, input, textarea, select {
+    button,
+    input,
+    textarea,
+    select {
       font: inherit;
       color: inherit;
     }
@@ -107,6 +119,130 @@
     .container {
       width: min(1200px, calc(100% - 44px));
       margin-inline: auto;
+    }
+
+    /* ==========================================================
+       NEO-BRUTALIST PRELOADER (RESPONSIVE & PLAYFUL)
+       ========================================================== */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      background-color: var(--bg-main);
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      pointer-events: none;
+    }
+
+    .preloader-box {
+      background: #FFFFFF;
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-xl);
+      padding: 34px 40px;
+      box-shadow: var(--shadow-brutal-lg);
+      text-align: center;
+      max-width: 380px;
+      width: calc(100% - 40px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      animation: preloaderBounce 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes preloaderBounce {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-8px);
+      }
+    }
+
+    .preloader-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: var(--border-width) solid #000;
+      background: var(--yellow-highlight);
+      display: grid;
+      place-items: center;
+      box-shadow: 3px 3px 0 #000;
+      position: relative;
+    }
+
+    .preloader-avatar i {
+      font-size: 1.8rem;
+      animation: spinSlow 4s linear infinite;
+    }
+
+    @keyframes spinSlow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .preloader-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .preloader-bar-wrap {
+      width: 100%;
+      height: 18px;
+      background: var(--bg-main);
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .preloader-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--pink-highlight), var(--yellow-highlight), var(--blue-highlight));
+      background-size: 200% 100%;
+      border-right: 2px solid #000;
+      transition: width 0.15s ease-out;
+      animation: shimmerBar 1.5s linear infinite;
+    }
+
+    @keyframes shimmerBar {
+      0% {
+        background-position: 100% 0;
+      }
+
+      100% {
+        background-position: -100% 0;
+      }
+    }
+
+    .preloader-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
     }
 
     /* Highlights / Pill Badges */
@@ -120,6 +256,11 @@
       border: var(--border-width) solid #000;
       box-shadow: 2px 2px 0 #000;
       transform: rotate(-1deg);
+      transition: transform var(--transition-fast);
+    }
+
+    .highlight-pink:hover {
+      transform: rotate(1deg) scale(1.04);
     }
 
     .highlight-blue {
@@ -132,6 +273,11 @@
       border: var(--border-width) solid #000;
       box-shadow: 2px 2px 0 #000;
       transform: rotate(1deg);
+      transition: transform var(--transition-fast);
+    }
+
+    .highlight-blue:hover {
+      transform: rotate(-1deg) scale(1.04);
     }
 
     .highlight-yellow {
@@ -144,6 +290,11 @@
       border: var(--border-width) solid #000;
       box-shadow: 2px 2px 0 #000;
       transform: rotate(-0.5deg);
+      transition: transform var(--transition-fast);
+    }
+
+    .highlight-yellow:hover {
+      transform: rotate(1.5deg) scale(1.04);
     }
 
     /* Neo-Brutalist Buttons */
@@ -164,15 +315,15 @@
     }
 
     .btn-dark {
-      background-color: #f1ff95;
-      color: #000000;
+      background-color: #000000;
+      color: #FFFFFF;
       box-shadow: var(--shadow-brutal);
     }
 
     .btn-dark:hover {
       transform: translate(-3px, -3px);
       box-shadow: var(--shadow-brutal-hover);
-      background-color: #f9ed4e;
+      background-color: #17171F;
     }
 
     .btn-dark:active {
@@ -232,14 +383,13 @@
       pointer-events: none;
     }
 
-    /* Glass Effect & Fluid Animated Capsule */
     .navbar-pill {
       pointer-events: auto;
       width: 100%;
-      max-width: 1000px;
+      max-width: 960px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(6px) saturate(190%);
+      backdrop-filter: blur(20px) saturate(190%);
       -webkit-backdrop-filter: blur(20px) saturate(190%);
       border: var(--border-width) solid var(--border-color);
       border-radius: var(--radius-pill);
@@ -249,14 +399,13 @@
       align-items: center;
       justify-content: space-between;
       transition: max-width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-                  padding 0.35s ease,
-                  background 0.3s ease,
-                  box-shadow 0.35s ease;
+        padding 0.35s ease,
+        background 0.3s ease,
+        box-shadow 0.35s ease;
     }
 
-    /* Animated Shrink When Scrolled */
     .navbar-pill.scrolled {
-      max-width: 790px;
+      max-width: 740px;
       padding: 7px 18px;
       background: rgba(255, 255, 255, 0.88);
       box-shadow: 3px 3px 0px #000000;
@@ -282,16 +431,21 @@
       overflow: hidden;
       box-shadow: 2px 2px 0 #000;
       flex-shrink: 0;
+      transition: transform var(--transition-bounce);
+    }
+
+    .navbar-brand:hover .brand-avatar {
+      transform: rotate(-10deg) scale(1.1);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
     }
 
     .nav-link {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: var(--text-main);
       transition: color var(--transition-fast);
@@ -325,7 +479,6 @@
       font-size: 0.88rem;
     }
 
-    /* Mobile Hamburger Trigger */
     .hamburger-btn {
       display: none;
       width: 44px;
@@ -347,14 +500,7 @@
       background: var(--yellow-light);
     }
 
-    .hamburger-btn:active {
-      transform: translate(1px, 1px);
-      box-shadow: 1px 1px 0 #000;
-    }
-
-    /* ==========================================================
-       MOBILE DRAWER MENU (100% WORKING & ACCESSIBLE)
-       ========================================================== */
+    /* Mobile Drawer */
     .mobile-menu {
       position: fixed;
       inset: 0;
@@ -385,7 +531,7 @@
       padding: 26px 22px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
       box-shadow: -6px 0 0 rgba(0, 0, 0, 0.15);
       transform: translateX(100%);
       transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -425,12 +571,12 @@
     .mobile-links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-top: 8px;
+      gap: 10px;
+      margin-top: 6px;
     }
 
     .mobile-link {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 800;
       padding: 12px 16px;
       border-radius: var(--radius-md);
@@ -545,8 +691,13 @@
     }
 
     @keyframes floatSlow {
-      0% { transform: translateY(0px) rotate(-3deg); }
-      100% { transform: translateY(-10px) rotate(2deg); }
+      0% {
+        transform: translateY(0px) rotate(-3deg);
+      }
+
+      100% {
+        transform: translateY(-10px) rotate(2deg);
+      }
     }
 
     /* ==========================================================
@@ -561,6 +712,10 @@
       white-space: nowrap;
       user-select: none;
       box-shadow: 0 4px 0 #000;
+    }
+
+    .marquee-container:hover .marquee-track {
+      animation-play-state: paused;
     }
 
     .marquee-track {
@@ -579,12 +734,13 @@
       font-weight: 800;
       letter-spacing: -0.01em;
       opacity: 0.92;
-      transition: opacity 0.2s;
+      transition: all 0.2s;
     }
 
     .marquee-item:hover {
       opacity: 1;
       color: var(--yellow-highlight);
+      transform: scale(1.05);
     }
 
     .marquee-sep {
@@ -593,8 +749,13 @@
     }
 
     @keyframes scrollMarquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     /* ==========================================================
@@ -771,7 +932,7 @@
     }
 
     /* ==========================================================
-       PORTFOLIO SECTION (NODEXUI + GITHUB PROJECTS ONLY)
+       PORTFOLIO SECTION (NODEXUI & GITHUB PROJECTS ONLY)
        ========================================================== */
     .portfolio-section {
       padding: 100px 0 110px;
@@ -884,6 +1045,270 @@
     }
 
     /* ==========================================================
+       NEW: GITHUB REPOSITORIES DYNAMIC SECTION
+       ========================================================== */
+    .github-repos-section {
+      padding: 100px 0;
+      background: #FFFFFF;
+      border-top: var(--border-width) solid #000;
+      border-bottom: var(--border-width) solid #000;
+      position: relative;
+    }
+
+    .github-user-bar {
+      background: var(--bg-main);
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-brutal);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .github-user-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .github-avatar-circle {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: var(--border-width) solid #000;
+      background: var(--yellow-highlight);
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      box-shadow: 2.5px 2.5px 0 #000;
+      flex-shrink: 0;
+    }
+
+    .github-user-info h3 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .github-user-info p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .repo-card {
+      background: var(--bg-card);
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow-brutal);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-bounce);
+      position: relative;
+    }
+
+    .repo-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: var(--shadow-brutal-hover);
+      background: #FFFFFF;
+    }
+
+    .repo-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .repo-card-top i {
+      font-size: 1.3rem;
+      color: var(--blue-highlight);
+    }
+
+    .repo-visibility {
+      font-size: 0.72rem;
+      font-weight: 800;
+      border: 1.5px solid #000;
+      border-radius: var(--radius-pill);
+      padding: 2px 8px;
+      background: var(--yellow-light);
+    }
+
+    .repo-card h4 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .repo-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .repo-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      border-top: 1.5px dashed #D0D0DA;
+      padding-top: 14px;
+      margin-bottom: 16px;
+    }
+
+    .repo-lang {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .repo-lang-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1.5px solid #000;
+    }
+
+    .repo-btn-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .repo-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 2px solid #000;
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: 2px 2px 0 #000;
+      background: #FFFFFF;
+      transition: all var(--transition-fast);
+    }
+
+    .repo-link-btn:hover {
+      background: var(--yellow-highlight);
+      transform: translate(-2px, -2px);
+      box-shadow: 3px 3px 0 #000;
+    }
+
+    /* ==========================================================
+       NEW: SOCIAL MEDIA ACCOUNTS SECTION
+       ========================================================== */
+    .social-accounts-section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .social-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .social-box {
+      border: var(--border-width) solid #000;
+      border-radius: var(--radius-xl);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-brutal-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-bounce);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 10px 10px 0 #000;
+    }
+
+    .social-box-github {
+      background: var(--yellow-highlight);
+    }
+
+    .social-box-linkedin {
+      background: var(--blue-light);
+    }
+
+    .social-box-email {
+      background: var(--pink-light);
+    }
+
+    .social-box-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .social-box-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: var(--border-width) solid #000;
+      background: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      box-shadow: 3px 3px 0 #000;
+    }
+
+    .social-box-badge {
+      background: #000000;
+      color: #FFFFFF;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .social-box h3 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .social-box p {
+      font-size: 0.96rem;
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    .social-box-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* ==========================================================
        SKILLS SECTION
        ========================================================== */
     .skills-section {
@@ -958,12 +1383,16 @@
     .contact-section {
       padding: 100px 0;
       position: relative;
+      overflow-x: clip;
+      overflow: hidden;
+      width: 100%;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       gap: 40px;
+      width: 100%;
     }
 
     .contact-card-info {
@@ -975,6 +1404,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .contact-card-info h3 {
@@ -997,6 +1430,8 @@
       flex-direction: column;
       gap: 16px;
       margin-bottom: 32px;
+      width: 100%;
+      min-width: 0;
     }
 
     .contact-channel-item {
@@ -1010,6 +1445,10 @@
       box-shadow: var(--shadow-brutal-sm);
       font-weight: 700;
       transition: transform var(--transition-fast);
+      min-width: 0;
+      max-width: 100%;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .contact-channel-item:hover {
@@ -1020,6 +1459,13 @@
     .contact-channel-item i {
       font-size: 1.25rem;
       color: var(--blue-highlight);
+      flex-shrink: 0;
+    }
+
+    .contact-channel-item span {
+      min-width: 0;
+      word-break: break-all;
+      overflow-wrap: anywhere;
     }
 
     .contact-form-box {
@@ -1028,6 +1474,9 @@
       border-radius: var(--radius-xl);
       padding: 44px 38px;
       box-shadow: var(--shadow-brutal-lg);
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .contact-form-box h3 {
@@ -1037,7 +1486,7 @@
       margin-bottom: 10px;
     }
 
-    .contact-form-box > p {
+    .contact-form-box>p {
       color: var(--text-muted);
       font-size: 0.95rem;
       margin-bottom: 28px;
@@ -1096,7 +1545,7 @@
 
     /* ==========================================================
        FOOTER
-       ========================================================== */
+       ========================================================= */
     .site-footer {
       background: var(--dark-bar);
       color: #FFFFFF;
@@ -1185,21 +1634,66 @@
       box-shadow: 2px 2px 0 #FFFFFF;
     }
 
-    /* Scroll Reveal */
-    .reveal {
+    /* ==========================================================
+       ADVANCED DIRECTIONAL SCROLL REVEAL ANIMATIONS
+       ========================================================= */
+    .reveal,
+    .reveal-up,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+      transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .reveal.active {
+    .reveal,
+    .reveal-up {
+      transform: translateY(35px);
+    }
+
+    .reveal-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal-scale {
+      transform: scale(0.92);
+    }
+
+    .reveal.active,
+    .reveal-up.active,
+    .reveal-left.active,
+    .reveal-right.active,
+    .reveal-scale.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(0) scale(1);
+    }
+
+    /* Staggered Delay Helpers */
+    .stagger-1 {
+      transition-delay: 0.1s;
+    }
+
+    .stagger-2 {
+      transition-delay: 0.2s;
+    }
+
+    .stagger-3 {
+      transition-delay: 0.3s;
+    }
+
+    .stagger-4 {
+      transition-delay: 0.4s;
     }
 
     /* ==========================================================
-       RESPONSIVE BREAKPOINTS (FIXED FOR MOBILE VIEW)
-       ========================================================== */
+       RESPONSIVE BREAKPOINTS
+       ========================================================= */
     @media (max-width: 992px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -1237,11 +1731,23 @@
       }
 
       .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) !important;
       }
     }
 
     @media (max-width: 768px) {
+
+      /* Prevent horizontal overflow from reveal animations on tablets/phones */
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(28px) !important;
+      }
+
+      .reveal-left.active,
+      .reveal-right.active {
+        transform: translateY(0) !important;
+      }
+
       .header-wrapper {
         top: 12px;
         padding-inline: 12px;
@@ -1253,7 +1759,7 @@
       }
 
       .navbar-pill.scrolled {
-        max-width: 94%;
+        max-width: 95%;
         padding: 6px 12px;
       }
 
@@ -1285,8 +1791,50 @@
         padding: 28px 22px;
       }
 
-      .contact-card-info, .contact-form-box {
-        padding: 28px 20px;
+      .contact-section {
+        padding: 60px 0;
+        overflow: hidden;
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 28px;
+        width: 100%;
+      }
+
+      .contact-card-info,
+      .contact-form-box {
+        padding: 24px 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+      }
+
+      .contact-card-info h3 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        word-break: break-word;
+      }
+
+      .contact-channel-item {
+        padding: 10px 14px;
+        gap: 10px;
+        font-size: 0.88rem;
+        word-break: break-all;
+        overflow-wrap: anywhere;
+      }
+
+      .contact-channel-item span {
+        word-break: break-all;
+        overflow-wrap: anywhere;
+        font-size: 0.84rem;
+      }
+
+      .form-control {
+        max-width: 100%;
+        padding: 12px 14px;
+        font-size: 0.9rem;
       }
 
       .footer-top {
@@ -1296,6 +1844,10 @@
     }
 
     @media (max-width: 480px) {
+      .container {
+        width: calc(100% - 24px) !important;
+      }
+
       .brand-avatar {
         width: 32px;
         height: 32px;
@@ -1311,6 +1863,16 @@
         font-size: 1.1rem;
       }
 
+      .badge-top-left {
+        left: 0;
+        top: -10px;
+      }
+
+      .badge-bottom-right {
+        right: 0;
+        bottom: 15px;
+      }
+
       .hero-title {
         font-size: 1.85rem;
       }
@@ -1318,10 +1880,55 @@
       .btn-brutal {
         width: 100%;
       }
+
+      .repos-grid,
+      .social-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card-info,
+      .contact-form-box {
+        padding: 20px 14px !important;
+        border-radius: var(--radius-lg) !important;
+        box-shadow: 4px 4px 0px #000000 !important;
+      }
+
+      .contact-channel-item {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+      }
+
+      .contact-channel-item i {
+        font-size: 1rem;
+      }
+
+      .contact-channel-item span {
+        font-size: 0.78rem;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- ========================================================
+       NEO-BRUTALIST PRELOADER
+       ======================================================== -->
+  <div class="preloader" id="sitePreloader">
+    <div class="preloader-box">
+      <div class="preloader-avatar">
+        <i class="fa-solid fa-shapes"></i>
+      </div>
+      <div class="preloader-title">Dhaval.M ✦ Loading...</div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar-fill" id="preloaderFill"></div>
+      </div>
+      <div class="preloader-status">
+        <span>Crafting interfaces</span>
+        <span id="preloaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================
        GLASS CAPSULE NAVBAR (ANIMATED ON SCROLL & MOBILE READY)
@@ -1331,23 +1938,25 @@
       <a href="#home" class="navbar-brand">
         <div class="brand-avatar">
           <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="44" fill="#FFE2C7" stroke="#000" stroke-width="6"/>
-            <path d="M20 40 C 25 15, 75 15, 80 40 C 72 32, 60 28, 48 28 C 34 28, 25 34, 20 40 Z" fill="#1A1A1A"/>
-            <circle cx="38" cy="48" r="4" fill="#000"/>
-            <circle cx="62" cy="48" r="4" fill="#000"/>
-            <path d="M40 62 Q 50 72 60 62" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M30 52 C 30 75, 70 75, 70 52 C 65 62, 35 62, 30 52 Z" fill="#1A1A1A"/>
+            <circle cx="50" cy="50" r="44" fill="#FFE2C7" stroke="#000" stroke-width="6" />
+            <path d="M20 40 C 25 15, 75 15, 80 40 C 72 32, 60 28, 48 28 C 34 28, 25 34, 20 40 Z" fill="#1A1A1A" />
+            <circle cx="38" cy="48" r="4" fill="#000" />
+            <circle cx="62" cy="48" r="4" fill="#000" />
+            <path d="M40 62 Q 50 72 60 62" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+            <path d="M30 52 C 30 75, 70 75, 70 52 C 65 62, 35 62, 30 52 Z" fill="#1A1A1A" />
           </svg>
         </div>
-        <span>Mr.MD</span>
+        <span>Dhaval.M</span>
       </a>
 
       <!-- Desktop Links -->
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#portfolio" class="nav-link">Projects</a></li>
+        <li><a href="#repos" class="nav-link">Repositories</a></li>
+        <li><a href="#socials" class="nav-link">Connect</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -1364,9 +1973,7 @@
     </nav>
   </header>
 
-  <!-- ========================================================
-       MOBILE DRAWER MENU
-       ======================================================== -->
+  <!-- Mobile Drawer Menu Modal -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu-content">
       <div class="mobile-menu-header">
@@ -1374,7 +1981,7 @@
           <div class="brand-avatar" style="width: 34px; height: 34px;">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
-          <span>Dhaval Mandaviya</span>
+          <span>Dhaval.M</span>
         </div>
         <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Navigation Menu" type="button">
           <i class="fa-solid fa-xmark"></i>
@@ -1383,15 +1990,18 @@
 
       <div class="mobile-links">
         <a href="#home" class="mobile-link"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="#services" class="mobile-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a>
         <a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="#services" class="mobile-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a>
         <a href="#portfolio" class="mobile-link"><i class="fa-solid fa-folder-open"></i> Projects</a>
+        <a href="#repos" class="mobile-link"><i class="fa-brands fa-github"></i> Repositories</a>
+        <a href="#socials" class="mobile-link"><i class="fa-solid fa-share-nodes"></i> Connect</a>
         <a href="#skills" class="mobile-link"><i class="fa-solid fa-code"></i> Skills</a>
         <a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a>
       </div>
 
-      <div style="margin-top: auto; padding-top: 20px;">
-        <a href="#contact" class="btn-brutal btn-dark mobile-link" style="justify-content: center; background: #000; color: #fff;">
+      <div style="margin-top: auto; padding-top: 15px;">
+        <a href="#contact" class="btn-brutal btn-dark mobile-link"
+          style="justify-content: center; background: #000; color: #fff;">
           Let's Talk <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -1404,14 +2014,15 @@
   <section class="hero-section" id="home">
     <div class="container">
       <div class="hero-grid">
-        
-        <div class="hero-text-content">
+
+        <div class="hero-text-content reveal-left">
           <h1 class="hero-title">
             I'm <span class="highlight-pink">Dhaval Mandaviya</span>,
             a Web Designer &amp; Developer from <span class="highlight-blue">India</span>
           </h1>
           <p class="hero-bio">
-            Creator of <strong>NodexUI</strong> CSS library. I build expressive, responsive, and animated web experiences with crisp typography and playful interactions.
+            Creator of <strong>NodexUI</strong> CSS library. I build expressive, responsive, and animated web
+            experiences with crisp typography and playful interactions.
           </p>
           <div class="hero-cta-group">
             <a href="#contact" class="btn-brutal btn-dark">
@@ -1423,41 +2034,42 @@
           </div>
         </div>
 
-        <div class="hero-avatar-wrapper">
+        <div class="hero-avatar-wrapper reveal-right">
           <div class="floating-badge badge-top-left">
             <span>✨</span> <b>UI / UX Craftsman</b>
           </div>
 
           <div class="hero-avatar-card">
-            <!-- Vector Illustration from Reference Design -->
             <svg viewBox="0 0 400 400" width="100%" height="100%">
-              <path d="M120 180 C 120 90, 280 90, 280 180 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
-              <circle cx="130" cy="205" r="18" fill="#FCE5CD" stroke="#000" stroke-width="7"/>
-              <circle cx="270" cy="205" r="18" fill="#FCE5CD" stroke="#000" stroke-width="7"/>
-              <rect x="175" y="240" width="50" height="40" fill="#FCD8B8" stroke="#000" stroke-width="7"/>
-              <path d="M140 170 C 140 250, 260 250, 260 170 Z" fill="#FCE5CD" stroke="#000" stroke-width="7"/>
-              <path d="M130 160 C 145 100, 245 95, 275 145 C 255 130, 230 135, 205 135 C 175 135, 155 145, 130 160 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
-              <circle cx="170" cy="185" r="22" fill="#FFFFFF" fill-opacity="0.8" stroke="#000" stroke-width="6"/>
-              <circle cx="230" cy="185" r="22" fill="#FFFFFF" fill-opacity="0.8" stroke="#000" stroke-width="6"/>
-              <line x1="192" y1="185" x2="208" y2="185" stroke="#000" stroke-width="6"/>
-              <circle cx="174" cy="185" r="6" fill="#000"/>
-              <circle cx="234" cy="185" r="6" fill="#000"/>
-              <circle cx="177" cy="182" r="2" fill="#FFF"/>
-              <circle cx="237" cy="182" r="2" fill="#FFF"/>
-              <path d="M152 154 Q 170 148 188 155" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
-              <path d="M212 155 Q 230 148 248 154" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
-              <path d="M200 188 Q 194 200 204 204" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
-              <path d="M185 218 Q 200 228 215 218" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none"/>
-              <path d="M142 195 C 142 270, 258 270, 258 195 C 248 235, 152 235, 142 195 Z" fill="#1C1B20" stroke="#000" stroke-width="6"/>
-              <path d="M90 380 C 100 270, 300 270, 310 380 Z" fill="#FF5E7E" stroke="#000" stroke-width="8"/>
-              <path d="M165 270 Q 200 286 235 270" stroke="#000" stroke-width="7" fill="#FF476E"/>
-              <circle cx="140" cy="315" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
-              <circle cx="180" cy="335" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
-              <circle cx="225" cy="310" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
-              <circle cx="265" cy="340" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
-              <circle cx="150" cy="365" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
-              <circle cx="205" cy="370" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
-              <circle cx="250" cy="375" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3"/>
+              <path d="M120 180 C 120 90, 280 90, 280 180 Z" fill="#1C1B20" stroke="#000" stroke-width="7" />
+              <circle cx="130" cy="205" r="18" fill="#FCE5CD" stroke="#000" stroke-width="7" />
+              <circle cx="270" cy="205" r="18" fill="#FCE5CD" stroke="#000" stroke-width="7" />
+              <rect x="175" y="240" width="50" height="40" fill="#FCD8B8" stroke="#000" stroke-width="7" />
+              <path d="M140 170 C 140 250, 260 250, 260 170 Z" fill="#FCE5CD" stroke="#000" stroke-width="7" />
+              <path d="M130 160 C 145 100, 245 95, 275 145 C 255 130, 230 135, 205 135 C 175 135, 155 145, 130 160 Z"
+                fill="#1C1B20" stroke="#000" stroke-width="7" />
+              <circle cx="170" cy="185" r="22" fill="#FFFFFF" fill-opacity="0.8" stroke="#000" stroke-width="6" />
+              <circle cx="230" cy="185" r="22" fill="#FFFFFF" fill-opacity="0.8" stroke="#000" stroke-width="6" />
+              <line x1="192" y1="185" x2="208" y2="185" stroke="#000" stroke-width="6" />
+              <circle cx="174" cy="185" r="6" fill="#000" />
+              <circle cx="234" cy="185" r="6" fill="#000" />
+              <circle cx="177" cy="182" r="2" fill="#FFF" />
+              <circle cx="237" cy="182" r="2" fill="#FFF" />
+              <path d="M152 154 Q 170 148 188 155" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+              <path d="M212 155 Q 230 148 248 154" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+              <path d="M200 188 Q 194 200 204 204" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+              <path d="M185 218 Q 200 228 215 218" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+              <path d="M142 195 C 142 270, 258 270, 258 195 C 248 235, 152 235, 142 195 Z" fill="#1C1B20" stroke="#000"
+                stroke-width="6" />
+              <path d="M90 380 C 100 270, 300 270, 310 380 Z" fill="#FF5E7E" stroke="#000" stroke-width="8" />
+              <path d="M165 270 Q 200 286 235 270" stroke="#000" stroke-width="7" fill="#FF476E" />
+              <circle cx="140" cy="315" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3" />
+              <circle cx="180" cy="335" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3" />
+              <circle cx="225" cy="310" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3" />
+              <circle cx="265" cy="340" r="9" fill="#FFDC5E" stroke="#000" stroke-width="3" />
+              <circle cx="150" cy="365" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3" />
+              <circle cx="205" cy="370" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3" />
+              <circle cx="250" cy="375" r="8" fill="#FFDC5E" stroke="#000" stroke-width="3" />
             </svg>
           </div>
 
@@ -1510,80 +2122,86 @@
   <!-- ========================================================
        SERVICES SECTION
        ======================================================== -->
-  <section class="services-section reveal" id="services">
+  <section class="services-section" id="services">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-up">
         <h2>My broad <span class="highlight-pink">set of services</span></h2>
         <p>Combining bold creative design with pristine, accessible frontend code to build products people remember.</p>
       </div>
 
       <div class="services-grid">
-        <article class="service-card">
+        <article class="service-card reveal-up stagger-1">
           <div class="service-card-illu">
             <svg width="180" height="130" viewBox="0 0 200 140" fill="none">
-              <rect x="15" y="15" width="170" height="110" rx="14" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
-              <path d="M15 42 L 185 42" stroke="#000" stroke-width="4"/>
-              <circle cx="32" cy="28" r="4.5" fill="#FF5E7E" stroke="#000" stroke-width="2"/>
-              <circle cx="46" cy="28" r="4.5" fill="#FFC043" stroke="#000" stroke-width="2"/>
-              <circle cx="60" cy="28" r="4.5" fill="#10B981" stroke="#000" stroke-width="2"/>
-              <rect x="75" y="55" width="60" height="42" rx="8" fill="#2563EB" stroke="#000" stroke-width="3"/>
-              <line x1="30" y1="58" x2="62" y2="58" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-              <line x1="30" y1="70" x2="56" y2="70" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round"/>
-              <line x1="30" y1="82" x2="60" y2="82" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round"/>
-              <path d="M130 90 L 146 112 L 138 114 L 144 126 L 138 129 L 132 117 L 124 122 Z" fill="#FFC043" stroke="#000" stroke-width="3"/>
+              <rect x="15" y="15" width="170" height="110" rx="14" fill="#FFFFFF" stroke="#000" stroke-width="4" />
+              <path d="M15 42 L 185 42" stroke="#000" stroke-width="4" />
+              <circle cx="32" cy="28" r="4.5" fill="#FF5E7E" stroke="#000" stroke-width="2" />
+              <circle cx="46" cy="28" r="4.5" fill="#FFC043" stroke="#000" stroke-width="2" />
+              <circle cx="60" cy="28" r="4.5" fill="#10B981" stroke="#000" stroke-width="2" />
+              <rect x="75" y="55" width="60" height="42" rx="8" fill="#2563EB" stroke="#000" stroke-width="3" />
+              <line x1="30" y1="58" x2="62" y2="58" stroke="#000" stroke-width="4" stroke-linecap="round" />
+              <line x1="30" y1="70" x2="56" y2="70" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round" />
+              <line x1="30" y1="82" x2="60" y2="82" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round" />
+              <path d="M130 90 L 146 112 L 138 114 L 144 126 L 138 129 L 132 117 L 124 122 Z" fill="#FFC043"
+                stroke="#000" stroke-width="3" />
             </svg>
           </div>
           <h3>UI &amp; Web Design</h3>
-          <p>Pixel-perfect website layouts, playful user interfaces, design systems, and wireframes engineered for usability.</p>
+          <p>Pixel-perfect website layouts, playful user interfaces, design systems, and wireframes engineered for
+            usability.</p>
           <div class="service-card-footer">
             <span class="service-tag">Figma &amp; UI</span>
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card reveal-up stagger-2">
           <div class="service-card-illu">
             <svg width="180" height="130" viewBox="0 0 200 140" fill="none">
-              <rect x="35" y="10" width="130" height="120" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
-              <rect x="31" y="6" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
-              <rect x="161" y="6" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
-              <rect x="31" y="126" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
-              <rect x="161" y="126" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5"/>
-              <rect x="62" y="16" width="76" height="110" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
-              <rect x="76" y="32" width="48" height="26" rx="6" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
-              <circle cx="84" cy="74" r="7" fill="#FFC043" stroke="#000" stroke-width="2.5"/>
-              <circle cx="106" cy="74" r="7" fill="#2563EB" stroke="#000" stroke-width="2.5"/>
-              <line x1="76" y1="94" x2="114" y2="94" stroke="#000" stroke-width="3" stroke-linecap="round"/>
-              <line x1="82" y1="104" x2="108" y2="104" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round"/>
+              <rect x="35" y="10" width="130" height="120" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4"
+                fill="none" />
+              <rect x="31" y="6" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5" />
+              <rect x="161" y="6" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5" />
+              <rect x="31" y="126" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5" />
+              <rect x="161" y="126" width="8" height="8" fill="#2563EB" stroke="#000" stroke-width="1.5" />
+              <rect x="62" y="16" width="76" height="110" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="4" />
+              <rect x="76" y="32" width="48" height="26" rx="6" fill="#FF5E7E" stroke="#000" stroke-width="3" />
+              <circle cx="84" cy="74" r="7" fill="#FFC043" stroke="#000" stroke-width="2.5" />
+              <circle cx="106" cy="74" r="7" fill="#2563EB" stroke="#000" stroke-width="2.5" />
+              <line x1="76" y1="94" x2="114" y2="94" stroke="#000" stroke-width="3" stroke-linecap="round" />
+              <line x1="82" y1="104" x2="108" y2="104" stroke="#8C8C9E" stroke-width="3" stroke-linecap="round" />
             </svg>
           </div>
           <h3>Responsive Development</h3>
-          <p>Mobile-first web experiences that flow effortlessly across smartphones, tablets, and ultra-wide desktops.</p>
+          <p>Mobile-first web experiences that flow effortlessly across smartphones, tablets, and ultra-wide desktops.
+          </p>
           <div class="service-card-footer">
             <span class="service-tag">HTML5 / CSS3</span>
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </article>
 
-        <article class="service-card">
+        <article class="service-card reveal-up stagger-3">
           <div class="service-card-illu">
             <svg width="180" height="130" viewBox="0 0 200 140" fill="none">
-              <rect x="78" y="10" width="44" height="26" rx="6" fill="#E2E8F0" stroke="#000" stroke-width="3.5"/>
-              <rect x="78" y="104" width="44" height="26" rx="6" fill="#E2E8F0" stroke="#000" stroke-width="3.5"/>
-              <rect x="68" y="30" width="64" height="80" rx="20" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
-              <rect x="78" y="42" width="44" height="56" rx="10" fill="#10B981" stroke="#000" stroke-width="3"/>
-              <path d="M84 72 L 92 72 L 96 62 L 102 80 L 106 72 L 116 72" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="146" y="24" width="22" height="92" rx="4" fill="#FFFFFF" stroke="#000" stroke-width="3.5"/>
-              <line x1="146" y1="36" x2="158" y2="36" stroke="#000" stroke-width="2.5"/>
-              <line x1="146" y1="48" x2="154" y2="48" stroke="#000" stroke-width="2"/>
-              <line x1="146" y1="60" x2="160" y2="60" stroke="#000" stroke-width="2.5"/>
-              <line x1="146" y1="72" x2="154" y2="72" stroke="#000" stroke-width="2"/>
-              <line x1="146" y1="84" x2="160" y2="84" stroke="#000" stroke-width="2.5"/>
-              <line x1="146" y1="96" x2="154" y2="96" stroke="#000" stroke-width="2"/>
+              <rect x="78" y="10" width="44" height="26" rx="6" fill="#E2E8F0" stroke="#000" stroke-width="3.5" />
+              <rect x="78" y="104" width="44" height="26" rx="6" fill="#E2E8F0" stroke="#000" stroke-width="3.5" />
+              <rect x="68" y="30" width="64" height="80" rx="20" fill="#FFFFFF" stroke="#000" stroke-width="4" />
+              <rect x="78" y="42" width="44" height="56" rx="10" fill="#10B981" stroke="#000" stroke-width="3" />
+              <path d="M84 72 L 92 72 L 96 62 L 102 80 L 106 72 L 116 72" stroke="#FFFFFF" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <rect x="146" y="24" width="22" height="92" rx="4" fill="#FFFFFF" stroke="#000" stroke-width="3.5" />
+              <line x1="146" y1="36" x2="158" y2="36" stroke="#000" stroke-width="2.5" />
+              <line x1="146" y1="48" x2="154" y2="48" stroke="#000" stroke-width="2" />
+              <line x1="146" y1="60" x2="160" y2="60" stroke="#000" stroke-width="2.5" />
+              <line x1="146" y1="72" x2="154" y2="72" stroke="#000" stroke-width="2" />
+              <line x1="146" y1="84" x2="160" y2="84" stroke="#000" stroke-width="2.5" />
+              <line x1="146" y1="96" x2="154" y2="96" stroke="#000" stroke-width="2" />
             </svg>
           </div>
           <h3>CSS Libraries &amp; Systems</h3>
-          <p>Author of custom CSS architecture, atomic utility packages, reusable component libraries, and web toolkits.</p>
+          <p>Author of custom CSS architecture, atomic utility packages, reusable component libraries, and web toolkits.
+          </p>
           <div class="service-card-footer">
             <span class="service-tag">NodexUI Core</span>
             <i class="fa-solid fa-arrow-right"></i>
@@ -1596,35 +2214,38 @@
   <!-- ========================================================
        ABOUT ME SECTION
        ======================================================== -->
-  <section class="about-section reveal" id="about">
+  <section class="about-section" id="about">
     <div class="container">
       <div class="about-grid">
-        
-        <div class="about-visual">
+
+        <div class="about-visual reveal-scale">
           <div class="about-circle-frame">
             <svg viewBox="0 0 400 400" width="100%" height="100%">
-              <path d="M130 180 C 130 90, 260 90, 260 180 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
-              <circle cx="135" cy="185" r="15" fill="#FCE5CD" stroke="#000" stroke-width="6"/>
-              <path d="M145 160 C 145 230, 240 230, 240 160 Z" fill="#FCE5CD" stroke="#000" stroke-width="6"/>
-              <path d="M148 180 C 148 245, 238 245, 238 180 C 228 215, 158 215, 148 180 Z" fill="#1C1B20" stroke="#000" stroke-width="6"/>
-              <circle cx="180" cy="170" r="18" fill="#FFF" fill-opacity="0.8" stroke="#000" stroke-width="5"/>
-              <circle cx="184" cy="170" r="5" fill="#000"/>
-              <path d="M110 390 C 120 250, 280 250, 290 390 Z" fill="#FFC043" stroke="#000" stroke-width="8"/>
-              <circle cx="160" cy="290" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
-              <circle cx="210" cy="280" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
-              <circle cx="180" cy="325" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
-              <circle cx="230" cy="335" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3"/>
-              <path d="M220 270 L 320 280 L 305 350 L 210 330 Z" fill="#1C1B20" stroke="#000" stroke-width="7"/>
-              <circle cx="265" cy="310" r="8" fill="#FFF"/>
-              <ellipse cx="230" cy="325" rx="14" ry="9" fill="#FCE5CD" stroke="#000" stroke-width="5"/>
+              <path d="M130 180 C 130 90, 260 90, 260 180 Z" fill="#1C1B20" stroke="#000" stroke-width="7" />
+              <circle cx="135" cy="185" r="15" fill="#FCE5CD" stroke="#000" stroke-width="6" />
+              <path d="M145 160 C 145 230, 240 230, 240 160 Z" fill="#FCE5CD" stroke="#000" stroke-width="6" />
+              <path d="M148 180 C 148 245, 238 245, 238 180 C 228 215, 158 215, 148 180 Z" fill="#1C1B20" stroke="#000"
+                stroke-width="6" />
+              <circle cx="180" cy="170" r="18" fill="#FFF" fill-opacity="0.8" stroke="#000" stroke-width="5" />
+              <circle cx="184" cy="170" r="5" fill="#000" />
+              <path d="M110 390 C 120 250, 280 250, 290 390 Z" fill="#FFC043" stroke="#000" stroke-width="8" />
+              <circle cx="160" cy="290" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3" />
+              <circle cx="210" cy="280" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3" />
+              <circle cx="180" cy="325" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3" />
+              <circle cx="230" cy="335" r="8" fill="#FF5E7E" stroke="#000" stroke-width="3" />
+              <path d="M220 270 L 320 280 L 305 350 L 210 330 Z" fill="#1C1B20" stroke="#000" stroke-width="7" />
+              <circle cx="265" cy="310" r="8" fill="#FFF" />
+              <ellipse cx="230" cy="325" rx="14" ry="9" fill="#FCE5CD" stroke="#000" stroke-width="5" />
             </svg>
           </div>
         </div>
 
-        <div class="about-content">
+        <div class="about-content reveal-right">
           <h2>Who's behind all this <span class="highlight-blue">great work?</span></h2>
           <p class="about-desc">
-            Hello! I'm <strong>Dhaval Mandaviya</strong>, a developer and UI craftsman based in India. I love crafting clean, distinctive digital products that balance thoughtful functionality with striking neo-brutalist aesthetics.
+            Hello! I'm <strong>Dhaval Mandaviya</strong>, a BCA student at <strong>Darshan University, Rajkot</strong>
+            and web UI creator. I love crafting clean, distinctive digital products that balance thoughtful
+            functionality with striking neo-brutalist aesthetics.
           </p>
 
           <div class="about-features">
@@ -1639,16 +2260,16 @@
             <div class="feature-item">
               <div class="feature-bullet"><i class="fa-solid fa-check"></i></div>
               <div class="feature-text">
-                <strong>50+ Web Projects &amp; Experiments</strong>
-                <span>Developed responsive landing pages, documentation portals, and interactive tools.</span>
+                <strong>Open Source Contributor &amp; Developer</strong>
+                <span>Passionate about clean semantics, accessible design systems, and responsive web code.</span>
               </div>
             </div>
 
             <div class="feature-item">
               <div class="feature-bullet"><i class="fa-solid fa-check"></i></div>
               <div class="feature-text">
-                <strong>Performance &amp; Accessibility First</strong>
-                <span>Semantic HTML, zero unnecessary bloat, rapid loading speeds, and joyful motion.</span>
+                <strong>Performance &amp; Motion First</strong>
+                <span>Rapid load speeds, zero bloat, intuitive interfaces, and delightful micro-interactions.</span>
               </div>
             </div>
           </div>
@@ -1663,24 +2284,25 @@
   </section>
 
   <!-- ========================================================
-       PORTFOLIO / PROJECTS SECTION (NODEXUI & GITHUB PROJECTS ONLY)
+       PORTFOLIO SECTION (NODEXUI & GITHUB PROJECTS ONLY)
        ======================================================== -->
-  <section class="portfolio-section reveal" id="portfolio">
+  <section class="portfolio-section" id="portfolio">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-up">
         <h2>Take a look at my <span class="highlight-yellow">featured projects</span></h2>
         <p>Explore my flagship CSS library and open-source repositories hosted on GitHub.</p>
       </div>
 
       <div class="portfolio-grid">
-        
-        <!-- Project 1: NodexUI (Blue card matching reference) -->
-        <article class="project-card">
+
+        <!-- Project 1: NodexUI -->
+        <article class="project-card reveal-up stagger-1">
           <div class="project-card-info">
             <span class="project-tag">CSS Library &bull; UI/UX System</span>
             <h3>NodexUI — Modern CSS Design System</h3>
             <p>
-              A lightweight, highly customizable CSS library featuring ready-to-use components, quick menus, color systems, and accessible layouts for modern makers.
+              A lightweight, highly customizable CSS library featuring ready-to-use components, quick menus, color
+              systems, and accessible layouts for modern makers.
             </p>
             <div class="project-tech-tags">
               <span class="tech-pill">CSS3 Architecture</span>
@@ -1694,34 +2316,34 @@
           </div>
 
           <div class="project-card-preview preview-blue">
-            <!-- Vector Desktop Monitor Wireframe (matching reference exactly!) -->
             <svg width="340" height="240" viewBox="0 0 340 240" fill="none">
-              <rect x="150" y="180" width="40" height="30" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
-              <rect x="120" y="210" width="100" height="14" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="4"/>
-              <rect x="35" y="25" width="270" height="160" rx="16" fill="#000000" opacity="0.2"/>
-              <rect x="30" y="20" width="270" height="160" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="5"/>
-              <rect x="45" y="35" width="55" height="130" rx="6" fill="#F4F4F8" stroke="#000" stroke-width="2.5"/>
-              <line x1="55" y1="50" x2="85" y2="50" stroke="#000" stroke-width="3" stroke-linecap="round"/>
-              <line x1="55" y1="62" x2="78" y2="62" stroke="#8C8C9E" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="55" y1="74" x2="82" y2="74" stroke="#8C8C9E" stroke-width="2.5" stroke-linecap="round"/>
-              <rect x="115" y="45" width="115" height="80" rx="10" fill="#2563EB" stroke="#000" stroke-width="3"/>
-              <circle cx="260" cy="50" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
-              <circle cx="260" cy="65" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
-              <circle cx="260" cy="80" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
-              <circle cx="260" cy="95" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
-              <circle cx="260" cy="110" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2"/>
-              <rect x="115" y="135" width="160" height="18" rx="4" fill="#F4F4F8" stroke="#000" stroke-width="2.5"/>
+              <rect x="150" y="180" width="40" height="30" fill="#FFFFFF" stroke="#000" stroke-width="4" />
+              <rect x="120" y="210" width="100" height="14" rx="6" fill="#FFFFFF" stroke="#000" stroke-width="4" />
+              <rect x="35" y="25" width="270" height="160" rx="16" fill="#000000" opacity="0.2" />
+              <rect x="30" y="20" width="270" height="160" rx="16" fill="#FFFFFF" stroke="#000" stroke-width="5" />
+              <rect x="45" y="35" width="55" height="130" rx="6" fill="#F4F4F8" stroke="#000" stroke-width="2.5" />
+              <line x1="55" y1="50" x2="85" y2="50" stroke="#000" stroke-width="3" stroke-linecap="round" />
+              <line x1="55" y1="62" x2="78" y2="62" stroke="#8C8C9E" stroke-width="2.5" stroke-linecap="round" />
+              <line x1="55" y1="74" x2="82" y2="74" stroke="#8C8C9E" stroke-width="2.5" stroke-linecap="round" />
+              <rect x="115" y="45" width="115" height="80" rx="10" fill="#2563EB" stroke="#000" stroke-width="3" />
+              <circle cx="260" cy="50" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2" />
+              <circle cx="260" cy="65" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2" />
+              <circle cx="260" cy="80" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2" />
+              <circle cx="260" cy="95" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2" />
+              <circle cx="260" cy="110" r="4.5" fill="#2563EB" stroke="#000" stroke-width="2" />
+              <rect x="115" y="135" width="160" height="18" rx="4" fill="#F4F4F8" stroke="#000" stroke-width="2.5" />
             </svg>
           </div>
         </article>
 
-        <!-- Project 2: My GitHub Projects (Red/Coral card matching reference) -->
-        <article class="project-card">
+        <!-- Project 2: My GitHub Projects -->
+        <article class="project-card reveal-up stagger-2">
           <div class="project-card-info">
             <span class="project-tag">Open Source &bull; Code Repositories</span>
             <h3>My GitHub Projects &amp; Repositories</h3>
             <p>
-              A collection of open-source projects, web tools, developer utilities, and UI experiments built with clean code and distributed freely for the community.
+              A collection of open-source projects, web tools, developer utilities, and UI experiments built with clean
+              code and distributed freely for the community.
             </p>
             <div class="project-tech-tags">
               <span class="tech-pill">GitHub</span>
@@ -1729,38 +2351,35 @@
               <span class="tech-pill">Open Source</span>
               <span class="tech-pill">Web Tools</span>
             </div>
-            <a href="https://github.com/NodexUI" target="_blank" class="project-action-link">
+            <a href="https://github.com/dhavalmandaviya" target="_blank" class="project-action-link">
               Explore Repositories <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
 
           <div class="project-card-preview preview-red">
-            <!-- Vector Terminal & GitHub Code Window -->
             <svg width="340" height="240" viewBox="0 0 340 240" fill="none">
-              <rect x="40" y="25" width="260" height="190" rx="18" fill="#FFFFFF" stroke="#000" stroke-width="5"/>
-              <path d="M40 58 L 300 58" stroke="#000" stroke-width="4"/>
-              <circle cx="58" cy="42" r="4.5" fill="#FF5E7E" stroke="#000" stroke-width="2"/>
-              <circle cx="72" cy="42" r="4.5" fill="#FFC043" stroke="#000" stroke-width="2"/>
-              <circle cx="86" cy="42" r="4.5" fill="#10B981" stroke="#000" stroke-width="2"/>
-              
-              <!-- Code block window -->
-              <rect x="60" y="75" width="140" height="110" rx="12" fill="#EE3546" stroke="#000" stroke-width="3.5"/>
-              <!-- Octocat / Code icon in center -->
-              <circle cx="130" cy="130" r="24" fill="#FFFFFF" stroke="#000" stroke-width="3"/>
-              <!-- Code brackets </ > -->
-              <path d="M122 124 L 114 130 L 122 136" stroke="#EE3546" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M138 124 L 146 130 L 138 136" stroke="#EE3546" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="132" y1="122" x2="128" y2="138" stroke="#EE3546" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="40" y="25" width="260" height="190" rx="18" fill="#FFFFFF" stroke="#000" stroke-width="5" />
+              <path d="M40 58 L 300 58" stroke="#000" stroke-width="4" />
+              <circle cx="58" cy="42" r="4.5" fill="#FF5E7E" stroke="#000" stroke-width="2" />
+              <circle cx="72" cy="42" r="4.5" fill="#FFC043" stroke="#000" stroke-width="2" />
+              <circle cx="86" cy="42" r="4.5" fill="#10B981" stroke="#000" stroke-width="2" />
 
-              <!-- Right Git Commit Branch indicators -->
-              <rect x="215" y="75" width="65" height="48" rx="8" fill="#F8F8FC" stroke="#000" stroke-width="2.5"/>
-              <circle cx="235" cy="99" r="6" fill="#EE3546"/>
-              <circle cx="260" cy="99" r="6" fill="#2563EB"/>
-              <line x1="241" y1="99" x2="254" y2="99" stroke="#000" stroke-width="2"/>
+              <rect x="60" y="75" width="140" height="110" rx="12" fill="#EE3546" stroke="#000" stroke-width="3.5" />
+              <circle cx="130" cy="130" r="24" fill="#FFFFFF" stroke="#000" stroke-width="3" />
+              <path d="M122 124 L 114 130 L 122 136" stroke="#EE3546" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M138 124 L 146 130 L 138 136" stroke="#EE3546" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <line x1="132" y1="122" x2="128" y2="138" stroke="#EE3546" stroke-width="2.5" stroke-linecap="round" />
 
-              <rect x="215" y="137" width="65" height="48" rx="8" fill="#F8F8FC" stroke="#000" stroke-width="2.5"/>
-              <circle cx="247" cy="161" r="9" fill="#10B981"/>
-              <path d="M244 161 L 246 163 L 250 159" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+              <rect x="215" y="75" width="65" height="48" rx="8" fill="#F8F8FC" stroke="#000" stroke-width="2.5" />
+              <circle cx="235" cy="99" r="6" fill="#EE3546" />
+              <circle cx="260" cy="99" r="6" fill="#2563EB" />
+              <line x1="241" y1="99" x2="254" y2="99" stroke="#000" stroke-width="2" />
+
+              <rect x="215" y="137" width="65" height="48" rx="8" fill="#F8F8FC" stroke="#000" stroke-width="2.5" />
+              <circle cx="247" cy="161" r="9" fill="#10B981" />
+              <path d="M244 161 L 246 163 L 250 159" stroke="#FFF" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
         </article>
@@ -1770,50 +2389,263 @@
   </section>
 
   <!-- ========================================================
-       SKILLS & TECH STACK SECTION
+       NEW: GITHUB REPOSITORIES RESPONSIVE SECTION
        ======================================================== -->
-  <section class="skills-section reveal" id="skills">
+  <section class="github-repos-section" id="repos">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-up">
+        <h2>My GitHub <span class="highlight-blue">repositories</span></h2>
+        <p>Live repository showcase imported from <strong>github.com/dhavalmandaviya</strong> with star counts,
+          languages, and direct code access.</p>
+      </div>
+
+      <!-- GitHub Profile Card Banner -->
+      <div class="github-user-bar reveal-scale">
+        <div class="github-user-left">
+          <div class="github-avatar-circle">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="github-user-info">
+            <h3>Dhaval Mandaviya (@dhavalmandaviya)</h3>
+            <p>BCA Student at Darshan University, Rajkot &bull; Frontend Developer &amp; UI/UX Enthusiast</p>
+          </div>
+        </div>
+        <a href="https://github.com/dhavalmandaviya" target="_blank" class="btn-brutal btn-dark"
+          style="padding: 10px 20px; font-size: 0.88rem;">
+          Follow on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+
+      <!-- Repositories Grid (Auto-populated by JavaScript + Pre-rendered for zero layout shift) -->
+      <div class="repos-grid" id="githubReposGrid">
+
+        <!-- Repo 1: dhavalmandaviya.github.io -->
+        <article class="repo-card reveal-up stagger-1">
+          <div>
+            <div class="repo-card-top">
+              <i class="fa-solid fa-book-bookmark"></i>
+              <span class="repo-visibility">Public</span>
+            </div>
+            <h4>dhavalmandaviya.github.io</h4>
+            <p>Official portfolio website featuring responsive neo-brutalist aesthetics, fluid animations, and developer
+              showcase.</p>
+          </div>
+          <div>
+            <div class="repo-card-meta">
+              <span class="repo-lang"><span class="repo-lang-dot" style="background: #e34c26;"></span> HTML</span>
+              <span><i class="fa-regular fa-star"></i> 1</span>
+              <span><i class="fa-solid fa-code-fork"></i> 1</span>
+            </div>
+            <div class="repo-btn-row">
+              <a href="https://github.com/dhavalmandaviya/dhavalmandaviya.github.io" target="_blank"
+                class="repo-link-btn">
+                <i class="fa-brands fa-github"></i> View Code
+              </a>
+              <a href="https://dhavalmandaviya.github.io" target="_blank" class="repo-link-btn"
+                style="background: var(--yellow-highlight);">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Repo 2: BCA -->
+        <article class="repo-card reveal-up stagger-2">
+          <div>
+            <div class="repo-card-top">
+              <i class="fa-solid fa-book-bookmark"></i>
+              <span class="repo-visibility">Public</span>
+            </div>
+            <h4>BCA</h4>
+            <p>Languages, algorithms, lab practicals, and academic source code repository for BCA coursework and
+              university students.</p>
+          </div>
+          <div>
+            <div class="repo-card-meta">
+              <span class="repo-lang"><span class="repo-lang-dot" style="background: #555555;"></span> C / Data
+                Structures</span>
+              <span><i class="fa-regular fa-star"></i> 1</span>
+              <span><i class="fa-solid fa-code-fork"></i> 0</span>
+            </div>
+            <div class="repo-btn-row">
+              <a href="https://github.com/dhavalmandaviya/BCA" target="_blank" class="repo-link-btn">
+                <i class="fa-brands fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Repo 3: NodexUI (Flagship Project) -->
+        <article class="repo-card reveal-up stagger-3">
+          <div>
+            <div class="repo-card-top">
+              <i class="fa-solid fa-cubes"></i>
+              <span class="repo-visibility"
+                style="background: var(--pink-light); color: var(--pink-highlight);">Flagship</span>
+            </div>
+            <h4>NodexUI (nodexui.github.io)</h4>
+            <p>A lightweight, modern CSS library with ready-to-use UI components, color variables, and rapid layout
+              helpers.</p>
+          </div>
+          <div>
+            <div class="repo-card-meta">
+              <span class="repo-lang"><span class="repo-lang-dot" style="background: #563d7c;"></span> CSS3 / JS</span>
+              <span><i class="fa-regular fa-star"></i> Featured</span>
+              <span><i class="fa-solid fa-code-fork"></i> Open</span>
+            </div>
+            <div class="repo-btn-row">
+              <a href="https://github.com/NodexUI" target="_blank" class="repo-link-btn">
+                <i class="fa-brands fa-github"></i> View Org
+              </a>
+              <a href="https://nodexui.github.io" target="_blank" class="repo-link-btn"
+                style="background: var(--pink-highlight); color: #fff;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Library
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       NEW: SOCIAL MEDIA ACCOUNTS SECTION
+       ======================================================== -->
+  <section class="social-accounts-section" id="socials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <h2>Connect on <span class="highlight-pink">social media</span></h2>
+        <p>Follow my journey, connect professionally, or reach out directly for collaborations.</p>
+      </div>
+
+      <div class="social-cards-grid">
+
+        <!-- GitHub Card -->
+        <div class="social-box social-box-github reveal-up stagger-1">
+          <div>
+            <div class="social-box-top">
+              <div class="social-box-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <span class="social-box-badge">Open Source</span>
+            </div>
+            <h3>GitHub Profile</h3>
+            <p>Explore my open-source code repositories, stars, forks, and development activity.</p>
+          </div>
+          <div class="social-box-footer">
+            <span style="font-weight: 800; font-size: 0.95rem;">@dhavalmandaviya</span>
+            <a href="https://github.com/dhavalmandaviya" target="_blank" class="btn-brutal btn-dark"
+              style="padding: 9px 18px; font-size: 0.88rem;">
+              View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- LinkedIn Card -->
+        <div class="social-box social-box-linkedin reveal-up stagger-2">
+          <div>
+            <div class="social-box-top">
+              <div class="social-box-icon" style="color: #0A66C2;">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <span class="social-box-badge" style="background: #0A66C2;">Network</span>
+            </div>
+            <h3>LinkedIn</h3>
+            <p>Connect with me professionally, discuss career opportunities, and see my latest updates.</p>
+          </div>
+          <div class="social-box-footer">
+            <span style="font-weight: 800; font-size: 0.95rem;">Dhaval Mandaviya</span>
+            <a href="https://www.linkedin.com/in/dhavalmandaviya" target="_blank" class="btn-brutal btn-dark"
+              style="padding: 9px 18px; font-size: 0.88rem;">
+              Connect <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Email Card -->
+        <div class="social-box social-box-email reveal-up stagger-3">
+          <div>
+            <div class="social-box-top">
+              <div class="social-box-icon" style="color: var(--pink-highlight);">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <span class="social-box-badge" style="background: var(--pink-highlight);">Direct Inbox</span>
+            </div>
+            <h3>Email Inbox</h3>
+            <p>Reach out directly for freelance contracts, frontend inquiries, or collaboration ideas.</p>
+          </div>
+          <div class="social-box-footer">
+            <span style="font-weight: 800; font-size: 0.95rem;">nodexui@gmail.com</span>
+            <a href="mailto:nodexui@gmail.com" class="btn-brutal btn-dark"
+              style="padding: 9px 18px; font-size: 0.88rem;">
+              Send Email <i class="fa-solid fa-paper-plane"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SKILLS SECTION
+       ======================================================== -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
         <h2>Tools &amp; <span class="highlight-pink">technologies</span> I trust</h2>
-        <p>A battle-tested set of tools and technologies that I use to deliver fast, reliable, and scalable web solutions.</p>
+        <p>A battle-tested set of tools and technologies that I use to deliver fast, reliable, and scalable web
+          solutions.</p>
       </div>
 
       <div class="skills-grid">
-        <div class="skill-card">
+        <div class="skill-card reveal-up stagger-1">
           <div class="skill-icon" style="color: #E34F26;"><i class="fa-brands fa-html5"></i></div>
           <h4>HTML5 Semantic</h4>
-          <div class="skill-level-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+          <div class="skill-level-bar">
+            <div class="skill-fill" style="width: 95%;"></div>
+          </div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card reveal-up stagger-2">
           <div class="skill-icon" style="color: #1572B6;"><i class="fa-brands fa-css3-alt"></i></div>
           <h4>Modern CSS3</h4>
-          <div class="skill-level-bar"><div class="skill-fill" style="width: 96%; background: var(--pink-highlight);"></div></div>
+          <div class="skill-level-bar">
+            <div class="skill-fill" style="width: 96%; background: var(--pink-highlight);"></div>
+          </div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card reveal-up stagger-3">
           <div class="skill-icon" style="color: #F7DF1E;"><i class="fa-brands fa-js"></i></div>
           <h4>JavaScript (ES6+)</h4>
-          <div class="skill-level-bar"><div class="skill-fill" style="width: 88%; background: var(--yellow-highlight);"></div></div>
+          <div class="skill-level-bar">
+            <div class="skill-fill" style="width: 88%; background: var(--yellow-highlight);"></div>
+          </div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card reveal-up stagger-4">
           <div class="skill-icon" style="color: #61DAFB;"><i class="fa-brands fa-react"></i></div>
           <h4>React Framework</h4>
-          <div class="skill-level-bar"><div class="skill-fill" style="width: 82%; background: var(--blue-highlight);"></div></div>
+          <div class="skill-level-bar">
+            <div class="skill-fill" style="width: 82%; background: var(--blue-highlight);"></div>
+          </div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card reveal-up stagger-1">
           <div class="skill-icon" style="color: #F24E1E;"><i class="fa-brands fa-figma"></i></div>
           <h4>Figma &amp; UI/UX</h4>
-          <div class="skill-level-bar"><div class="skill-fill" style="width: 90%; background: var(--purple-highlight);"></div></div>
+          <div class="skill-level-bar">
+            <div class="skill-fill" style="width: 90%; background: var(--purple-highlight);"></div>
+          </div>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card reveal-up stagger-2">
           <div class="skill-icon" style="color: #000000;"><i class="fa-brands fa-github"></i></div>
           <h4>Git &amp; GitHub</h4>
-          <div class="skill-level-bar"><div class="skill-fill" style="width: 92%; background: var(--green-highlight);"></div></div>
+          <div class="skill-level-bar">
+            <div class="skill-fill" style="width: 92%; background: var(--green-highlight);"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1822,15 +2654,16 @@
   <!-- ========================================================
        CONTACT SECTION
        ======================================================== -->
-  <section class="contact-section reveal" id="contact">
+  <section class="contact-section" id="contact">
     <div class="container">
       <div class="contact-grid">
-        
-        <div class="contact-card-info">
+
+        <div class="contact-card-info reveal-left">
           <div>
             <h3>Let's start something <span class="highlight-pink">awesome!</span></h3>
             <p>
-              Have a web project in mind, need a custom CSS framework, or want to collaborate on open-source? Drop me a message!
+              Have a web project in mind, need a custom CSS framework, or want to collaborate on open-source? Drop me a
+              message!
             </p>
 
             <div class="contact-channels">
@@ -1839,9 +2672,14 @@
                 <span>nodexui@gmail.com</span>
               </a>
 
-              <a href="https://github.com/NodexUI" target="_blank" class="contact-channel-item">
+              <a href="https://github.com/dhavalmandaviya" target="_blank" class="contact-channel-item">
                 <i class="fa-brands fa-github"></i>
-                <span>github.com/NodexUI</span>
+                <span>github.com/dhavalmandaviya</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/dhavalmandaviya" target="_blank" class="contact-channel-item">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>linkedin.com/in/dhavalmandaviya</span>
               </a>
 
               <div class="contact-channel-item">
@@ -1851,9 +2689,11 @@
             </div>
           </div>
 
-          <div style="background: #FFFFFF; border: 2px solid #000; border-radius: var(--radius-md); padding: 16px; box-shadow: var(--shadow-brutal-sm);">
+          <div
+            style="background: #FFFFFF; border: 2px solid #000; border-radius: var(--radius-md); padding: 16px; box-shadow: var(--shadow-brutal-sm);">
             <div style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 0.95rem;">
-              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
+              <span
+                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10B981;"></span>
               Open for Opportunities
             </div>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 6px 0 0; font-weight: 500;">
@@ -1862,7 +2702,7 @@
           </div>
         </div>
 
-        <div class="contact-form-box">
+        <div class="contact-form-box reveal-right">
           <h3>Send a Message</h3>
           <p>Fill out the form below and I will respond to your inquiry within 24 hours.</p>
 
@@ -1872,15 +2712,17 @@
 
           <form id="portfolioContactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="2a8c7c6b-f6bd-48c2-8add-44efaf35f899">
-            
+
             <div class="form-group">
               <label for="senderName">Your Name</label>
-              <input type="text" id="senderName" name="name" class="form-control" placeholder="e.g. John Carter" required>
+              <input type="text" id="senderName" name="name" class="form-control" placeholder="e.g. John Carter"
+                required>
             </div>
 
             <div class="form-group">
               <label for="senderEmail">Email Address</label>
-              <input type="email" id="senderEmail" name="email" class="form-control" placeholder="john@example.com" required>
+              <input type="email" id="senderEmail" name="email" class="form-control" placeholder="john@example.com"
+                required>
             </div>
 
             <div class="form-group">
@@ -1895,7 +2737,8 @@
 
             <div class="form-group">
               <label for="senderMessage">Your Message</label>
-              <textarea id="senderMessage" name="message" class="form-control" placeholder="Tell me about your goals, timeline, and vision..." required></textarea>
+              <textarea id="senderMessage" name="message" class="form-control"
+                placeholder="Tell me about your goals, timeline, and vision..." required></textarea>
             </div>
 
             <button type="submit" class="btn-brutal btn-dark" style="width: 100%; padding: 15px;">
@@ -1920,8 +2763,12 @@
         </div>
 
         <div class="footer-social-links">
-          <a href="https://github.com/NodexUI" target="_blank" class="social-btn" aria-label="GitHub">
+          <a href="https://github.com/dhavalmandaviya" target="_blank" class="social-btn" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/dhavalmandaviya" target="_blank" class="social-btn"
+            aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
           <a href="https://dhavalmandaviya.github.io" target="_blank" class="social-btn" aria-label="Portfolio">
             <i class="fa-solid fa-globe"></i>
@@ -1945,12 +2792,45 @@
   </footer>
 
   <!-- ========================================================
-       JAVASCRIPT
+       JAVASCRIPT INTERACTIONS & LOGIC
        ======================================================== -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      
-      // 1. Mobile Drawer Navigation (Fixed & Verified)
+
+      // 1. Neo-Brutalist Loader Animation
+      const preloader = document.getElementById("sitePreloader");
+      const preloaderFill = document.getElementById("preloaderFill");
+      const preloaderPercent = document.getElementById("preloaderPercent");
+
+      let progress = 0;
+      const progressInterval = setInterval(() => {
+        progress += Math.floor(Math.random() * 15) + 10;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(progressInterval);
+          if (preloaderFill) preloaderFill.style.width = "100%";
+          if (preloaderPercent) preloaderPercent.textContent = "100%";
+
+          setTimeout(() => {
+            if (preloader) preloader.classList.add("fade-out");
+          }, 450);
+        } else {
+          if (preloaderFill) preloaderFill.style.width = progress + "%";
+          if (preloaderPercent) preloaderPercent.textContent = progress + "%";
+        }
+      }, 70);
+
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          if (preloader && !preloader.classList.contains("fade-out")) {
+            if (preloaderFill) preloaderFill.style.width = "100%";
+            if (preloaderPercent) preloaderPercent.textContent = "100%";
+            preloader.classList.add("fade-out");
+          }
+        }, 1200);
+      });
+
+      // 2. Mobile Drawer Navigation
       const mobileMenu = document.getElementById("mobileMenu");
       const mobileMenuOpen = document.getElementById("mobileMenuOpen");
       const mobileMenuClose = document.getElementById("mobileMenuClose");
@@ -1967,39 +2847,36 @@
       }
 
       if (mobileMenuOpen) {
-        mobileMenuOpen.addEventListener("click", function(e) {
+        mobileMenuOpen.addEventListener("click", function (e) {
           e.stopPropagation();
           openMenu();
         });
       }
 
       if (mobileMenuClose) {
-        mobileMenuClose.addEventListener("click", function(e) {
+        mobileMenuClose.addEventListener("click", function (e) {
           e.stopPropagation();
           closeMenu();
         });
       }
 
-      // Close when clicking overlay backdrop
-      mobileMenu.addEventListener("click", function(e) {
+      mobileMenu.addEventListener("click", function (e) {
         if (e.target === mobileMenu) {
           closeMenu();
         }
       });
 
-      // Close on clicking any link
       mobileLinks.forEach(link => {
         link.addEventListener("click", closeMenu);
       });
 
-      // Close on Escape key
-      document.addEventListener("keydown", function(e) {
+      document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
           closeMenu();
         }
       });
 
-      // 2. Animated Navbar on Scroll (Glass & Width Shrink)
+      // 3. Animated Glass Navbar on Scroll
       const navbar = document.getElementById("mainNavbar");
       window.addEventListener("scroll", function () {
         if (window.scrollY > 40) {
@@ -2009,7 +2886,7 @@
         }
       });
 
-      // 3. Active Nav Link on Scroll
+      // 4. Active Nav Link on Scroll
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".nav-link");
 
@@ -2018,7 +2895,7 @@
 
         sections.forEach(current => {
           const sectionHeight = current.offsetHeight;
-          const sectionTop = current.offsetTop - 120;
+          const sectionTop = current.offsetTop - 140;
           const sectionId = current.getAttribute("id");
 
           if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -2032,8 +2909,8 @@
         });
       });
 
-      // 4. Scroll Reveal Animations (Intersection Observer)
-      const reveals = document.querySelectorAll(".reveal");
+      // 5. Directional Scroll Reveal Animations
+      const revealElements = document.querySelectorAll(".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale");
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -2045,9 +2922,73 @@
         threshold: 0.12
       });
 
-      reveals.forEach(el => revealObserver.observe(el));
+      revealElements.forEach(el => revealObserver.observe(el));
 
-      // 5. Contact Form Submission (Web3Forms API with instant feedback)
+      // 6. Dynamic GitHub Repositories Fetch with Graceful Fallback
+      const reposGrid = document.getElementById("githubReposGrid");
+      if (reposGrid) {
+        fetch("https://api.github.com/users/dhavalmandaviya/repos?sort=updated&per_page=6")
+          .then(res => res.json())
+          .then(repos => {
+            if (Array.isArray(repos) && repos.length > 0) {
+              // Color map for languages
+              const langColors = {
+                "HTML": "#e34c26",
+                "CSS": "#563d7c",
+                "JavaScript": "#f1e05a",
+                "C": "#555555",
+                "TypeScript": "#2b7489"
+              };
+
+              let html = "";
+              repos.forEach((repo, idx) => {
+                const color = langColors[repo.language] || "#2563EB";
+                const desc = repo.description || "Public repository and code collection by Dhaval Mandaviya.";
+                html += `
+                  <article class="repo-card reveal-up stagger-${(idx % 3) + 1}">
+                    <div>
+                      <div class="repo-card-top">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                        <span class="repo-visibility">${repo.private ? "Private" : "Public"}</span>
+                      </div>
+                      <h4>${repo.name}</h4>
+                      <p>${desc}</p>
+                    </div>
+                    <div>
+                      <div class="repo-card-meta">
+                        ${repo.language ? `<span class="repo-lang"><span class="repo-lang-dot" style="background: ${color};"></span> ${repo.language}</span>` : ""}
+                        <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
+                        <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count}</span>
+                      </div>
+                      <div class="repo-btn-row">
+                        <a href="${repo.html_url}" target="_blank" class="repo-link-btn">
+                          <i class="fa-brands fa-github"></i> View Code
+                        </a>
+                        ${repo.homepage ? `
+                          <a href="${repo.homepage}" target="_blank" class="repo-link-btn" style="background: var(--yellow-highlight);">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                          </a>
+                        ` : ""}
+                      </div>
+                    </div>
+                  </article>
+                `;
+              });
+              reposGrid.innerHTML = html;
+
+              // Observe newly created cards for reveal animation
+              const newCards = reposGrid.querySelectorAll(".reveal-up");
+              newCards.forEach(c => {
+                c.classList.add("active");
+              });
+            }
+          })
+          .catch(err => {
+            console.log("GitHub API load note: Using pre-rendered fallback cards.");
+          });
+      }
+
+      // 7. Contact Form Handling
       const contactForm = document.getElementById("portfolioContactForm");
       const successAlert = document.getElementById("formSuccessAlert");
 
@@ -2069,8 +3010,22 @@
               'Accept': 'application/json'
             }
           })
-          .then(response => {
-            if (response.ok) {
+            .then(response => {
+              if (response.ok) {
+                successAlert.style.display = "block";
+                contactForm.reset();
+                submitBtn.innerHTML = `Sent! <i class="fa-solid fa-check"></i>`;
+                setTimeout(() => {
+                  submitBtn.innerHTML = originalText;
+                  submitBtn.disabled = false;
+                }, 3500);
+              } else {
+                alert("Submission error. Please email directly to nodexui@gmail.com");
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+              }
+            })
+            .catch(() => {
               successAlert.style.display = "block";
               contactForm.reset();
               submitBtn.innerHTML = `Sent! <i class="fa-solid fa-check"></i>`;
@@ -2078,25 +3033,12 @@
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
               }, 3500);
-            } else {
-              alert("Submission error. Please email directly to nodexui@gmail.com");
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-            }
-          })
-          .catch(() => {
-            successAlert.style.display = "block";
-            contactForm.reset();
-            submitBtn.innerHTML = `Sent! <i class="fa-solid fa-check"></i>`;
-            setTimeout(() => {
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-            }, 3500);
-          });
+            });
         });
       }
 
     });
   </script>
 </body>
+
 </html>
