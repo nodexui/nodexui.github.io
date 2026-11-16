@@ -24,10 +24,10 @@
       --text-muted: #5E5E6E;
       --border-color: #000000;
       --border-width: 2.5px;
-      --shadow-brutal: 5px 5px 0px #000000;
-      --shadow-brutal-hover: 8px 8px 0px #000000;
+      --shadow-brutal: 3px 3px 0px #000000;
+      --shadow-brutal-hover: 5px 5px 0px #000000;
       --shadow-brutal-sm: 3px 3px 0px #000000;
-      --shadow-brutal-lg: 8px 8px 0px #000000;
+      --shadow-brutal-lg: 5px 5px 0px #000000;
 
       /* Reference Palette */
       --pink-highlight: #FF5E7E;
@@ -315,15 +315,16 @@
     }
 
     .btn-dark {
-      background-color: #000000;
-      color: #FFFFFF;
+      background-color: #ffffc2;
+      color: #000000;
       box-shadow: var(--shadow-brutal);
     }
 
     .btn-dark:hover {
       transform: translate(-3px, -3px);
       box-shadow: var(--shadow-brutal-hover);
-      background-color: #17171F;
+      background-color: #f8f881;
+      color: rgb(0, 0, 0);
     }
 
     .btn-dark:active {
@@ -370,27 +371,41 @@
     }
 
     /* ==========================================================
-       ANIMATED GLASS NAVBAR (RESPONSIVE & SCROLL ANIMATED)
+       ANIMATED GLASS NAVBAR (ALWAYS FIXED, ANIMATED & MOBILE READY)
        ========================================================== */
     .header-wrapper {
-      position: sticky;
+      position: fixed;
       top: 16px;
-      z-index: 1000;
-      padding-inline: 16px;
+      left: 0;
+      right: 0;
       width: 100%;
+      z-index: 9999;
+      padding-inline: 16px;
       display: flex;
       justify-content: center;
       pointer-events: none;
+      animation: navSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes navSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.96);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     .navbar-pill {
       pointer-events: auto;
       width: 100%;
-      max-width: 960px;
+      max-width: 1200px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(20px) saturate(190%);
-      -webkit-backdrop-filter: blur(20px) saturate(190%);
+      background-color: rgba(255, 255, 255, 0.948);
+      backdrop-filter: blur(30px);
       border: var(--border-width) solid var(--border-color);
       border-radius: var(--radius-pill);
       box-shadow: var(--shadow-brutal);
@@ -398,17 +413,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: max-width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        padding 0.35s ease,
+      transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
         background 0.3s ease,
-        box-shadow 0.35s ease;
+        box-shadow 0.35s ease,
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .navbar-pill.scrolled {
-      max-width: 740px;
+      max-width: 1000px;
       padding: 7px 18px;
-      background: rgba(255, 255, 255, 0.88);
-      box-shadow: 3px 3px 0px #000000;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 4px 4px 0px #000000;
+      transform: translateY(-1px);
     }
 
     .navbar-brand {
@@ -524,7 +541,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: min(330px, 86vw);
+      width: min(350px, 89vw);
       height: 100%;
       background: #FFFFFF;
       border-left: var(--border-width) solid #000;
@@ -571,14 +588,17 @@
     .mobile-links {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
       margin-top: 6px;
+      overflow-y: auto;
+      max-height: calc(120vh - 210px);
+      padding-right: 1px;
     }
 
     .mobile-link {
       font-size: 1.05rem;
       font-weight: 800;
-      padding: 12px 16px;
+      padding: 10px 16px;
       border-radius: var(--radius-md);
       border: 2px solid #000;
       background: var(--bg-main);
@@ -591,15 +611,13 @@
 
     .mobile-link:hover {
       background: var(--yellow-highlight);
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0 #000;
     }
 
     /* ==========================================================
        HERO SECTION
        ========================================================== */
     .hero-section {
-      padding: 50px 0 85px;
+      padding: 125px 0 85px;
       position: relative;
     }
 
@@ -1749,18 +1767,21 @@
       }
 
       .header-wrapper {
-        top: 12px;
+        top: 10px;
         padding-inline: 12px;
       }
 
       .navbar-pill {
         max-width: 100%;
         padding: 8px 14px;
+        box-shadow: 3px 3px 0 #000;
       }
 
       .navbar-pill.scrolled {
-        max-width: 95%;
-        padding: 6px 12px;
+        max-width: 85%;
+        padding: 7px 14px;
+        box-shadow: 3px 3px 0 #000;
+        transform: none;
       }
 
       .nav-links {
@@ -1768,7 +1789,7 @@
       }
 
       .nav-contact-btn {
-        display: none;
+        display: none !important;
       }
 
       .hamburger-btn {
@@ -1776,7 +1797,7 @@
       }
 
       .hero-section {
-        padding: 35px 0 55px;
+        padding: 95px 0 55px;
       }
 
       .hero-title {
@@ -1844,8 +1865,21 @@
     }
 
     @media (max-width: 480px) {
+      .header-wrapper {
+        top: 8px;
+        padding-inline: 8px;
+      }
+
+      .navbar-pill {
+        padding: 6px 12px;
+      }
+
       .container {
         width: calc(100% - 24px) !important;
+      }
+
+      .hero-section {
+        padding: 85px 0 45px;
       }
 
       .brand-avatar {
@@ -1919,7 +1953,7 @@
       <div class="preloader-avatar">
         <i class="fa-solid fa-shapes"></i>
       </div>
-      <div class="preloader-title">Dhaval.M ✦ Loading...</div>
+      <div class="preloader-title">Loading...</div>
       <div class="preloader-bar-wrap">
         <div class="preloader-bar-fill" id="preloaderFill"></div>
       </div>
@@ -1946,14 +1980,14 @@
             <path d="M30 52 C 30 75, 70 75, 70 52 C 65 62, 35 62, 30 52 Z" fill="#1A1A1A" />
           </svg>
         </div>
-        <span>Dhaval.M</span>
+        <span>Mr.MD</span>
       </a>
 
       <!-- Desktop Links -->
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#portfolio" class="nav-link">Projects</a></li>
         <li><a href="#repos" class="nav-link">Repositories</a></li>
         <li><a href="#socials" class="nav-link">Connect</a></li>
@@ -1981,7 +2015,7 @@
           <div class="brand-avatar" style="width: 34px; height: 34px;">
             <i class="fa-solid fa-user-astronaut"></i>
           </div>
-          <span>Dhaval.M</span>
+          <span>Dhaval Mandaviya</span>
         </div>
         <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close Navigation Menu" type="button">
           <i class="fa-solid fa-xmark"></i>
@@ -1989,7 +2023,6 @@
       </div>
 
       <div class="mobile-links">
-        <a href="#home" class="mobile-link"><i class="fa-solid fa-house"></i> Home</a>
         <a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About Me</a>
         <a href="#services" class="mobile-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Services</a>
         <a href="#portfolio" class="mobile-link"><i class="fa-solid fa-folder-open"></i> Projects</a>
@@ -2426,9 +2459,8 @@
               <i class="fa-solid fa-book-bookmark"></i>
               <span class="repo-visibility">Public</span>
             </div>
-            <h4>dhavalmandaviya.github.io</h4>
-            <p>Official portfolio website featuring responsive neo-brutalist aesthetics, fluid animations, and developer
-              showcase.</p>
+            <h4>nodexui.github.io</h4>
+            <p>Official NodexUI CSS Library by Dhaval Mandaviya.</p>
           </div>
           <div>
             <div class="repo-card-meta">
@@ -2437,11 +2469,10 @@
               <span><i class="fa-solid fa-code-fork"></i> 1</span>
             </div>
             <div class="repo-btn-row">
-              <a href="https://github.com/dhavalmandaviya/dhavalmandaviya.github.io" target="_blank"
-                class="repo-link-btn">
+              <a href="https://github.com/nodexui/nodexui.github.io" target="_blank" class="repo-link-btn">
                 <i class="fa-brands fa-github"></i> View Code
               </a>
-              <a href="https://dhavalmandaviya.github.io" target="_blank" class="repo-link-btn"
+              <a href="https://nodexui.github.io" target="_blank" class="repo-link-btn"
                 style="background: var(--yellow-highlight);">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
               </a>
@@ -2576,10 +2607,10 @@
             <p>Reach out directly for freelance contracts, frontend inquiries, or collaboration ideas.</p>
           </div>
           <div class="social-box-footer">
-            <span style="font-weight: 800; font-size: 0.95rem;">nodexui@gmail.com</span>
-            <a href="mailto:nodexui@gmail.com" class="btn-brutal btn-dark"
+            <span style="font-weight: 800; font-size: 0.95rem;">devloperdhaval@gmail.com</span>
+            <a href="mailto:devloperdhaval@gmail.com" class="btn-brutal btn-dark"
               style="padding: 9px 18px; font-size: 0.88rem;">
-              Send Email <i class="fa-solid fa-paper-plane"></i>
+              Send <i class="fa-solid fa-paper-plane"></i>
             </a>
           </div>
         </div>
@@ -2594,7 +2625,7 @@
   <section class="skills-section" id="skills">
     <div class="container">
       <div class="section-header reveal-up">
-        <h2>Tools &amp; <span class="highlight-pink">technologies</span> I trust</h2>
+        <h2>Tools &amp; <span class="highlight-pink">technologies</span><br> I trust</h2>
         <p>A battle-tested set of tools and technologies that I use to deliver fast, reliable, and scalable web
           solutions.</p>
       </div>
@@ -2878,13 +2909,16 @@
 
       // 3. Animated Glass Navbar on Scroll
       const navbar = document.getElementById("mainNavbar");
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 40) {
+      function updateNavOnScroll() {
+        if (!navbar) return;
+        if (window.scrollY > 30) {
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
         }
-      });
+      }
+      window.addEventListener("scroll", updateNavOnScroll, { passive: true });
+      updateNavOnScroll();
 
       // 4. Active Nav Link on Scroll
       const sections = document.querySelectorAll("section[id]");
@@ -2923,70 +2957,6 @@
       });
 
       revealElements.forEach(el => revealObserver.observe(el));
-
-      // 6. Dynamic GitHub Repositories Fetch with Graceful Fallback
-      const reposGrid = document.getElementById("githubReposGrid");
-      if (reposGrid) {
-        fetch("https://api.github.com/users/dhavalmandaviya/repos?sort=updated&per_page=6")
-          .then(res => res.json())
-          .then(repos => {
-            if (Array.isArray(repos) && repos.length > 0) {
-              // Color map for languages
-              const langColors = {
-                "HTML": "#e34c26",
-                "CSS": "#563d7c",
-                "JavaScript": "#f1e05a",
-                "C": "#555555",
-                "TypeScript": "#2b7489"
-              };
-
-              let html = "";
-              repos.forEach((repo, idx) => {
-                const color = langColors[repo.language] || "#2563EB";
-                const desc = repo.description || "Public repository and code collection by Dhaval Mandaviya.";
-                html += `
-                  <article class="repo-card reveal-up stagger-${(idx % 3) + 1}">
-                    <div>
-                      <div class="repo-card-top">
-                        <i class="fa-solid fa-book-bookmark"></i>
-                        <span class="repo-visibility">${repo.private ? "Private" : "Public"}</span>
-                      </div>
-                      <h4>${repo.name}</h4>
-                      <p>${desc}</p>
-                    </div>
-                    <div>
-                      <div class="repo-card-meta">
-                        ${repo.language ? `<span class="repo-lang"><span class="repo-lang-dot" style="background: ${color};"></span> ${repo.language}</span>` : ""}
-                        <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
-                        <span><i class="fa-solid fa-code-fork"></i> ${repo.forks_count}</span>
-                      </div>
-                      <div class="repo-btn-row">
-                        <a href="${repo.html_url}" target="_blank" class="repo-link-btn">
-                          <i class="fa-brands fa-github"></i> View Code
-                        </a>
-                        ${repo.homepage ? `
-                          <a href="${repo.homepage}" target="_blank" class="repo-link-btn" style="background: var(--yellow-highlight);">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                          </a>
-                        ` : ""}
-                      </div>
-                    </div>
-                  </article>
-                `;
-              });
-              reposGrid.innerHTML = html;
-
-              // Observe newly created cards for reveal animation
-              const newCards = reposGrid.querySelectorAll(".reveal-up");
-              newCards.forEach(c => {
-                c.classList.add("active");
-              });
-            }
-          })
-          .catch(err => {
-            console.log("GitHub API load note: Using pre-rendered fallback cards.");
-          });
-      }
 
       // 7. Contact Form Handling
       const contactForm = document.getElementById("portfolioContactForm");
