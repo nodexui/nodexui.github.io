@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 Happy Birthday ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=DM+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --sage: rgb(233, 254, 236);
+      --sage-light: #A8B99B;
+      --sage-pale: #C5D4B8;
+      --cream: #FDF6EC;
+      --cream-warm: #FAF0E0;
+      --cream-rose: #FFF5F5;
+      --blush: #E8C4B8;
+      --blush-deep: #D4A094;
+      --burgundy: #7A3B3E;
+      --burgundy-light: #9E5558;
+      --rose: #C76A6E;
+      --rose-light: #F0D4D6;
+      --rose-pale: #F8E8EA;
+      --gold: #D4A843;
+      --gold-light: #F5E6BE;
+      --green-dark: #4A5E3C;
+      --text: #2D2D2D;
+      --text-m: #6B6B6B;
+      --ff-d: 'Playfair Display', Georgia, serif;
+      --ff-b: 'DM Sans', sans-serif;
+      --ff-s: 'Dancing Script', cursive;
+      --r-sm: 14px;
+      --r-md: 22px;
+      --r-lg: 32px;
+      --r-xl: 48px;
+      --r-pill: 999px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden
+    }
+
+    body {
+      font-family: var(--ff-b);
+      background: var(--sage);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .container {
+      width: min(1060px, calc(100% - 36px));
+      margin-inline: auto
+    }
+
+    /* ============ PASSWORD LOCK SCREEN ============ */
+    .lock-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: var(--sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .6s, visibility .6s, transform .6s;
+    }
+
+    .lock-screen.unlocked {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.1);
+      pointer-events: none;
+    }
+
+    .lock-card {
+      background: var(--cream);
+      border-radius: var(--r-xl);
+      padding: 50px 44px 44px;
+      text-align: center;
+      max-width: 420px;
+      width: calc(100% - 32px);
+      box-shadow: 0 20px 80px rgba(74, 94, 60, .25);
+      position: relative;
+      overflow: hidden;
+      animation: lockFloat 1s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    @keyframes lockFloat {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(.94)
+      }
+
+      100% {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* Scallop banner on lock card (matching design) */
+    .lock-scallop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 56px;
+      background: var(--burgundy);
+    }
+
+    .lock-scallop::after {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 0;
+      width: 100%;
+      height: 14px;
+      background:
+        radial-gradient(circle at 10px 0, transparent 10px, var(--burgundy) 11px) repeat-x;
+      background-size: 20px 14px;
+    }
+
+    .lock-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--rose-light);
+      border: 3px solid var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--burgundy);
+      margin: 30px auto 20px;
+      box-shadow: 0 4px 24px rgba(199, 106, 110, .2);
+      animation: pulseRing 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        box-shadow: 0 4px 24px rgba(199, 106, 110, .2)
+      }
+
+      100% {
+        box-shadow: 0 4px 36px rgba(199, 106, 110, .4), 0 0 0 8px rgba(199, 106, 110, .08)
+      }
+    }
+
+    .lock-card h2 {
+      font-family: var(--ff-d);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--burgundy);
+      margin-bottom: 6px;
+    }
+
+    .lock-card .lock-sub {
+      font-family: var(--ff-s);
+      font-size: 1.15rem;
+      color: var(--rose);
+      margin-bottom: 28px;
+    }
+
+    .lock-input-wrap {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .lock-input {
+      width: 100%;
+      padding: 14px 48px 14px 20px;
+      border: 2.5px solid var(--blush);
+      border-radius: var(--r-pill);
+      background: var(--cream-warm);
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: var(--ff-b);
+      color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+
+    .lock-input:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 4px rgba(199, 106, 110, .12)
+    }
+
+    .lock-input::placeholder {
+      color: var(--blush-deep)
+    }
+
+    .lock-input-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--blush-deep);
+      font-size: 1.1rem;
+    }
+
+    .lock-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: var(--r-pill);
+      background: var(--burgundy);
+      color: var(--cream);
+      font-family: var(--ff-d);
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all .25s;
+      box-shadow: 0 6px 24px rgba(122, 59, 62, .25);
+    }
+
+    .lock-btn:hover {
+      background: var(--rose);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(199, 106, 110, .35)
+    }
+
+    .lock-error {
+      color: var(--rose);
+      font-size: .88rem;
+      font-weight: 700;
+      margin-top: 12px;
+      min-height: 22px;
+      transition: opacity .2s;
+    }
+
+    .lock-hint {
+      font-size: .82rem;
+      color: var(--text-m);
+      margin-top: 10px;
+    }
+
+    /* Decorative flowers on lock screen */
+    .lock-deco {
+      position: absolute;
+      pointer-events: none;
+      opacity: .6
+    }
+
+    .lock-deco-1 {
+      top: -10px;
+      left: -20px;
+      font-size: 3rem;
+      animation: floatSoft 6s ease-in-out infinite alternate
+    }
+
+    .lock-deco-2 {
+      bottom: 10px;
+      right: -15px;
+      font-size: 2.5rem;
+      animation: floatSoft 7s ease-in-out infinite alternate-reverse
+    }
+
+    @keyframes floatSoft {
+      0% {
+        transform: translateY(0) rotate(0)
+      }
+
+      100% {
+        transform: translateY(-12px) rotate(8deg)
+      }
+    }
+
+    /* ============ BACKGROUND PARTICLES ============ */
+    #bgCanvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    /* ============ MAIN CONTENT (hidden until unlock) ============ */
+    .main-content {
+      position: relative;
+      z-index: 1
+    }
+
+    /* ============ HERO (Matching "Joy of Ceramics" style) ============ */
+    .hero {
+      background: var(--sage);
+      padding: 40px 16px 80px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 80px;
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Cream card with scalloped burgundy top banner */
+    .hero-card {
+      background: var(--cream);
+      border-radius: 0 0 var(--r-xl) var(--r-xl);
+      padding: 0 0 50px;
+      text-align: center;
+      box-shadow: 0 16px 60px rgba(74, 94, 60, .18);
+      position: relative;
+      overflow: visible;
+      border-radius: 80px;
+    }
+
+    .hero-banner {
+      background: var(--burgundy);
+      padding: 28px 32px 36px;
+      position: relative;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      background:
+        radial-gradient(circle at 11px 0, transparent 11px, var(--burgundy) 12px) repeat-x;
+      background-size: 22px 16px;
+    }
+
+    .hero-banner-label {
+      font-family: var(--ff-b);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    .hero-banner-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      color: var(--cream);
+      font-size: .88rem;
+      font-weight: 600;
+      opacity: .8;
+      margin-top: 6px;
+    }
+
+    .hero-body {
+      padding: 40px 40px 0
+    }
+
+    /* Decorative emoji circles (like the ceramics products) */
+    .hero-deco-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-deco-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+      transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .hero-deco-circle:hover {
+      transform: scale(1.15) rotate(-5deg)
+    }
+
+    .hdc-1 {
+      background: var(--rose-light)
+    }
+
+    .hdc-2 {
+      background: var(--gold-light)
+    }
+
+    .hdc-3 {
+      background: var(--sage-pale)
+    }
+
+    .hdc-4 {
+      background: var(--blush)
+    }
+
+    .hdc-5 {
+      background: var(--cream-rose)
+    }
+
+    .hero-body h1 {
+      font-family: var(--ff-d);
+      font-size: clamp(2.6rem, 7vw, 4.4rem);
+      font-weight: 900;
+      font-style: italic;
+      color: var(--burgundy);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .hero-body h1 em {
+      font-style: normal;
+      display: block;
+      font-family: var(--ff-s);
+      color: var(--rose);
+      font-size: .72em;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .hero-body .hero-sub {
+      font-size: 1.02rem;
+      color: var(--text-m);
+      font-weight: 500;
+      max-width: 420px;
+      margin: 14px auto 28px;
+      line-height: 1.7;
+    }
+
+    /* CTA Button (matching design's pill button) */
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--burgundy);
+      color: var(--cream);
+      padding: 13px 32px;
+      border-radius: var(--r-pill);
+      font-family: var(--ff-d);
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(122, 59, 62, .25);
+      transition: all .3s;
+    }
+
+    .hero-cta:hover {
+      background: var(--rose);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(199, 106, 110, .3)
+    }
+
+    /* Bottom row — circular items with labels (like Petal Vase, Sunny Mug) */
+    .hero-items-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .hero-item {
+      text-align: center;
+      max-width: 100px
+    }
+
+    .hero-item-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--rose-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 8px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .06);
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .hero-item-circle:hover {
+      transform: translateY(-4px) scale(1.06);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1)
+    }
+
+    .hero-item-name {
+      font-family: var(--ff-d);
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text)
+    }
+
+    .hero-item-desc {
+      font-size: .74rem;
+      color: var(--text-m);
+      font-weight: 500;
+      margin-top: 2px
+    }
+
+    /* Flower decorations around hero */
+    .hero-abs {
+      position: absolute;
+      pointer-events: none;
+      z-index: 3
+    }
+
+    .hero-fl-1 {
+      top: 6%;
+      left: 3%
+    }
+
+    .hero-fl-2 {
+      top: 10%;
+      right: 5%
+    }
+
+    .hero-fl-3 {
+      bottom: 12%;
+      left: 5%
+    }
+
+    .hero-fl-4 {
+      bottom: 8%;
+      right: 3%
+    }
+
+    .hero-leaf-l {
+      top: 30%;
+      left: 0
+    }
+
+    .hero-leaf-r {
+      top: 25%;
+      right: 0
+    }
+
+    /* ============ SECTION DIVIDER (Scallop) ============ */
+    .scallop-div {
+      height: 18px;
+      background: radial-gradient(circle at 11px 0, transparent 11px, var(--burgundy) 12px) repeat-x;
+      background-size: 22px 18px;
+    }
+
+    .scallop-div-sage {
+      background: radial-gradient(circle at 11px 0, transparent 11px, var(--sage) 12px) repeat-x;
+      background-size: 22px 18px;
+    }
+
+    .scallop-div-cream {
+      background: radial-gradient(circle at 11px 0, transparent 11px, var(--cream) 12px) repeat-x;
+      background-size: 22px 18px;
+    }
+
+    /* ============ SECTION 2: SPECIAL WISH ============ */
+    .wish-sec {
+      background: var(--cream);
+      padding: 80px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wish-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .wish-art {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wish-blob {
+      width: 280px;
+      height: 280px;
+      border-radius: 58% 42% 55% 45% / 56% 48% 52% 44%;
+      background: linear-gradient(135deg, var(--blush), var(--rose-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 48px rgba(199, 106, 110, .15);
+      animation: blobMorph 8s ease-in-out infinite;
+    }
+
+    @keyframes blobMorph {
+
+      0%,
+      100% {
+        border-radius: 58% 42% 55% 45%/56% 48% 52% 44%
+      }
+
+      33% {
+        border-radius: 45% 55% 48% 52%/42% 58% 44% 56%
+      }
+
+      66% {
+        border-radius: 52% 48% 42% 58%/55% 45% 56% 44%
+      }
+    }
+
+    .wish-blob-inner {
+      font-size: 5.5rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .1))
+    }
+
+    /* Floating mini decorations around blob */
+    .wish-float {
+      position: absolute;
+      font-size: 1.6rem;
+      animation: floatSoft 5s ease-in-out infinite alternate;
+    }
+
+    .wf-1 {
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s
+    }
+
+    .wf-2 {
+      top: 5%;
+      right: 15%;
+      animation-delay: 1s
+    }
+
+    .wf-3 {
+      bottom: 8%;
+      left: 15%;
+      animation-delay: 2s
+    }
+
+    .wf-4 {
+      bottom: 5%;
+      right: 10%;
+      animation-delay: .5s
+    }
+
+    .wish-text h2 {
+      font-family: var(--ff-d);
+      font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+      font-weight: 800;
+      color: var(--burgundy);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .wish-text h2 .scr {
+      font-family: var(--ff-s);
+      color: var(--rose);
+      font-weight: 600
+    }
+
+    .wish-text p {
+      font-size: 1.05rem;
+      color: var(--text-m);
+      line-height: 1.8;
+      margin-bottom: 24px
+    }
+
+    .wish-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .wpill {
+      background: var(--sage-pale);
+      color: var(--green-dark);
+      padding: 8px 18px;
+      border-radius: var(--r-pill);
+      font-weight: 700;
+      font-size: .86rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .wpill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .08)
+    }
+
+    /* ============ SECTION 3: SHAYARI ============ */
+    .shayari-sec {
+      background: var(--sage);
+      padding: 80px 16px;
+      position: relative;
+    }
+
+    .sec-head {
+      text-align: center;
+      margin-bottom: 44px
+    }
+
+    .sec-head h2 {
+      font-family: var(--ff-d);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--cream);
+      margin-bottom: 6px
+    }
+
+    .sec-head p {
+      font-family: var(--ff-s);
+      font-size: 1.2rem;
+      color: var(--cream-warm);
+      opacity: .85
+    }
+
+    .sec-head.dark h2 {
+      color: var(--burgundy)
+    }
+
+    .sec-head.dark p {
+      color: var(--text-m);
+      opacity: 1
+    }
+
+    .sh-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px
+    }
+
+    .sh-card {
+      background: var(--cream);
+      border-radius: var(--r-lg);
+      padding: 32px 26px 26px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(74, 94, 60, .12);
+      transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s;
+    }
+
+    .sh-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(74, 94, 60, .18)
+    }
+
+    .sh-card::before {
+      content: "\201C";
+      font-family: var(--ff-d);
+      font-size: 4.5rem;
+      position: absolute;
+      top: 4px;
+      left: 16px;
+      color: var(--blush);
+      opacity: .45;
+      line-height: 1;
+    }
+
+    .sh-emoji {
+      font-size: 2rem;
+      margin-bottom: 12px
+    }
+
+    .sh-card p {
+      font-family: var(--ff-b);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--burgundy);
+      position: relative;
+      z-index: 2;
+    }
+
+    .sh-author {
+      font-family: var(--ff-s);
+      font-style: normal;
+      color: var(--rose);
+      font-size: 1.1rem;
+      margin-top: 14px;
+      display: block;
+    }
+
+    .sh-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      border-radius: 0 0 var(--r-lg) var(--r-lg);
+    }
+
+    .ac-r {
+      background: var(--rose)
+    }
+
+    .ac-g {
+      background: var(--gold)
+    }
+
+    .ac-s {
+      background: var(--sage)
+    }
+
+    /* ============ SECTION 4: PROPOSE ============ */
+    .propose-sec {
+      background: var(--burgundy);
+      padding: 90px 16px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .propose-sec::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(199, 106, 110, .25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .propose-wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2
+    }
+
+    .propose-heart {
+      font-size: 4.5rem;
+      margin-bottom: 22px;
+      display: inline-block;
+      animation: heartBeat 1.4s ease-in-out infinite
+    }
+
+    @keyframes heartBeat {
+
+      0%,
+      100% {
+        transform: scale(1)
+      }
+
+      14% {
+        transform: scale(1.18)
+      }
+
+      28% {
+        transform: scale(1)
+      }
+
+      42% {
+        transform: scale(1.18)
+      }
+
+      56% {
+        transform: scale(1)
+      }
+    }
+
+    .propose-wrap h2 {
+      font-family: var(--ff-d);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .propose-wrap h2 .pscrip {
+      font-family: var(--ff-s);
+      color: var(--gold-light);
+      display: block;
+      font-weight: 600;
+      font-size: 1.15em;
+    }
+
+    .propose-wrap>p {
+      font-size: 1.08rem;
+      color: var(--rose-light);
+      line-height: 1.8;
+      margin-bottom: 30px
+    }
+
+    .propose-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--burgundy);
+      padding: 14px 36px;
+      border-radius: var(--r-pill);
+      font-family: var(--ff-d);
+      font-weight: 800;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+      box-shadow: 0 6px 24px rgba(212, 168, 67, .35);
+    }
+
+    .propose-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 10px 32px rgba(212, 168, 67, .45);
+      background: var(--gold-light)
+    }
+
+    /* Falling petals */
+    .petal {
+      position: absolute;
+      opacity: .12;
+      font-size: 2.6rem;
+      animation: fallP 9s linear infinite
+    }
+
+    @keyframes fallP {
+      0% {
+        transform: translateY(-80px) rotate(0);
+        opacity: 0
+      }
+
+      8% {
+        opacity: .15
+      }
+
+      90% {
+        opacity: .12
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(400deg);
+        opacity: 0
+      }
+    }
+
+    /* ============ SECTION 5: MUSIC PLAYER ============ */
+    .song-sec {
+      background: var(--cream-warm);
+      padding: 80px 16px;
+      position: relative
+    }
+
+    .player-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--cream);
+      border-radius: var(--r-xl);
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 16px 64px rgba(122, 59, 62, .12);
+      position: relative;
+    }
+
+    /* Top gradient bar */
+    .player-topbar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--rose), var(--gold), var(--sage-light), var(--rose));
+      background-size: 300%;
+      animation: gradShift 5s linear infinite;
+    }
+
+    @keyframes gradShift {
+      0% {
+        background-position: 0%
+      }
+
+      100% {
+        background-position: 300%
+      }
+    }
+
+    .player-inner {
+      padding: 36px 32px 32px
+    }
+
+    .player-disc-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 26px
+    }
+
+    .vinyl {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--burgundy), var(--rose), var(--burgundy-light), var(--burgundy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 36px rgba(122, 59, 62, .25), inset 0 0 30px rgba(0, 0, 0, .15);
+      position: relative;
+      transition: all .5s;
+    }
+
+    .vinyl.spin {
+      animation: spinV 3s linear infinite
+    }
+
+    @keyframes spinV {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .vinyl-hole {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 3px solid var(--burgundy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      z-index: 2;
+    }
+
+    .vinyl::before,
+    .vinyl::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .vinyl::before {
+      width: 110px;
+      height: 110px
+    }
+
+    .vinyl::after {
+      width: 140px;
+      height: 140px
+    }
+
+    .pinfo {
+      text-align: center;
+      margin-bottom: 22px
+    }
+
+    .pinfo h3 {
+      font-family: var(--ff-d);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--burgundy);
+      margin-bottom: 3px
+    }
+
+    .pinfo span {
+      font-size: .88rem;
+      color: var(--text-m)
+    }
+
+    .pbar {
+      width: 100%;
+      height: 5px;
+      background: var(--blush);
+      border-radius: var(--r-pill);
+      margin-bottom: 8px;
+      cursor: pointer;
+      overflow: hidden
+    }
+
+    .pbar-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--rose), var(--burgundy));
+      border-radius: var(--r-pill);
+      transition: width .3s
+    }
+
+    .ptime {
+      display: flex;
+      justify-content: space-between;
+      font-size: .78rem;
+      color: var(--text-m);
+      margin-bottom: 22px
+    }
+
+    .pcontrols {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px
+    }
+
+    .pbtn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 2px solid var(--blush);
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      color: var(--burgundy);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .pbtn:hover {
+      background: var(--rose-light);
+      border-color: var(--rose);
+      transform: scale(1.08)
+    }
+
+    .pbtn-main {
+      width: 60px;
+      height: 60px;
+      background: var(--burgundy);
+      color: var(--cream);
+      border-color: var(--burgundy);
+      font-size: 1.2rem;
+      box-shadow: 0 4px 18px rgba(122, 59, 62, .25);
+    }
+
+    .pbtn-main:hover {
+      background: var(--rose);
+      border-color: var(--rose);
+      box-shadow: 0 6px 24px rgba(199, 106, 110, .35)
+    }
+
+    /* ============ SECTION 6: PHOTOS ============ */
+    .photos-sec {
+      background: var(--sage);
+      padding: 80px 16px;
+      position: relative
+    }
+
+    .ph-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto auto;
+      gap: 14px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .ph-card {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 28px rgba(74, 94, 60, .15);
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s;
+      cursor: pointer;
+      background: var(--cream);
+    }
+
+    .ph-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: 0 16px 48px rgba(74, 94, 60, .22)
+    }
+
+    .ph-card:nth-child(1) {
+      grid-column: 1/3
+    }
+
+    .ph-card:nth-child(2) {
+      grid-column: 3/5
+    }
+
+    .ph-card:nth-child(3) {
+      grid-column: 5/7
+    }
+
+    .ph-card:nth-child(4) {
+      grid-column: 2/4
+    }
+
+    .ph-card:nth-child(5) {
+      grid-column: 4/6
+    }
+
+    .ph-placeholder {
+      width: 100%;
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+    }
+
+    .php-1 {
+      background: linear-gradient(135deg, var(--blush), var(--rose-light))
+    }
+
+    .php-2 {
+      background: linear-gradient(135deg, var(--sage-pale), var(--cream))
+    }
+
+    .php-3 {
+      background: linear-gradient(135deg, var(--gold-light), var(--blush))
+    }
+
+    .php-4 {
+      background: linear-gradient(135deg, var(--rose-light), var(--blush-deep))
+    }
+
+    .php-5 {
+      background: linear-gradient(135deg, var(--cream-warm), var(--sage-pale))
+    }
+
+    .ph-over {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(122, 59, 62, .55));
+      opacity: 0;
+      transition: opacity .3s;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .ph-card:hover .ph-over {
+      opacity: 1
+    }
+
+    .ph-over span {
+      color: var(--cream);
+      font-family: var(--ff-s);
+      font-size: 1.2rem
+    }
+
+    /* ============ SECTION 7: FINALE ============ */
+    .finale-sec {
+      background: var(--cream);
+      padding: 90px 16px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .finale-sec::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% 30%, rgba(199, 106, 110, .06), transparent 60%);
+      pointer-events: none;
+    }
+
+    .finale-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2
+    }
+
+    .finale-emojis {
+      font-size: 3.4rem;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      flex-wrap: wrap
+    }
+
+    .finale-wrap h2 {
+      font-family: var(--ff-d);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--burgundy);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .finale-wrap h2 .fscr {
+      font-family: var(--ff-s);
+      color: var(--rose);
+      display: block;
+      font-size: .85em;
+      font-weight: 600
+    }
+
+    .finale-wrap>p {
+      font-size: 1.08rem;
+      color: var(--text-m);
+      line-height: 1.8;
+      margin-bottom: 34px
+    }
+
+    .finale-flowers {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .ff-item {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+      transition: transform .3s;
+    }
+
+    .ff-item:hover {
+      transform: scale(1.18) rotate(-6deg)
+    }
+
+    .ff-item:nth-child(1) {
+      background: var(--rose-light)
+    }
+
+    .ff-item:nth-child(2) {
+      background: var(--gold-light)
+    }
+
+    .ff-item:nth-child(3) {
+      background: var(--sage-pale)
+    }
+
+    .ff-item:nth-child(4) {
+      background: var(--blush)
+    }
+
+    .ff-item:nth-child(5) {
+      background: var(--rose-pale)
+    }
+
+    .creator-box {
+      border-top: 2px solid var(--blush);
+      padding-top: 28px;
+      margin-top: 16px
+    }
+
+    .creator-box p {
+      font-size: .9rem;
+      color: var(--text-m);
+      margin-bottom: 6px
+    }
+
+    .creator-box .cr-name {
+      font-family: var(--ff-d);
+      font-weight: 800;
+      color: var(--burgundy);
+      font-size: 1.15rem
+    }
+
+    .creator-box .cr-tag {
+      font-family: var(--ff-s);
+      color: var(--rose);
+      font-size: 1.05rem;
+      margin-top: 4px
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .rv {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1)
+    }
+
+    .rv.on {
+      opacity: 1;
+      transform: none
+    }
+
+    .rvs {
+      opacity: 0;
+      transform: scale(.92);
+      transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1)
+    }
+
+    .rvs.on {
+      opacity: 1;
+      transform: none
+    }
+
+    .d1 {
+      transition-delay: .1s
+    }
+
+    .d2 {
+      transition-delay: .2s
+    }
+
+    .d3 {
+      transition-delay: .3s
+    }
+
+    .d4 {
+      transition-delay: .4s
+    }
+
+    .d5 {
+      transition-delay: .5s
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media(max-width:768px) {
+      .wish-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px
+      }
+
+      .wish-art {
+        order: -1
+      }
+
+      .wish-blob {
+        width: 220px;
+        height: 220px
+      }
+
+      .wish-blob-inner {
+        font-size: 4rem
+      }
+
+      .wish-pills {
+        justify-content: center
+      }
+
+      .sh-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ph-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px
+      }
+
+      .ph-card:nth-child(n) {
+        grid-column: auto
+      }
+
+      .ph-card:nth-child(3) {
+        grid-column: 1/-1
+      }
+
+      .ph-placeholder {
+        min-height: 190px
+      }
+
+      .hero-body {
+        padding: 32px 24px 0
+      }
+
+      .hero-body h1 {
+        font-size: 2.4rem
+      }
+
+      .hero-items-row {
+        gap: 14px
+      }
+
+      .hero-item-circle {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem
+      }
+
+      .hero-deco-circle {
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem
+      }
+
+      .vinyl {
+        width: 140px;
+        height: 140px
+      }
+
+      .vinyl-hole {
+        width: 46px;
+        height: 46px;
+        font-size: 1.1rem
+      }
+
+      .player-inner {
+        padding: 28px 22px 26px
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero-body {
+        padding: 26px 16px 0
+      }
+
+      .hero-body h1 {
+        font-size: 2rem
+      }
+
+      .hero-items-row {
+        gap: 10px
+      }
+
+      .hero-item-circle {
+        width: 56px;
+        height: 56px;
+        font-size: 1.6rem
+      }
+
+      .hero-item-name {
+        font-size: .78rem
+      }
+
+      .hero-deco-circle {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem
+      }
+
+      .ph-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ph-card:nth-child(n) {
+        grid-column: 1/-1
+      }
+
+      .ph-placeholder {
+        min-height: 200px
+      }
+
+      .vinyl {
+        width: 120px;
+        height: 120px
+      }
+
+      .vinyl-hole {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem
+      }
+
+      .pbtn {
+        width: 40px;
+        height: 40px;
+        font-size: .85rem
+      }
+
+      .pbtn-main {
+        width: 52px;
+        height: 52px;
+        font-size: 1.1rem
+      }
+
+      .wish-blob {
+        width: 180px;
+        height: 180px
+      }
+
+      .wish-blob-inner {
+        font-size: 3.2rem
+      }
+
+      .lock-card {
+        padding: 40px 24px 32px
+      }
+
+      .finale-emojis {
+        font-size: 2.6rem;
+        gap: 10px
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =============== PASSWORD LOCK SCREEN =============== -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-card">
+      <div class="lock-scallop"></div>
+      <span class="lock-deco lock-deco-1">🌸</span>
+      <span class="lock-deco lock-deco-2">🌺</span>
+
+      <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+      <h2>This Is Special 💝</h2>
+      <p class="lock-sub">Enter the secret password to open</p>
+
+      <div class="lock-input-wrap">
+        <input type="password" class="lock-input" id="lockInput" placeholder="Enter password..." autocomplete="off">
+        <i class="fa-solid fa-key lock-input-icon"></i>
+      </div>
+
+      <button class="lock-btn" id="lockBtn">
+        <i class="fa-solid fa-heart"></i> &nbsp;Open My Surprise
+      </button>
+
+      <div class="lock-error" id="lockError"></div>
+      <p class="lock-hint">Hint: Ask the person who sent this 💕</p>
+    </div>
+  </div>
+
+  <!-- =============== BACKGROUND PARTICLES =============== -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- =============== MAIN CONTENT =============== -->
+  <div class="main-content" id="mainContent" style="display:none">
+
+    <!-- Decorative floating flowers -->
+    <div class="hero-abs hero-fl-1" style="animation:floatSoft 8s ease-in-out infinite alternate">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <circle cx="36" cy="24" r="13" fill="#E8C4B8" opacity=".6" />
+        <circle cx="26" cy="36" r="13" fill="#F0D4D6" opacity=".5" />
+        <circle cx="46" cy="36" r="13" fill="#E8C4B8" opacity=".5" />
+        <circle cx="36" cy="32" r="6" fill="#D4A843" opacity=".8" />
+      </svg>
+    </div>
+    <div class="hero-abs hero-fl-2" style="animation:floatSoft 9s ease-in-out infinite alternate-reverse">
+      <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
+        <circle cx="27" cy="17" r="10" fill="#FDF6EC" opacity=".7" />
+        <circle cx="19" cy="27" r="10" fill="#FDF6EC" opacity=".6" />
+        <circle cx="35" cy="27" r="10" fill="#FDF6EC" opacity=".6" />
+        <circle cx="27" cy="23" r="5" fill="#D4A843" opacity=".8" />
+      </svg>
+    </div>
+    <div class="hero-abs hero-fl-3" style="animation:floatSoft 10s ease-in-out infinite alternate;animation-delay:2s">
+      <svg width="48" height="65" viewBox="0 0 48 65" fill="none">
+        <path d="M22 38Q24 8 26 38" stroke="#4A5E3C" stroke-width="2.5" fill="none" />
+        <ellipse cx="15" cy="30" rx="9" ry="5" fill="#A8B99B" opacity=".5" transform="rotate(-30 15 30)" />
+        <ellipse cx="33" cy="24" rx="9" ry="5" fill="#A8B99B" opacity=".5" transform="rotate(30 33 24)" />
+      </svg>
+    </div>
+    <div class="hero-abs hero-fl-4"
+      style="animation:floatSoft 11s ease-in-out infinite alternate-reverse;animation-delay:1s">
+      <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
+        <circle cx="29" cy="19" r="11" fill="#C76A6E" opacity=".35" />
+        <circle cx="20" cy="30" r="11" fill="#C76A6E" opacity=".3" />
+        <circle cx="38" cy="30" r="11" fill="#C76A6E" opacity=".3" />
+        <circle cx="29" cy="26" r="5.5" fill="#D4A843" opacity=".6" />
+      </svg>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-card">
+          <!-- Scalloped burgundy banner top -->
+          <div class="hero-banner">
+            <div class="hero-banner-label">✨ A Special Day ✨</div>
+            <nav class="hero-banner-nav">
+              <span>Wish</span><span>•</span><span>Shayari</span><span>•</span><span>Song</span>
+            </nav>
+          </div>
+
+          <div class="hero-body">
+            <!-- Decorative top circles -->
+            <div class="hero-deco-row">
+              <div class="hero-deco-circle hdc-1">🌹</div>
+              <div class="hero-deco-circle hdc-2">🎂</div>
+              <div class="hero-deco-circle hdc-3">🎁</div>
+              <div class="hero-deco-circle hdc-4">💐</div>
+              <div class="hero-deco-circle hdc-5">✨</div>
+            </div>
+
+            <h1>
+              The Joy of<br>Your Birthday
+              <em>Happy Birthday, My Love</em>
+            </h1>
+
+            <p class="hero-sub">
+              Today is a celebration of the most wonderful person in the world.
+              Made with love, just for you. 🌹 <br> From 7th September and till lifetime, a very special day is 19
+              Novemver!
+            </p>
+
+            <a href="#wish" class="hero-cta">
+              Open Your Wishes <i class="fa-solid fa-arrow-down"></i>
+            </a>
+
+            <!-- Bottom items row (matching ceramics layout) -->
+            <div class="hero-items-row">
+              <div class="hero-item">
+                <div class="hero-item-circle" style="background:var(--rose-pale)">🌸</div>
+                <div class="hero-item-name">Love</div>
+                <div class="hero-item-desc">Always & forever</div>
+              </div>
+              <div class="hero-item">
+                <div class="hero-item-circle" style="background:var(--gold-light)">🎉</div>
+                <div class="hero-item-name">Joy</div>
+                <div class="hero-item-desc">For brighter days</div>
+              </div>
+              <div class="hero-item">
+                <div class="hero-item-circle" style="background:var(--sage-pale)">🌿</div>
+                <div class="hero-item-name">Peace</div>
+                <div class="hero-item-desc">In your heart</div>
+              </div>
+              <div class="hero-item">
+                <div class="hero-item-circle" style="background:var(--blush)">🦋</div>
+                <div class="hero-item-name">Dreams</div>
+                <div class="hero-item-desc">All come true</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scallop divider -->
+    <div class="scallop-div" style="background-color:var(--cream)"></div>
+
+    <!-- ===== SPECIAL WISH ===== -->
+    <section class="wish-sec" id="wish">
+      <div class="container">
+        <div class="wish-layout">
+          <div class="wish-art rvs">
+            <div class="wish-blob">
+              <div class="wish-blob-inner">🎁</div>
+            </div>
+            <span class="wish-float wf-1">🌸</span>
+            <span class="wish-float wf-2">✨</span>
+            <span class="wish-float wf-3">💕</span>
+            <span class="wish-float wf-4">🌺</span>
+          </div>
+          <div class="wish-text rv">
+            <h2>A Very <span class="scr">Special Wish</span><br>Just For You</h2>
+            <p>
+              Many many happy return of the day my everything, my love and my cute girl. 😊 Today is very special day
+              for
+              you and also me. I hope we stay together lifetime and be a more happy... Thanks for coming in life and
+              become very important person.
+            </p>
+            <div class="wish-pills">
+              <span class="wpill">🌸 Happiness</span>
+              <span class="wpill">💕 Love</span>
+              <span class="wpill">✨ Joy</span>
+              <span class="wpill">🌟 Dreams</span>
+              <span class="wpill">🦋 Peace</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scallop-div-sage" style="background-color:var(--sage)"></div>
+
+    <!-- ===== SHAYARI ===== -->
+    <section class="shayari-sec" id="shayari">
+      <div class="container">
+        <div class="sec-head rv">
+          <h2>Special Messages 💌</h2>
+          <p>Words from the heart, just for you</p>
+        </div>
+        <div class="sh-grid">
+          <div class="sh-card rv d1">
+            <div class="sh-emoji">🌹</div>
+            <p>
+              તારી આંખો થી લઈને તારા સ્મિત સુધી , <br>
+              તારા અવાજ થી લઈને તારા મૌન સુધી , <br>
+              તારી વાતો થી લઈને તારા સ્વભાવ સુધી , <br>
+              તારા ગુસ્સા થી લઈને તારા મનાવવા સુધી , <br>
+              તારી હાજરી થી લઈને તારી ગેરહાજરી સુધી ; મને પ્રેમ, પ્રેમ અને પ્રેમ જ છે...
+            </p>
+            <span class="sh-author">— With all my love</span>
+            <div class="sh-accent ac-r"></div>
+          </div>
+          <div class="sh-card rv d2">
+            <div class="sh-emoji">🌺</div>
+            <p>
+              તારું રૂપ નહીં.. તારી લાગણી ગમે છે ! <br>
+              તારી આંખો નહીં.. આંખોમાં ઉભરાયેલો પ્રેમ ગમે છે ! <br>
+              તારા હોઠ નહીં.. તારા બોલેલા શબ્દો ગમે છે ! <br>
+              મને તું નહીં.. પણ હા "તું" જ ગમે છે ! <br>
+            </p>
+            <span class="sh-author">— Forever yours</span>
+            <div class="sh-accent ac-g"></div>
+          </div>
+          <div class="sh-card rv d3">
+            <div class="sh-emoji">🦋</div>
+            <p>
+              હવે તો સુ લખું તારા રૂપ વિશે, <br>
+              લખવા બેસું તો શબ્દો પણ નખરાં કરવા લાગે છે!
+            </p>
+            <span class="sh-author">— From my heart</span>
+            <div class="sh-accent ac-s"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROPOSE ===== -->
+    <section class="propose-sec" id="propose">
+      <span class="petal" style="left:5%;animation-delay:0s">🌸</span>
+      <span class="petal" style="left:18%;animation-delay:1.5s">🌺</span>
+      <span class="petal" style="left:35%;animation-delay:3s">💮</span>
+      <span class="petal" style="left:52%;animation-delay:.8s">🌸</span>
+      <span class="petal" style="left:70%;animation-delay:2.2s">🌺</span>
+      <span class="petal" style="left:88%;animation-delay:4s">💮</span>
+
+      <div class="propose-wrap rv">
+        <div class="propose-heart">💝</div>
+        <h2>Important question for life time, <br>You Are My Everything<span class="pscrip">Will you be mine
+            forever?</span></h2>
+        <p>
+          I am so exited to tell you this, Will you be my permanent life partner? 😊✨🤞💝<br>I promise, I will make you
+          happy everyday and do whatever you said. You are the first girl, who get my proposal. And in the last day of
+          my life, you are still important for me. I am so lucky to have you, Do you want to be my forever? <br><br>
+          <span style="font-weight: 900; ">I love you soooooo muchhhhhhhhhh myyyyyyy girl....</span>
+        </p>
+        <button class="propose-btn" id="proposeBtn">
+          <i class="fa-solid fa-heart"></i> Say Yes? 💍
+        </button>
+      </div>
+    </section>
+
+    <div class="scallop-div-cream" style="background-color:var(--cream-warm)"></div>
+
+    <!-- ===== MUSIC PLAYER ===== -->
+    <section class="song-sec" id="song">
+      <div class="container">
+        <div class="sec-head dark rv">
+          <h2>A Song For You 🎵</h2>
+          <p>Because you deserve the most beautiful melody</p>
+        </div>
+        <div class="player-card rvs">
+          <div class="player-topbar"></div>
+          <div class="player-inner">
+            <div class="player-disc-wrap">
+              <div class="vinyl" id="vinyl">
+                <div class="vinyl-hole">🎵</div>
+              </div>
+            </div>
+            <div class="pinfo">
+              <h3>Tu hai meri</h3>
+              <span>A love song, just for you</span>
+            </div>
+            <div class="pbar" id="pbar">
+              <div class="pbar-fill" id="pbarFill"></div>
+            </div>
+            <div class="ptime"><span id="curTime">0:00</span><span id="totTime">0:00</span></div>
+            <div class="pcontrols">
+              <button class="pbtn" id="prevBtn" title="Restart"><i class="fa-solid fa-backward-step"></i></button>
+              <button class="pbtn pbtn-main" id="playBtn" title="Play/Pause"><i class="fa-solid fa-play"
+                  id="playIco"></i></button>
+              <button class="pbtn" id="nextBtn" title="Restart"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+            <audio id="audioPlayer" src="songi.mp3" preload="metadata"></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scallop-div-sage" style="background-color:var(--sage)"></div>
+
+
+    <!-- ===== FINALE ===== -->
+    <section class="finale-sec" id="finale">
+      <div class="container">
+        <div class="finale-wrap rv">
+          <div class="finale-emojis"><span>🎂</span><span>🎉</span><span>💖</span><span>🎈</span><span>✨</span></div>
+          <h2>Once Again,<br><span class="fscr">Happy Birthday!</span></h2>
+          <p>
+            Happy birthday my one and only love. I love you so much. Thanks for coming in my life. I really respect &
+            care you for lifetime. 💝😊✨
+          </p>
+          <div class="finale-flowers">
+            <div class="ff-item">🌸</div>
+            <div class="ff-item">🌻</div>
+            <div class="ff-item">🌷</div>
+            <div class="ff-item">🌺</div>
+            <div class="ff-item">🌹</div>
+          </div>
+          <div class="creator-box">
+            <p>Made with all my love 💕</p>
+            <div class="cr-name">Your Dhaval 😁</div>
+            <div class="cr-tag">crafted with love & code ✨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /main-content -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      /* ===== 1. PASSWORD LOCK ===== */
+      const PASSWORD = "hetu2119";
+      const lockScreen = document.getElementById("lockScreen");
+      const lockInput = document.getElementById("lockInput");
+      const lockBtn = document.getElementById("lockBtn");
+      const lockError = document.getElementById("lockError");
+      const mainContent = document.getElementById("mainContent");
+
+      function tryUnlock() {
+        const val = lockInput.value.trim().toLowerCase();
+        if (val === PASSWORD) {
+          lockScreen.classList.add("unlocked");
+          mainContent.style.display = "block";
+          document.body.style.overflow = "";
+          setTimeout(() => lockScreen.style.display = "none", 700);
+        } else {
+          lockError.textContent = "Wrong password! Try again 💔";
+          lockInput.style.borderColor = "var(--rose)";
+          lockInput.style.animation = "shake .4s";
+          setTimeout(() => { lockInput.style.animation = ""; lockInput.style.borderColor = "" }, 500);
+        }
+      }
+      lockBtn.addEventListener("click", tryUnlock);
+      lockInput.addEventListener("keydown", e => { if (e.key === "Enter") tryUnlock() });
+      // Shake animation
+      const shakeCSS = document.createElement("style");
+      shakeCSS.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}`;
+      document.head.appendChild(shakeCSS);
+
+      /* ===== 2. PARTICLE CANVAS ===== */
+      const cv = document.getElementById("bgCanvas");
+      const cx = cv.getContext("2d");
+      let pts = [];
+      function szCv() { cv.width = innerWidth; cv.height = innerHeight }
+      szCv(); addEventListener("resize", szCv);
+
+      const cols = ["rgba(199,106,110,", "rgba(212,168,67,", "rgba(232,196,184,", "rgba(240,212,214,", "rgba(139,158,124,"];
+      class P {
+        constructor() { this.r() }
+        r() {
+          this.x = Math.random() * cv.width; this.y = Math.random() * cv.height;
+          this.s = Math.random() * 2.5 + .8; this.vx = (Math.random() - .5) * .35; this.vy = Math.random() * -.4 - .08;
+          this.o = Math.random() * .35 + .08; this.fd = Math.random() > .5 ? 1 : -1;
+          this.c = cols[Math.floor(Math.random() * cols.length)];
+        }
+        u() {
+          this.x += this.vx; this.y += this.vy; this.o += this.fd * .002;
+          if (this.o <= .04 || this.o >= .42) this.fd *= -1;
+          if (this.y < -10 || this.x < -10 || this.x > cv.width + 10) { this.r(); this.y = cv.height + 10 }
+        }
+        d() { cx.beginPath(); cx.arc(this.x, this.y, this.s, 0, Math.PI * 2); cx.fillStyle = this.c + this.o + ")"; cx.fill() }
+      }
+      const pc = Math.min(70, Math.floor(innerWidth / 18));
+      for (let i = 0; i < pc; i++)pts.push(new P);
+      (function loop() { cx.clearRect(0, 0, cv.width, cv.height); pts.forEach(p => { p.u(); p.d() }); requestAnimationFrame(loop) })();
+
+      /* ===== 3. SCROLL REVEAL ===== */
+      const obs = new IntersectionObserver(ents => {
+        ents.forEach(e => { if (e.isIntersecting) e.target.classList.add("on") });
+      }, { threshold: .1 });
+      document.querySelectorAll(".rv,.rvs").forEach(el => obs.observe(el));
+
+      /* ===== 4. MUSIC PLAYER (real audio playback) ===== */
+      const playBtn = document.getElementById("playBtn"),
+        playIco = document.getElementById("playIco"),
+        vinyl = document.getElementById("vinyl"),
+        pbar = document.getElementById("pbar"),
+        pbarFill = document.getElementById("pbarFill"),
+        curTime = document.getElementById("curTime"),
+        totTime = document.getElementById("totTime"),
+        audio = document.getElementById("audioPlayer");
+
+      function fmt(s) {
+        if (isNaN(s)) return "0:00";
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60);
+        return m + ":" + (sec < 10 ? "0" : "") + sec;
+      }
+
+      function updateDuration() {
+        if (audio && !isNaN(audio.duration)) {
+          totTime.textContent = fmt(audio.duration);
+        }
+      }
+
+      if (audio) {
+        audio.addEventListener("loadedmetadata", updateDuration);
+        audio.addEventListener("durationchange", updateDuration);
+
+        audio.addEventListener("timeupdate", () => {
+          if (!isNaN(audio.duration) && audio.duration > 0) {
+            const pct = (audio.currentTime / audio.duration) * 100;
+            pbarFill.style.width = pct + "%";
+            curTime.textContent = fmt(audio.currentTime);
+          }
+        });
+
+        audio.addEventListener("play", () => {
+          playIco.className = "fa-solid fa-pause";
+          vinyl.classList.add("spin");
+        });
+
+        audio.addEventListener("pause", () => {
+          playIco.className = "fa-solid fa-play";
+          vinyl.classList.remove("spin");
+        });
+
+        audio.addEventListener("ended", () => {
+          playIco.className = "fa-solid fa-play";
+          vinyl.classList.remove("spin");
+          pbarFill.style.width = "0%";
+          curTime.textContent = "0:00";
+        });
+      }
+
+      function toggleAudio() {
+        if (!audio) return;
+        if (audio.paused) {
+          audio.play().catch(e => console.log("Playback error or autoplay restriction:", e));
+        } else {
+          audio.pause();
+        }
+      }
+
+      playBtn.addEventListener("click", toggleAudio);
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        if (!audio) return;
+        audio.currentTime = 0;
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        if (!audio) return;
+        audio.currentTime = 0;
+      });
+
+      pbar.addEventListener("click", e => {
+        if (!audio || isNaN(audio.duration)) return;
+        const r = pbar.getBoundingClientRect();
+        const p = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+        audio.currentTime = p * audio.duration;
+      });
+
+      /* ===== 5. PROPOSE CONFETTI ===== */
+      const pBtn = document.getElementById("proposeBtn");
+      pBtn.addEventListener("click", () => {
+        pBtn.innerHTML = '💖 Yes! Forever & Always! 💖';
+        pBtn.style.background = 'var(--rose)'; pBtn.style.color = 'var(--cream)';
+        for (let i = 0; i < 35; i++) {
+          const c = document.createElement("div");
+          c.textContent = ["💖", "✨", "🌹", "💕", "🎉", "🌸"][Math.floor(Math.random() * 6)];
+          const dx = (Math.random() - .5) * 500, dy = -Math.random() * 600 - 150, rt = Math.random() * 720;
+          c.style.cssText = `position:fixed;font-size:${Math.random() * 18 + 14}px;left:50%;top:50%;pointer-events:none;z-index:99999;
+        animation:cfly ${Math.random() * 1.5 + 1.2}s cubic-bezier(.25,.46,.45,.94) forwards`;
+          document.body.appendChild(c);
+          setTimeout(() => c.remove(), 3200);
+        }
+      });
+      const cflyCSS = document.createElement("style");
+      cflyCSS.textContent = `@keyframes cfly{0%{transform:translate(0,0) rotate(0) scale(1);opacity:1}100%{transform:translate(var(--dx,${(Math.random() - .5) * 400}px),var(--dy,${-Math.random() * 500}px)) rotate(${Math.random() * 600}deg) scale(0);opacity:0}}`;
+      document.head.appendChild(cflyCSS);
+
+    });
+  </script>
+</body>
+
+</html>
